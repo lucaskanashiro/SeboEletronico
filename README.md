@@ -11,3 +11,5 @@ Caique de Paula Pereira
 João Gabriel - teste do git shell para windows \o/
 
 Descobri tbm que se alguem quiser abrir um arquivo texto pelo git shell basta colocar "notepad <arquivo>" - notepad = gedit xDD
+
+Macário - teste git
