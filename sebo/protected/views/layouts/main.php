@@ -1,4 +1,4 @@
-<?php /* @var $this Controller */ ?>
+﻿<?php /* @var $this Controller */ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@
 	<div class="clear"></div>
         <center>
                 <div >
-                        Sebo Eletrônico MDS- 2013/1<br/>
+                        Sebo Eletrônico GPP_MDS - 2013/1<br/>
 
                 </div><!-- footer -->
         </center>
