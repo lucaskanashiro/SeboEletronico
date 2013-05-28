@@ -4,15 +4,14 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background: url("../img/bg_body.jpg");
 }
 
 #page
 {
 	margin-top: 5px;
-	margin-bottom: 5px;
-	background: white;
-	border: 1px solid #C9E0ED;
+	background: #162029 url("../img/bg_body.jpg");
+	
 }
 
 #header
@@ -49,7 +48,7 @@ body
 
 #mainmenu
 {
-	background:white url(bg.gif) repeat-x left top;
+	background:#162029 url(../img/painel_link_active_bg.jpg) repeat-x ;
 }
 
 #mainmenu ul
@@ -75,9 +74,16 @@ body
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
-	color: #6399cd;
-	background-color:#EFF4FA;
+	color: #ffffff;
+	background-color:#162029;
 	text-decoration:none;
+}
+
+.container 
+{
+    width:100%;
+    height: 100%;
+    margin:0 auto;
 }
 
 div.flash-error, div.flash-notice, div.flash-success
