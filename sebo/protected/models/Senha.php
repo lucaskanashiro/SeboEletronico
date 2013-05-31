@@ -1,15 +1,6 @@
 <?php
 
-/**
- * This is the model class for table "senha".
- *
- * The followings are the available columns in table 'senha':
- * @property string $id_senha
- * @property integer $codigo_senha
- *
- * The followings are the available model relations:
- * @property Usuario[] $usuarios
- */
+
 class Senha extends CActiveRecord
 {
 	//atributos
