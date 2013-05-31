@@ -1,62 +1,49 @@
 <?php
 
-/**
- * This is the model class for table "teste".
- *
- * The followings are the available columns in table 'teste':
- * @property string $id
- * @property string $descricao
- * @property boolean $ok
- */
 class Teste extends CActiveRecord
 {
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return Teste the static model class
-	 */
+	private $id;
+	private $descricao;
+	private $ok;
+
+	public function __construct($id, $descricao, $ok)
+	{
+		$this->id = $id;
+		$this->descricao = $descricao;
+		$this->ok = $ok;
+	}
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-	/**
-	 * @return string the associated database table name
-	 */
+	
 	public function tableName()
 	{
 		return 'teste';
 	}
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
+
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
+		
 		return array(
 			array('descricao, ok', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
+			
 			array('id, descricao, ok', 'safe', 'on'=>'search'),
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
+
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
+		
 		return array(
 		);
 	}
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
+
 	public function attributeLabels()
 	{
 		return array(
@@ -66,15 +53,10 @@ class Teste extends CActiveRecord
 		);
 	}
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
+	
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
+	
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
