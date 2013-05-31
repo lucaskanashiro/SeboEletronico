@@ -12,54 +12,48 @@
  */
 class Senha extends CActiveRecord
 {
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return Senha the static model class
-	 */
+	//atributos
+	private $id_senha;
+	private $codigo_senha;
+	
+	//método construtor
+	public function __construct($id_senha, $codigo_senha)
+	{
+		$this->id_senha = $id_senha;
+		$this->codigo_senha = $codigo_senha;
+	}
+	
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-	/**
-	 * @return string the associated database table name
-	 */
+	
 	public function tableName()
 	{
 		return 'senha';
 	}
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
+	
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
+		
 		return array(
 			array('codigo_senha', 'numerical', 'integerOnly'=>true),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
+			
 			array('id_senha, codigo_senha', 'safe', 'on'=>'search'),
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
+		
 		return array(
 			'usuarios' => array(self::HAS_MANY, 'Usuario', 'senha_id'),
 		);
 	}
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
+
 	public function attributeLabels()
 	{
 		return array(
@@ -68,15 +62,10 @@ class Senha extends CActiveRecord
 		);
 	}
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
+
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
+	
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id_senha',$this->id_senha,true);
