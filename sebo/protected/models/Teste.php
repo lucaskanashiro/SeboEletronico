@@ -6,9 +6,8 @@ class Teste extends CActiveRecord
 	private $descricao;
 	private $ok;
 
-	public function __construct($id, $descricao, $ok)
+	public function __construct($descricao, $ok)
 	{
-		$this->id = $id;
 		$this->descricao = $descricao;
 		$this->ok = $ok;
 	}
