@@ -8,9 +8,8 @@ class Senha extends CActiveRecord
 	private $codigo_senha;
 	
 	//método construtor
-	public function __construct($id_senha, $codigo_senha)
+	public function __construct($codigo_senha)
 	{
-		$this->id_senha = $id_senha;
 		$this->codigo_senha = $codigo_senha;
 	}
 	
