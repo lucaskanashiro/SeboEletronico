@@ -1,21 +1,20 @@
 <?php
 
-/**
- * This is the model class for table "usuario".
- *
- * The followings are the available columns in table 'usuario':
- * @property string $id_pessoa
- * @property integer $senha_id
- * @property string $nome
- * @property string $email
- * @property integer $telefone
- *
- * The followings are the available model relations:
- * @property Senha $senha
- */
+
 class Usuario extends CActiveRecord
 {
-    
+    	private $id_pessoa;
+    	private $senha_id;
+    	private $nome;
+    	private $email;
+    	private $telefone;
+    	
+    	public function __construct($nome, $email, $telefone)
+    	{
+    		$this->nome = $nome;
+    		$this->email = $email;
+    		$this->telefone = $telefone;
+    	}
     
         public static function Cadastrar($nome, $email, $telefone, $senha){
 
@@ -161,58 +160,39 @@ class Usuario extends CActiveRecord
         }
         
     
-    
-    
-    
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return Usuario the static model class
-	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
 
-	/**
-	 * @return string the associated database table name
-	 */
+	
 	public function tableName()
 	{
 		return 'usuario';
 	}
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
+
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
+		
 		return array(
 			array('senha_id', 'numerical', 'integerOnly'=>true),
 			array('nome, email', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
+			
 			array('id_pessoa, senha_id, nome, email', 'safe', 'on'=>'search'),
 		);
 	}
 
-	/**
-	 * @return array relational rules.
-	 */
+
 	public function relations()
 	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
+		
 		return array(
 			'senha' => array(self::BELONGS_TO, 'Senha', 'senha_id'),
 		);
 	}
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
+	
 	public function attributeLabels()
 	{
 		return array(
@@ -223,15 +203,10 @@ class Usuario extends CActiveRecord
 		);
 	}
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
+	
 	public function search()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
-
+		
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id_pessoa',$this->id_pessoa,true);
