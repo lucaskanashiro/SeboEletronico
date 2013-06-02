@@ -92,7 +92,7 @@ class TesteController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Teste('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes(); 
 		if(isset($_GET['Teste']))
 			$model->attributes=$_GET['Teste'];
 
