@@ -18,31 +18,6 @@ class Usuario extends CActiveRecord
     
         public static function Cadastrar($nome, $email, $telefone, $senha){
 
-            $nomeBranco;
-            $emailBranco;
-            $telefoneBranco;
-            $senhaBranco;
-            
-            if(empty($nome)){
-                //    Alerta quando o campo NOME está em branco
-                 $nomeBranco = true; 
-            }
-            if(empty($email)){
-                 //    Alerta quando o campo EMAIL está em branco
-                  $emailBranco=true;
-            }
-            if(empty($telefone)){
-                //    Alerta quando o campo TELEFONE está em branco
-                  $telefoneBranco = true;
-            }
-            if(empty($senha[0])){
-                //    Alerta quando o campo SENHA está em branco
-                  $senhaBranco = true;
-            }
-            if(empty($senha[1])){
-                //    Alerta quando o campo CONFIRMAÇÃO SENHA está em branco
-                  $senhaBranco2 = true;
-            }
             if(empty($nome) || empty ($email) || empty ($telefone) || empty($senha[0]) || empty($senha[1])){
                      echo "<script> alert('Não é possível cadastrar usuario,\n
                          existem campos em branco.\\nTodos os campos devem ser preenchidos!')</script>";
