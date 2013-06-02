@@ -1,6 +1,6 @@
 <?php
 
-class UsuarioController extends Controller
+class UsuariosController extends Controller
 {
 	public function actionIndex()
 	{
