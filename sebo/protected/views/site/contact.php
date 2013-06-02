@@ -1,7 +1,4 @@
 <?php
-/* @var $this SiteController */
-/* @var $model ContactForm */
-/* @var $form CActiveForm */
 
 $this->pageTitle=Yii::app()->name . ' - Contact Us';
 $this->breadcrumbs=array(
@@ -80,6 +77,6 @@ If you have business inquiries or other questions, please fill out the following
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>
 
 <?php endif; ?>

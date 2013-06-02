@@ -17,8 +17,12 @@ class Usuario extends CActiveRecord
     	}
     
         public static function Cadastrar($nome, $email, $telefone, $senha){
-
-            if(empty($nome) || empty ($email) || empty ($telefone) || empty($senha[0]) || empty($senha[1])){
+            
+            
+            
+            
+            //if($nome == NULL|| $email==NULL || $telefone==NULL || $senha[0]==NULL || $senha[1]==NULL){
+            if(empty($nome) || empty($email) || empty($telefone) || empty($senha[0]) || empty($senha[1])){
                      echo "<script> alert('Não é possível cadastrar usuario,\n
                          existem campos em branco.\\nTodos os campos devem ser preenchidos!')</script>";
                      ?>
@@ -49,15 +53,12 @@ class Usuario extends CActiveRecord
                     alert("A senha e a confirmação da senha estão diferentes!");
                 </script>
            <?php }?>
-             <script language = "Javascript">
-			location.reload();
-			</script>
+            <script language = "Javascript">
+		location.reload();
+            </script>
             
-			<?php
+            <?php
         }//fim function cadastrar
-            
-        
-        
     
 	public static function model($className=__CLASS__)
 	{
@@ -118,3 +119,4 @@ class Usuario extends CActiveRecord
 		));
 	}
 }
+?>

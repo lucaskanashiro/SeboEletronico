@@ -1,8 +1,3 @@
-<?php
-/* @var $this TesteController */
-/* @var $model Teste */
-/* @var $form CActiveForm */
-?>
 
 <div class="form">
 
@@ -33,4 +28,4 @@
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>

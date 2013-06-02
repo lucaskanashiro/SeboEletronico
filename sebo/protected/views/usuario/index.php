@@ -1,9 +1,6 @@
 <?php
-/* @var $this UsuarioController */
 
-$this->breadcrumbs=array(
-	'Usuario',
-);
+$this->breadcrumbs=array('Usuario',);
 ?>
 <!DOCTYPE HTML>
 <html>

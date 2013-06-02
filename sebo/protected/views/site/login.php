@@ -1,7 +1,4 @@
 <?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
 
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
@@ -48,4 +45,4 @@ $this->breadcrumbs=array(
             </div>
         </table>
 <?php $this->endWidget(); ?>
-</div><!-- form -->
+</div>

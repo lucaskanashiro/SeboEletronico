@@ -1,7 +1,3 @@
-<?php
-/* @var $this TesteController */
-/* @var $data Teste */
-?>
 
 <div class="view">
 

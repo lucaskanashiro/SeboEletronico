@@ -1,6 +1,4 @@
 <?php
-/* @var $this TesteController */
-/* @var $model Teste */
 
 $this->breadcrumbs=array(
 	'Testes'=>array('index'),

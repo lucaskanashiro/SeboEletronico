@@ -1,13 +1,3 @@
-/**
- * CSS styles for CLinkPager.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @link http://www.yiiframework.com/
- * @copyright Copyright &copy; 2008-2010 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- * @since 1.0
- */
-
 ul.yiiPager
 {
 	font-size:11px;
@@ -56,9 +46,6 @@ ul.yiiPager .hidden a
 	color:#888888;
 }
 
-/**
- * Hide first and last buttons by default.
- */
 ul.yiiPager .first,
 ul.yiiPager .last
 {

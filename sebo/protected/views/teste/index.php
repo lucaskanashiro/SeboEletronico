@@ -1,6 +1,4 @@
 <?php
-/* @var $this TesteController */
-/* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
 	'Testes',
