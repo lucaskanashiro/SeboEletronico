@@ -48,11 +48,11 @@
 
 /* IE6 adaptção do datepicker 1.5.3 */
 .ui-datepicker-cover {
-    position: absolute;
-    z-index: -1;
-    filter: mask;
-    top: -4px;
-    left: -4px;
-    width: 200px;
-    height: 200px;
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask; /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
 }

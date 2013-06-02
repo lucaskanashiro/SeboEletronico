@@ -17,7 +17,7 @@ $this->breadcrumbs=array(
 </head>
 <body>
     
-    <form  name="Insere Dados" action="<?php echo Yii::app()->request->baseUrl; ?>/index.php/user/add" method="post" class="formu">
+    <form  name="Insere Dados" action="<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/cadastrar" method="post" class="formu">
         
                 <table class='insr'>
 
