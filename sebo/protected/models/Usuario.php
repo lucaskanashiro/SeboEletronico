@@ -24,11 +24,11 @@ class Usuario extends CActiveRecord
             $senhaBranco;
             
             if(empty($nome)){
-            //    Alerta quando o campo NOME está em branco
+                //    Alerta quando o campo NOME está em branco
                  $nomeBranco = true; 
             }
             if(empty($email)){
-            //    Alerta quando o campo EMAIL está em branco
+                 //    Alerta quando o campo EMAIL está em branco
                   $emailBranco=true;
             }
             if(empty($telefone)){
@@ -44,87 +44,17 @@ class Usuario extends CActiveRecord
                   $senhaBranco2 = true;
             }
             if(empty($nome) || empty ($email) || empty ($telefone) || empty($senha[0]) || empty($senha[1])){
-                    if($nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2)
-                    {
                      echo "<script> alert('Não é possível cadastrar usuario,\n
                          existem campos em branco.\\nTodos os campos devem ser preenchidos!')</script>";
                      ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if($nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && !$senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos NOME, EMAIL, TELEFONE E SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if($nomeBranco && $emailBranco && $telefoneBranco && !$senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos NOME, EMAIL, TELEFONE E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if($nomeBranco && $emailBranco && !$telefoneBranco && $senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos NOME, EMAIL, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if($nomeBranco && !$emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos NOME, TELEFONE, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos EMAIL, TELEFONE, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if(!$nomeBranco && !$emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos TELEFONE, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if(!$nomeBranco && $emailBranco && !$telefoneBranco && $senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos EMAIL, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && !$senhaBranco && $senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos EMAIL, TELEFONE E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && !$senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos EMAIL, TELEFONE E SENHA em branco!')</script>";
-                            ?>
-                    <script language = "Javascript">
-                        location.reload();
-                    </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && !$senhaBranco2){
-                        echo"<script> alert('Não é possível cadastrar usuários,\n
-                            campos EMAIL, TELEFONE E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            
-                    }
-            }
+                    }//fim if empty
+			
             if($senha[0]===$senha[1]){
                 
                 $senhaFinal = $senha[1];
-            
             
             $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
             $comando = Yii::app()->db->createCommand($sql);
@@ -141,16 +71,16 @@ class Usuario extends CActiveRecord
             }else{
             ?>
                 <script language="Javascript">
-                    alert("A confirmação da senha está diferente!");
+                    alert("A senha e a confirmação da senha estão diferentes!");
                 </script>
            <?php }?>
              <script language = "Javascript">
-        window.location="<?php echo Yii::app()->request->baseUrl; ?>";
-        </script>
+			location.reload();
+			</script>
             
-        <?php }
+			<?php
+        }//fim function cadastrar
             
-           
         
         
     
