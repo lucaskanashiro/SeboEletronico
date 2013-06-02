@@ -41,10 +41,10 @@ class Usuario extends CActiveRecord
             }
             if(empty($senha[1])){
                 //    Alerta quando o campo CONFIRMAÇÃO SENHA está em branco
-                  $senhaBranco = true;
+                  $senhaBranco2 = true;
             }
             if(empty($nome) || empty ($email) || empty ($telefone) || empty($senha[0]) || empty($senha[1])){
-                    if($nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco[0] && $senhaBranco[1])
+                    if($nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2)
                     {
                      echo "<script> alert('Não é possível cadastrar usuario,\n
                          existem campos em branco.\\nTodos os campos devem ser preenchidos!')</script>";
@@ -52,81 +52,75 @@ class Usuario extends CActiveRecord
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if($nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco[0] && !$senhaBranco[1]){
+                    }else if($nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && !$senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos NOME, EMAIL, TELEFONE E SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if($nomeBranco && $emailBranco && $telefoneBranco && !$senhaBranco[0] && $senhaBranco[1]){
+                    }else if($nomeBranco && $emailBranco && $telefoneBranco && !$senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos NOME, EMAIL, TELEFONE E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if($nomeBranco && $emailBranco && !$telefoneBranco && $senhaBranco[0] && $senhaBranco[1]){
+                    }else if($nomeBranco && $emailBranco && !$telefoneBranco && $senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos NOME, EMAIL, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if($nomeBranco && !$emailBranco && $telefoneBranco && $senhaBranco[0] && $senhaBranco[1]){
+                    }else if($nomeBranco && !$emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos NOME, TELEFONE, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco[0] && $senhaBranco[1]){
+                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos EMAIL, TELEFONE, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if(!$nomeBranco && !$emailBranco && $telefoneBranco && $senhaBranco[0] && $senhaBranco[1]){
+                    }else if(!$nomeBranco && !$emailBranco && $telefoneBranco && $senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos TELEFONE, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if(!$nomeBranco && $emailBranco && !$telefoneBranco && $senhaBranco[0] && $senhaBranco[1]){
+                    }else if(!$nomeBranco && $emailBranco && !$telefoneBranco && $senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos EMAIL, SENHA E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && !$senhaBranco[0] && $senhaBranco[1]){
+                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && !$senhaBranco && $senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos EMAIL, TELEFONE E CONFIRMAÇÃO DE SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco[0] && !$senhaBranco[1]){
+                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && !$senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos EMAIL, TELEFONE E SENHA em branco!')</script>";
                             ?>
                     <script language = "Javascript">
                         location.reload();
                     </script><?php
-                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco[0] && !$senhaBranco[1]){
+                    }else if(!$nomeBranco && $emailBranco && $telefoneBranco && $senhaBranco && !$senhaBranco2){
                         echo"<script> alert('Não é possível cadastrar usuários,\n
                             campos EMAIL, TELEFONE E CONFIRMAÇÃO DE SENHA em branco!')</script>";
-                            ?>
+                            
                     }
             }
-            
-            <?php
-
-            
-            
-            
             if($senha[0]===$senha[1]){
                 
                 $senhaFinal = $senha[1];
@@ -155,9 +149,9 @@ class Usuario extends CActiveRecord
         </script>
             
         <?php }
-    
-    
-        }
+            
+           
+        
         
     
 	public static function model($className=__CLASS__)
