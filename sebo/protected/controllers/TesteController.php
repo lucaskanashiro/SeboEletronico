@@ -1,6 +1,6 @@
 <?php
 
-class TestController extends Controller
+class TesteController extends Controller
 {
 
 	public $layout='//layouts/column2';
