@@ -8,14 +8,25 @@ class Usuario extends CActiveRecord
     	private $nome;
     	private $email;
     	private $telefone;
-    	
-    	public function __construct($nome, $email, $telefone)
-    	{
+            	
+    	public function __construct($nome, $email, $telefone){
     		$this->nome = $nome;
     		$this->email = $email;
     		$this->telefone = $telefone;
     	}
     
+        public function validaCamposNulos($nome, $email, $telefone, $senha){
+            if(empty($nome) || empty($email) || empty($telefone) || empty($senha[0]) || empty($senha[1])){
+                    ?>
+                    <script language="Javascript" type="text/javascript">
+                        alert("Não é possível cadastrar usuario,\nexistem campos em branco.\n\n\
+                        Todos os campos devem ser preenchidos!");
+                        window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
+                    </script>
+                    <?php
+            }
+        }
+        
         public function validaNome($nome){
             
             $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
@@ -46,45 +57,71 @@ class Usuario extends CActiveRecord
                 <?php
             }
         }
+        
+        public function validaSenha($senha){
 
-       
-        public static function SalvarUsuario($nome, $email, $telefone, $senha){
+            if( !filter_var($senha[0], FILTER_VALIDATE_INT)){//caracter invalido
+                $resultado = 1;
+            }elseif( count($senha[0]) > 6 || count($senha[1]) > 6){//tamanho invalido
+                $resultado = 2;
+            }elseif($senha[0]!==$senha[1]){//senha e confirmação diferentes
+                $resultado = 3;
+            }else{
+                $resultado = 0;
+            }
             
-            if(empty($nome) || empty($email) || empty($telefone) || empty($senha[0]) || empty($senha[1])){
+            switch($resultado){
+                case 1:
                     ?>
                     <script language="Javascript" type="text/javascript">
-                        alert("Não é possível cadastrar usuario,\nexistem campos em branco.\n\n\
-                        Todos os campos devem ser preenchidos!");
+                        alert("Não é possível cadastrar usuario,\nO campo 'Senha' possui caracteres invalidos!");
                         window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
-                    </script><?php
-                    }//fim if empty
-			
+                    </script>
+                    <?php
+                    break;
+                case 2:
+                    ?>
+                    <script language="Javascript" type="text/javascript">
+                        alert("Não é possível cadastrar usuario,\nO campo 'Senha' possui mais de 6 digitos!");
+                        window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
+                    </script>
+                    <?php
+                    break;
+                case 3:
+                    ?>
+                    <script language="Javascript" type="text/javascript">
+                        alert("Não é possível cadastrar usuario,\nO campo 'Senha' e o campo 'Confirmar Senha' estão diferentes!");
+                        window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
+                    </script>
+                    <?php
+                    break;
+                default:
+                    $senhaFinal = $senha[1];
+                    return $senhaFinal;
+                    break;
+            }
+        }
+
+        public static function SalvarUsuario($nome, $email, $telefone, $senha){
+            
+            Usuario::validaCamposNulos($nome, $email, $telefone, $senha);
             Usuario::validaNome($nome);
-            Usuario::validaEmail($nome);
+            Usuario::validaEmail($email);
             
-            if($senha[0]===$senha[1]){
-                
-                $senhaFinal = $senha[1];
-            
-                $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
-                $comando = Yii::app()->db->createCommand($sql);
-                $comando->execute();
+            $senhaFinal = Usuario::validaSenha($senha);
 
-                $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaFinal."'";
-                $comando2 = Yii::app()->db->createCommand($sql2);
-                $id_senha = $comando2->queryRow();
+            $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
+            $comando = Yii::app()->db->createCommand($sql);
+            $comando->execute();
 
-                $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$nome."', '".$email."', '".$telefone."','".$id_senha['id_senha']."')";
-                $comando3 = Yii::app()->db->createCommand($sql3);
-                $comando3->execute();
-             }else{?>
-               <script language="Javascript">
-                    alert("A senha e a confirmação da senha estão diferentes!");
-               </script><?php
-             }?>
-               <script language = "Javascript">
-                    location.reload();
-                </script><?php
+            $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaFinal."'";
+            $comando2 = Yii::app()->db->createCommand($sql2);
+            $id_senha = $comando2->queryRow();
+
+            $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$nome."', '".$email."', '".$telefone."','".$id_senha['id_senha']."')";
+            $comando3 = Yii::app()->db->createCommand($sql3);
+            $comando3->execute();
+                    
         }//fim function cadastrar
     
 	public static function model($className=__CLASS__)
@@ -141,4 +178,4 @@ class Usuario extends CActiveRecord
 		));
 	}
 }
-?>
+        ?>
