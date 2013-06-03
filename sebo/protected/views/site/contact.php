@@ -17,7 +17,8 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+<!--If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.-->
+Se tiver dúvidas de negócio ou outras questões, por favor preencha o seguinte formulário para entrar em contato conosco. Obrigado.
 </p>
 
 <div class="form">

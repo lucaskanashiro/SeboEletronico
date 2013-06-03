@@ -26,7 +26,7 @@ $this->breadcrumbs=array(
                 </tr>
                 
                 <tr>
-                    <th > <p class="note">Campos com <span class="required">*</span> s„o obrigatÛrios.</p></th>
+                    <th > <p class="note">Campos com <span class="required">*</span> s√£o obrigat√≥rios.</p></th>
                 </tr>
 
                 

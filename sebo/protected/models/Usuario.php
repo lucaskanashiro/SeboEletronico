@@ -121,7 +121,17 @@ class Usuario extends CActiveRecord
             Usuario::validaEmail($email);
             Usuario::validaTelefone($telefone);
             $senhaFinal = Usuario::validaSenha($senha);
-
+            
+            /*
+             * "SELECT id_usuario FROM  usuario WHERE email = '".$email."', senha = '".$senha."'";
+             * "DELETE FROM usuario WHERE is_usuario = '".$id_usuario."'"; 
+             * "DELETE FROM senha WHERE id_senha = '".$senha."'"; 
+             * "UPDATE usuario Set email = '".$emailNovo."' WHERE id_usuario = '".$id_usuario."'";
+             * "UPDATE usuario Set nome = '".$nomeNovo."' WHERE id_usuario = '".$id_usuario."'";
+             * "UPDATE usuario Set telefone = '".$telefoneNovo."' WHERE id_usuario = '".$id_usuario."'";
+             * "UPDATE senha Set codigo_senha = '".$senhaNova."' WHERE id_senha = '".$id_senha  ."'";
+            */
+            
             $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
             $comando = Yii::app()->db->createCommand($sql);
             $comando->execute();
