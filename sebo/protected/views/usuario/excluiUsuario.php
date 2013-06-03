@@ -12,13 +12,27 @@
       
 </head>
 <body>
+    <div id="mainmenu">
+		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Cadastrar', 'url'=>array('/usuario/cadastra')),
+                                array('label'=>'Alterar', 'url'=>array('/usuario/altera')),
+				array('label'=>'Deletar', 'url'=>array('/usuario/deleta'), 'visible'=>Yii::app()->user),
+				array('label'=>'Pesquisar', 'url'=>array('/usuario/lista'), 'visible'=>Yii::app()->user)
+			),
+		)); ?>
+	</div>
+    
+    <br/>
+    <br/>
+    <br/>
     
     <form  name="Insere Dados" action="<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/cadastrar" method="post" class="formu">
         
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Aletrar Cadastro</h5></th>
+                    <th class='titlein' > <h5>Deletar Cadastro</h5></th>
                 </tr>
                 
                 <tr> 

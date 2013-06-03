@@ -48,7 +48,7 @@ class Usuario extends CActiveRecord
         }
 
        
-        public static function Cadastrar($nome, $email, $telefone, $senha){
+        public static function SalvarUsuario($nome, $email, $telefone, $senha){
             
             if(empty($nome) || empty($email) || empty($telefone) || empty($senha[0]) || empty($senha[1])){
                     ?>

@@ -7,14 +7,22 @@ class UsuarioController extends Controller
 		$this->render('index');
 	}
         
-        public function actionAlterar(){
+        public function actionAltera(){
             $this->render('alteraUsuario');
         }
         
-        public function actionDeletar(){
+        public function actionDeleta(){
             $this->render('excluiUsuario');
         }
-    
+        
+        public function actionLista(){
+            $this->render('tabelaUsuarios');
+        }
+        
+        public function actionCadastra(){
+            $this->render('cadastrarUsuario');
+        }
+        
 	public function actionCadastrar(){
             
             $nome = $_POST['nome'];
@@ -23,7 +31,7 @@ class UsuarioController extends Controller
             $senha = $_POST['senha'];
             
             
-            Usuario::Cadastrar($nome, $email, $telefone, $senha);
+            Usuario::SalvarUsuario($nome, $email, $telefone, $senha);
         ?>
         <script language = "Javascript">
             alert("Cadastro efetuado com sucesso");
@@ -33,7 +41,7 @@ class UsuarioController extends Controller
         </script>
 <?php     
         }
-
+        
         public function actionAlterarCadastro(){
             
             $nome = $_POST['nome'];
@@ -53,4 +61,10 @@ class UsuarioController extends Controller
 <?php
             
         }
+        
+        public function actionListaCadastros(){
+            
+            return Usuario::getCadastrados();
+        }
+            
 }

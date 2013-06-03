@@ -22,17 +22,17 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-                                array('label'=>'Cadastro Usuário', 'url'=>array('/usuario/index')),
+                                array('label'=>'Usuário', 'url'=>array('/usuario/index')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user),
 				array('label'=>'Logout ', 'url'=>array('/site/logout'), 'visible'=>Yii::app()->user)
 			),
 		)); ?>
 	</div>
-	<?php if(isset($this->breadcrumbs)){?>
+	<?php /* if(isset($this->breadcrumbs)){?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 		)); ?>
-        <?php }?>
+        <?php }*/?>
 
 	<?php echo $content; ?>
 
