@@ -3,9 +3,10 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
+	
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
+        
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -14,7 +15,7 @@
 <div class="container" id="page">
 
 	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+		<div id="logo"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/sebo_header.png" class="imgHeader"/></div>
 	</div>
 
 	<div id="mainmenu">

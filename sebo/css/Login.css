@@ -1,0 +1,88 @@
+
+root { 
+    display: block;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+	}
+
+	body{
+	
+    background: #162029 url("../img/bg_body.jpg");
+    font:100 80% normal arial, tahoma, sans-serif;
+    color: #A3BBD1;
+    overflow-x: hidden;
+    
+	
+	}
+        
+        .img{
+            
+            margin-left: 290px;
+/*            width: 900px;
+            height: 450px;*/
+            
+        }
+
+           
+        
+	table{
+	
+    background: #fff ;
+    width: 500px;
+    color: #f2f4ff;
+    font-size: 0.95em;
+    border-collapse: collapse;
+    border:1px solid #000;
+    boxshadow: 0 0 30px #000;
+	
+	}
+
+	table td, table th{
+    
+    padding: 10px;
+    text-wrap: suppress;
+    text-overflow:ellipsis-word;
+    border:1px solid #1B4158;
+    
+	}
+
+    input{
+	
+        background: #fff url("../img/input_bg.jpg") repeat-x top;
+        color: #466683;
+        border: 1px solid #162029;
+        box-shadow: 1px 0px 10px #1b4158;
+
+	
+	}
+	
+        h1{
+	
+		color: #466683;
+		font-family: arial, sans-serif;
+		text-transform: uppercase;
+		font-size: 25px;
+                
+	
+	}
+        
+	h2{
+	
+		color: #003457;
+		font-family: arial, sans-serif;
+		text-transform: uppercase;
+		font-size: 13px;
+                margin-left: 0px;
+	
+	}
+        
+	.titlein{
+	
+		background: #19558C url("../img/fundo_azul.jpg") repeat-x bottom;
+	
+	}
+	
+
