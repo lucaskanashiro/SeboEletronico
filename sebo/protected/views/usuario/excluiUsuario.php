@@ -35,11 +35,11 @@
                     <th class='titlein' > <h5>Deletar Cadastro</h5></th>
                 </tr>
                 
-                <tr> 
+                <!--<tr> 
                     <td>
                         <h2> Nome: <input type="text" name="nome"/></h2> 
                     </td>
-                </tr>
+                </tr>-->
         
                 <tr>
                     <td > 
@@ -47,11 +47,11 @@
                     </td>
                 </tr>
                 
-                <tr> 
+                <!--<tr> 
                     <td>
                         <h6> Telefone: <input type="text" name="telefone"/></h6> 
                     </td>
-                </tr>
+                </tr>-->
 
                 <tr>              
                     <td>
@@ -60,7 +60,7 @@
                 </tr>
 
                 <th>
-                    <input type="submit" name='Enviar' value="Excluir" title='Excluir Usuário' />
+                    <input type="submit" name='Enviar' value="Excluir" title='Excluir Usuï¿½rio' />
                 </th>
 
                 </table>    
