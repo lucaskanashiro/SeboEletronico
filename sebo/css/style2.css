@@ -14,7 +14,9 @@
 	}
         
         .img{     
-            margin-left: 210px; 
+            margin-left: 210px;
+			width: 950px;
+			height:475px;
         }
 
 	table{
