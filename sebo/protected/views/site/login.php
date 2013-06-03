@@ -5,10 +5,7 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-
-<h1>Login</h1>
-
-<p>Preencha o formulario para fazer login: </p>
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/Login.css" type="text/css" media="all">
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -19,30 +16,66 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p class="note">Campos com <span class="required">*</span> s√£o obrigat√≥rios.</p>
-        <table class='insr'>
-            <div class="row">
-                    <?php echo $form->labelEx($model,'username'); ?>
-                    <?php echo $form->textField($model,'username'); ?>
-                    <?php echo $form->error($model,'username'); ?>
-            </div>
+	
+        <form  name="Insere Dados" action="<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/cadastrar" method="post" class="formu">
+        
+                <table class='insr'>
 
-            <div class="row">
-                    <?php echo $form->labelEx($model,'password'); ?>
-                    <?php echo $form->passwordField($model,'password'); ?>
-                    <?php echo $form->error($model,'password'); ?>
+                <tr>
+                    <th class='titlein' > <h1>Login</h1></th>
+                </tr>
+                
+                <tr>
+                    <th > <p class="note">Campos com <span class="required">*</span> s„o obrigatÛrios.</p></th>
+                </tr>
 
-            </div>
+                
+                <tr> 
+                    <td>
+                        
+                        <div class="row">
+                            <h2><?php echo $form->labelEx($model,'username'); ?></h2>
+                            <?php echo $form->textField($model,'username'); ?>
+                            <?php echo $form->error($model,'username'); ?>
+                        </div> 
+                    </td>
+                </tr>
+        
 
-            <div class="row rememberMe">
-                    <?php echo $form->checkBox($model,'rememberMe'); ?>
-                    <?php echo $form->label($model,'rememberMe'); ?>
-                    <?php echo $form->error($model,'rememberMe'); ?>
-            </div>
+                <tr>              
+                    <td>
+                        <div class="row">
+                            <h2><?php echo $form->labelEx($model,'password'); ?></h2>
+                            <?php echo $form->passwordField($model,'password'); ?>
+                            <?php echo $form->error($model,'password'); ?>
 
-            <div class="row buttons">
-                    <?php echo CHtml::submitButton('Login'); ?>
-            </div>
-        </table>
+                        </div><p>
+                    </td>    
+                </tr>
+
+                <tr>              
+                    <td>
+                        <div class="row rememberMe">
+                            <?php echo $form->checkBox($model,'rememberMe'); ?>
+                            <?php echo $form->label($model,'rememberMe'); ?>
+                            <?php echo $form->error($model,'rememberMe'); ?>
+                        </div>
+                    </td>    
+                </tr>
+
+                <tr>              
+                    <td>
+                        <div class="row buttons">
+                            <?php echo CHtml::submitButton('Login'); ?>
+                        </div>
+                        </div><p>
+                    </td>    
+                </tr>
+                
+                </table>    
+        
+    </form>
+            
+        
 <?php $this->endWidget(); ?>
 </div>
