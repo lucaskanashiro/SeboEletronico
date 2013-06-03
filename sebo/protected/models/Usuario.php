@@ -122,16 +122,6 @@ class Usuario extends CActiveRecord
             Usuario::validaTelefone($telefone);
             $senhaFinal = Usuario::validaSenha($senha);
             
-            /*
-             * "SELECT id_usuario FROM  usuario WHERE email = '".$email."', senha = '".$senha."'";
-             * "DELETE FROM usuario WHERE is_usuario = '".$id_usuario."'"; 
-             * "DELETE FROM senha WHERE id_senha = '".$senha."'"; 
-             * "UPDATE usuario Set email = '".$emailNovo."' WHERE id_usuario = '".$id_usuario."'";
-             * "UPDATE usuario Set nome = '".$nomeNovo."' WHERE id_usuario = '".$id_usuario."'";
-             * "UPDATE usuario Set telefone = '".$telefoneNovo."' WHERE id_usuario = '".$id_usuario."'";
-             * "UPDATE senha Set codigo_senha = '".$senhaNova."' WHERE id_senha = '".$id_senha  ."'";
-            */
-            
             $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
             $comando = Yii::app()->db->createCommand($sql);
             $comando->execute();
@@ -146,6 +136,38 @@ class Usuario extends CActiveRecord
                     
         }//fim function cadastrar
     
+        public static function Alterar($nomeNovo, $emailNovo, $telefoneNovo, $senhaNova){
+            Usuario::validaCamposNulos($nomeNovo, $emailNovo, $telefoneNovo, $senhaNova);
+            Usuario::validaNome($nomeNovo);
+            Usuario::validaEmail($emailNovo);
+            Usuario::validaTelefone($telefoneNovo);
+            $senhaFinal = Usuario::validaSenha($senhaNova);
+            /*
+             * "SELECT id_usuario FROM  usuario WHERE email = '".$email."', senha = '".$senha."'";
+             * "DELETE FROM usuario WHERE is_usuario = '".$id_usuario."'"; 
+             * "DELETE FROM senha WHERE id_senha = '".$senha."'"; 
+             * "UPDATE usuario SET email = '".$emailNovo."' WHERE id_usuario = '".$id_usuario."'";
+             * "UPDATE usuario SET nome = '".$nomeNovo."', telefone = '".$telefoneNovo."' WHERE id_usuario = '".$id_usuario."'";
+             * "UPDATE senha SET codigo_senha = '".$senhaNova."' WHERE id_senha = '".$id_senha  ."'";
+            */
+            $sql="UPDATE usuario SET email = '".$emailNovo."', nome = '".$nomeNovo."',telefone = '".$telefoneNovo."'
+                WHERE id_usuario = '".$id_pessoa."'";
+            $comando = Yii::app()->db->createCommand($sql);
+            $comando->execute();
+
+            $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaFinal."'";
+            $comando2 = Yii::app()->db->createCommand($sql2);
+            $id_senha = $comando2->queryRow();
+
+            $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$nome."', '".$email."', '".$telefone."','".$id_senha['id_senha']."')";
+            $comando3 = Yii::app()->db->createCommand($sql3);
+            $comando3->execute();
+        }
+        
+        //public static function getCadastrados(){
+            
+        //}
+        
 	public static function model($className=__CLASS__){
 		return parent::model($className);
 	}

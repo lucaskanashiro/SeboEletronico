@@ -34,12 +34,6 @@
                 <tr>
                     <th class='titlein' > <h5>Deletar Cadastro</h5></th>
                 </tr>
-                
-                <!--<tr> 
-                    <td>
-                        <h2> Nome: <input type="text" name="nome"/></h2> 
-                    </td>
-                </tr>-->
         
                 <tr>
                     <td > 
@@ -47,12 +41,6 @@
                     </td>
                 </tr>
                 
-                <!--<tr> 
-                    <td>
-                        <h6> Telefone: <input type="text" name="telefone"/></h6> 
-                    </td>
-                </tr>-->
-
                 <tr>              
                     <td>
                         <h4> Senha: <input type="password" name="senha"/></h4> <p>

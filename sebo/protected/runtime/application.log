@@ -4914,3 +4914,37 @@ Stack trace:
 REQUEST_URI=/sebo/index.php/usuario/cadastrar
 HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
 ---
+2013/06/03 18:12:29 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsuarioController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UsuarioController->renderPartial()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(19): UsuarioController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionLista()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): UsuarioController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsuarioController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsuarioController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sebo\index.php(11): CWebApplication->run()
+REQUEST_URI=/sebo/index.php/usuario/lista
+in C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php (33)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (19)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/03 18:12:32 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsuarioController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): UsuarioController->renderPartial()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(19): UsuarioController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionLista()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): UsuarioController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsuarioController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsuarioController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sebo\index.php(11): CWebApplication->run()
+REQUEST_URI=/sebo/index.php/usuario/lista
+in C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php (33)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (19)
+in C:\xampp\htdocs\sebo\index.php (11)
