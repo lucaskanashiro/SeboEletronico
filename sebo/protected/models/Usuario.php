@@ -38,7 +38,7 @@ class Usuario extends CActiveRecord
                 if(!$char){
                     ?>
                     <script language="Javascript" type="text/javascript">
-                        alert("Não é possível cadastrar usuario,\nO campo 'Nome' possui caracteres invalidos!");
+                        alert("Não é possível cadastrar usuario,\nO campo 'NOME' possui caracteres invalidos!");
                         window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
                     </script>
                     <?php
@@ -51,7 +51,19 @@ class Usuario extends CActiveRecord
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             ?>
                 <script language="Javascript" type="text/javascript">
-                    alert("Não é possível cadastrar usuario,\nO campo 'E-mail' possui caracteres invalidos!");
+                    alert("Não é possível cadastrar usuario,\nO campo 'E-MAIL' possui caracteres invalidos!");
+                    window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
+                </script>
+                <?php
+            }
+        }
+        
+        public function validaTelefone($telefone){
+            
+            if(!filter_var($telefone, FILTER_VALIDATE_INT)){
+            ?>
+                <script language="Javascript" type="text/javascript">
+                    alert("Não é possível cadastrar usuario,\nO campo 'TELEFONE' possui caracteres invalidos!");
                     window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
                 </script>
                 <?php
@@ -62,7 +74,7 @@ class Usuario extends CActiveRecord
 
             if( !filter_var($senha[0], FILTER_VALIDATE_INT)){//caracter invalido
                 $resultado = 1;
-            }elseif( count($senha[0]) > 6 || count($senha[1]) > 6){//tamanho invalido
+            }elseif(strlen($senha[0]) > 6 || strlen($senha[1]) > 6){//tamanho invalido
                 $resultado = 2;
             }elseif($senha[0]!==$senha[1]){//senha e confirmação diferentes
                 $resultado = 3;
@@ -107,7 +119,7 @@ class Usuario extends CActiveRecord
             Usuario::validaCamposNulos($nome, $email, $telefone, $senha);
             Usuario::validaNome($nome);
             Usuario::validaEmail($email);
-            
+            Usuario::validaTelefone($telefone);
             $senhaFinal = Usuario::validaSenha($senha);
 
             $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
@@ -124,18 +136,15 @@ class Usuario extends CActiveRecord
                     
         }//fim function cadastrar
     
-	public static function model($className=__CLASS__)
-	{
+	public static function model($className=__CLASS__){
 		return parent::model($className);
 	}
 
-	public function tableName()
-	{
+	public function tableName(){
 		return 'usuario';
 	}
 
-	public function rules()
-	{
+	public function rules(){
 		
 		return array(
 			array('senha_id', 'numerical', 'integerOnly'=>true),
@@ -145,16 +154,14 @@ class Usuario extends CActiveRecord
 		);
 	}
 
-	public function relations()
-	{
+	public function relations(){
 		
 		return array(
 			'senha' => array(self::BELONGS_TO, 'Senha', 'senha_id'),
 		);
 	}
 
-	public function attributeLabels()
-	{
+	public function attributeLabels(){
 		return array(
 			'id_pessoa' => 'Id Pessoa',
 			'senha_id' => 'Senha',
@@ -163,8 +170,7 @@ class Usuario extends CActiveRecord
 		);
 	}
 
-	public function search()
-	{
+	public function search(){
 		
 		$criteria=new CDbCriteria;
 
