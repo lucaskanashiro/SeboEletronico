@@ -136,7 +136,30 @@ class Usuario extends CActiveRecord
                     
         }//fim function cadastrar
     
-        public static function Alterar($nomeNovo, $emailNovo, $telefoneNovo, $senhaNova){
+    public static function checaCadastro($email, $senha){
+        
+        $sql="SELECT * FROM usuario WHERE email = '".$email."'";
+        $comando = Yii::app()->db->createCommand($sql);
+       $resultado = $comando->queryAll();
+       
+        $sql2="SELECT * FROM senha WHERE codigo_senha = '".$senha."'";
+        $comando2 = Yii::app()->db->createCommand($sql2);
+       $resultado2 = $comando2->queryAll();
+       
+       if($resultado['senha_id'] == $resultado2['id_senha']){
+           return $resultado;
+       }else {
+           ?>
+                    <script language="Javascript" type="text/javascript">
+                        alert("Usuário não encontrado!");
+                        window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/femail';
+                    </script>
+                    <?php
+       }
+       
+    }
+
+    public static function Alterar($nomeNovo, $emailNovo, $telefoneNovo, $senhaNova, $id){
             Usuario::validaCamposNulos($nomeNovo, $emailNovo, $telefoneNovo, $senhaNova);
             Usuario::validaNome($nomeNovo);
             Usuario::validaEmail($emailNovo);
@@ -151,7 +174,7 @@ class Usuario extends CActiveRecord
              * "UPDATE senha SET codigo_senha = '".$senhaNova."' WHERE id_senha = '".$id_senha  ."'";
             */
             $sql="UPDATE usuario SET email = '".$emailNovo."', nome = '".$nomeNovo."',telefone = '".$telefoneNovo."'
-                WHERE id_usuario = '".$id_pessoa."'";
+                WHERE id_pessoa = '".$id."'";
             $comando = Yii::app()->db->createCommand($sql);
             $comando->execute();
 
@@ -164,9 +187,38 @@ class Usuario extends CActiveRecord
             $comando3->execute();
         }
         
-        //public static function getCadastrados(){
+        
+        public static function Deletar($email, $senha){
+            $sql="DELETE FROM usuario WHERE email = '".$email."'";
+            $comando = Yii::app()->db->createCommand($sql);
+            $comando->execute();
             
-        //}
+            $sql1="DELETE FROM senha WHERE codigo_senha = '".$senha."'";
+            $comando1 = Yii::app()->db->createCommand($sql1);
+            $comando1->execute();
+            
+        }
+        
+        public static function getCadastrados(){
+            $sql="SELECT nome FROM usuario ";
+            $comando = Yii::app()->db->createCommand($sql);
+            $resultado = $comando->queryAll();
+            return $resultado;
+        }
+        
+        public static function getCadastradosPorId($idPessoa){
+            $sql="SELECT * FROM usuario WHERE id_pessoa = '".$idPessoa."'";
+            $comando = Yii::app()->db->createCommand($sql);
+            $resultado = $comando->queryAll();
+            return $resultado;
+        }
+        
+        public static function getSenhaPorId($idSenha){
+            $sql="SELECT codigo_senha FROM senha WHERE id_senha = '".$idSenha."'";
+            $comando = Yii::app()->db->createCommand($sql);
+            $resultado = $comando->queryAll();
+            return $resultado;
+        }
         
 	public static function model($className=__CLASS__){
 		return parent::model($className);

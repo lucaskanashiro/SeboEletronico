@@ -4948,3 +4948,122 @@ REQUEST_URI=/sebo/index.php/usuario/lista
 in C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php (33)
 in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (19)
 in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/03 19:52:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "femail.php" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('femail.php')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('femail.php')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/femail....')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/femail.php
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/altera
+---
+2013/06/03 19:52:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "frameEmail.php" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('frameEmail.php')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('frameEmail.php')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/frameEm...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/frameEmail.php
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/altera
+---
+2013/06/03 20:05:53 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetch(): SQLSTATE[42601]: Syntax error: 7 ERRO:  erro de sintaxe em ou próximo a "FROM"
+LINE 1: SELECT FROM usuario WHERE email = 'caique.pereira@teste.com'
+               ^. A declaração SQL executada foi: SELECT FROM usuario WHERE email = 'caique.pereira@teste.com'.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (143)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (51)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/03 20:05:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[42601]: Syntax error: 7 ERRO:  erro de sintaxe em ou próximo a "FROM"
+LINE 1: SELECT FROM usuario WHERE email = 'caique.pereira@teste.com'
+               ^. The SQL statement executed was: SELECT FROM usuario WHERE email = 'caique.pereira@teste.com'' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(414): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(143): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(51): Usuario::checaCadastro('caique.pereira@...')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionChecaCadastro()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('checaCadastro')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/checaCa...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/sebo/index.php/usuario/checaCadastro
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/03 20:14:36 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[0A000]: Feature not supported: 7 ERRO:  entrada de tipos compostos anônimos não está implementada
+LINE 1: SELECT * FROM senha WHERE senha = '151515'
+                                          ^. A declaração SQL executada foi: SELECT * FROM senha WHERE senha = '151515'.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (147)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (52)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/03 20:14:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[0A000]: Feature not supported: 7 ERRO:  entrada de tipos compostos anônimos não está implementada
+LINE 1: SELECT * FROM senha WHERE senha = '151515'
+                                          ^. The SQL statement executed was: SELECT * FROM senha WHERE senha = '151515'' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(147): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(52): Usuario::checaCadastro('caique.pereira@...', '151515')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionChecaCadastro()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('checaCadastro')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/checaCa...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/sebo/index.php/usuario/checaCadastro
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/03 20:40:17 [error] [exception.CException] exception 'CException' with message 'UsuarioController and its behaviors do not have a method or closure named "ChecaCadastradoId".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:265
+Stack trace:
+#0 [internal function]: CComponent->__call('ChecaCadastrado...', Array)
+#1 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->ChecaCadastradoId('6')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#6 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera?idPessoa=6
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/checaCadastro
+---
+2013/06/03 20:48:34 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "id_usuario" não existe
+LINE 2:                 WHERE id_usuario = ''
+                              ^. A declaração SQL executada foi: UPDATE usuario SET email = 'caique.pereira@teste.com', nome = 'Caíque Pereira',telefone = '34560987'
+                WHERE id_usuario = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (179)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (77)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/03 20:48:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[42703]: Undefined column: 7 ERRO:  coluna "id_usuario" não existe
+LINE 2:                 WHERE id_usuario = ''
+                              ^. The SQL statement executed was: UPDATE usuario SET email = 'caique.pereira@teste.com', nome = 'Caíque Pereira',telefone = '34560987'
+                WHERE id_usuario = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(179): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(77): Usuario::Alterar('Ca??que Pereira', 'caique.pereira@...', '34560987', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAlterarCadastro()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('AlterarCadastro')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/Alterar...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/AlterarCadastro
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/altera?idPessoa=6
+---

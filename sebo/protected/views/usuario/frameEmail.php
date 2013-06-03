@@ -16,7 +16,7 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Cadastrar', 'url'=>array('/usuario/cadastra')),
-                                array('label'=>'Alterar', 'url'=>array('/usuario/femail')),
+                                array('label'=>'Alterar', 'url'=>array('/usuario/altera')),
 				array('label'=>'Deletar', 'url'=>array('/usuario/deleta'), 'visible'=>Yii::app()->user),
 				array('label'=>'Pesquisar', 'url'=>array('/usuario/lista'), 'visible'=>Yii::app()->user)
 			),
@@ -27,28 +27,29 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/DeletaCadastro" method="post" class="formu">
+    <form  name="Insere Dados" action="<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/checaCadastro" method="post" class="formu">
         
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Deletar Cadastro</h5></th>
+                    <th class='titlein' > <h5>Confirmar Informações</h5></th>
                 </tr>
-        
+                
                 <tr>
                     <td > 
                         <h4> E-mail: <input type="text" name="email"/></h4>
                     </td>
                 </tr>
                 
-                <tr>              
-                    <td>
-                        <h4> Senha: <input type="password" name="senha"/></h4> <p>
-                    </td>    
+                <tr>
+                    <td > 
+                        <h4> Senha: <input type="password" name="senha"/></h4>
+                    </td>
                 </tr>
-
+                
                 <th>
-                    <input type="submit" name='Enviar' value="Excluir" title='Excluir Usuário' />
+                    <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
+                    <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
                 </th>
 
                 </table>    

@@ -17,7 +17,7 @@ $this->breadcrumbs=array('Usuario',);
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Cadastrar', 'url'=>array('/usuario/cadastra')),
-                                array('label'=>'Alterar', 'url'=>array('/usuario/altera')),
+                                array('label'=>'Alterar', 'url'=>array('/usuario/femail')),
 				array('label'=>'Deletar', 'url'=>array('/usuario/deleta'), 'visible'=>Yii::app()->user),
 				array('label'=>'Pesquisar', 'url'=>array('/usuario/lista'), 'visible'=>Yii::app()->user)
 			),

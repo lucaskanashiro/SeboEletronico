@@ -13,6 +13,12 @@
 	
 	}
         
+        .linha1{
+            background: #fff url("../img/fundo_azul.jpg");
+            color: #fff;
+            
+        }
+        
         .acoes{
             
             margin-left: 10px;
