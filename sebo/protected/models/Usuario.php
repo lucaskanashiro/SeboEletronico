@@ -18,17 +18,32 @@ class Usuario extends CActiveRecord
     
         public function validaNome($nome){
             
-            $caracateresValidos = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','á','ã','à','õ','ó','ò','í','ú','é');
-            $nome = strtolower($nome);
+            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
             $vetorDeChar = str_split($nome);
             
             for ($i = 0; $i < count($vetorDeChar); $i++) {
-                if ($caracateresValidos.indexOf($vetorDeChar($i)) == -1) {
-                    ?><script language="Javascript" type="text/javascript">
+                $char = stripos($caracteresValidos, $vetorDeChar[$i]);
+                //stripos - retorna false se o nome[i] nao existir dentro da string de validos
+                if(!$char){
+                    ?>
+                    <script language="Javascript" type="text/javascript">
                         alert("Não é possível cadastrar usuario,\nO campo 'Nome' possui caracteres invalidos!");
                         window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
-                    </script><?php
+                    </script>
+                    <?php
                 }
+            }
+        }
+        
+        public function validaEmail($email){
+            
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            ?>
+                <script language="Javascript" type="text/javascript">
+                    alert("Não é possível cadastrar usuario,\nO campo 'E-mail' possui caracteres invalidos!");
+                    window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
+                </script>
+                <?php
             }
         }
 
@@ -44,7 +59,8 @@ class Usuario extends CActiveRecord
                     </script><?php
                     }//fim if empty
 			
-                    Usuario::validaNome($nome);
+            Usuario::validaNome($nome);
+            Usuario::validaEmail($nome);
             
             if($senha[0]===$senha[1]){
                 
