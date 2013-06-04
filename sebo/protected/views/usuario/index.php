@@ -26,7 +26,7 @@ $this->breadcrumbs=array('Usuario',);
 		)); ?>
 	</div>
    
-    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/livroSEBO.png" class="img"/>
+    <img src="<?php echo Yii::app()->request->baseUrl; ?>/img/livroSEBO.png" class="img2"/>
 </body>
 
 
