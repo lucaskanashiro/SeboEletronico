@@ -1,6 +1,5 @@
 <?php
 
-
 class Usuario extends CActiveRecord
 {
     	private $id_pessoa;
@@ -24,6 +23,7 @@ class Usuario extends CActiveRecord
                         window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
                     </script>
                     <?php
+                    exit;
             }
         }
         
@@ -42,7 +42,7 @@ class Usuario extends CActiveRecord
                         window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
                     </script>
                     <?php
-                }
+                exit;}
             }
         }
         
@@ -54,7 +54,7 @@ class Usuario extends CActiveRecord
                     alert("Não é possível cadastrar usuario,\nO campo 'E-MAIL' possui caracteres invalidos!");
                     window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
                 </script>
-                <?php
+                <?php exit;
             }
         }
         
@@ -66,7 +66,7 @@ class Usuario extends CActiveRecord
                     alert("Não é possível cadastrar usuario,\nO campo 'TELEFONE' possui caracteres invalidos!");
                     window.location='<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/index';
                 </script>
-                <?php
+                <?php exit;
             }
         }
         
@@ -111,7 +111,7 @@ class Usuario extends CActiveRecord
                     $senhaFinal = $senha[1];
                     return $senhaFinal;
                     break;
-            }
+            exit; }
         }
 
         public static function SalvarUsuario($nome, $email, $telefone, $senha){
@@ -137,6 +137,7 @@ class Usuario extends CActiveRecord
         }//fim function cadastrar
     
     public static function checaCadastro($email, $senha){
+        
         
         $sql="SELECT * FROM usuario WHERE email = '".$email."'";
         $comando = Yii::app()->db->createCommand($sql);
@@ -165,24 +166,17 @@ class Usuario extends CActiveRecord
             Usuario::validaEmail($emailNovo);
             Usuario::validaTelefone($telefoneNovo);
             $senhaFinal = Usuario::validaSenha($senhaNova);
-            /*
-             * "SELECT id_usuario FROM  usuario WHERE email = '".$email."', senha = '".$senha."'";
-             * "DELETE FROM usuario WHERE is_usuario = '".$id_usuario."'"; 
-             * "DELETE FROM senha WHERE id_senha = '".$senha."'"; 
-             * "UPDATE usuario SET email = '".$emailNovo."' WHERE id_usuario = '".$id_usuario."'";
-             * "UPDATE usuario SET nome = '".$nomeNovo."', telefone = '".$telefoneNovo."' WHERE id_usuario = '".$id_usuario."'";
-             * "UPDATE senha SET codigo_senha = '".$senhaNova."' WHERE id_senha = '".$id_senha  ."'";
-            */
+            
             $sql="UPDATE usuario SET email = '".$emailNovo."', nome = '".$nomeNovo."',telefone = '".$telefoneNovo."'
                 WHERE id_pessoa = '".$id."'";
             $comando = Yii::app()->db->createCommand($sql);
             $comando->execute();
 
-            $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaFinal."'";
+            $sql2="SELECT id_senha FROM usuario WHERE id_pessoa = '".$id."'";
             $comando2 = Yii::app()->db->createCommand($sql2);
             $id_senha = $comando2->queryRow();
 
-            $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$nome."', '".$email."', '".$telefone."','".$id_senha['id_senha']."')";
+            $sql3="UPDATE senha SET codigo_senha = '".$senhaFinal."'";
             $comando3 = Yii::app()->db->createCommand($sql3);
             $comando3->execute();
         }
@@ -200,7 +194,7 @@ class Usuario extends CActiveRecord
         }
         
         public static function getCadastrados(){
-            $sql="SELECT nome FROM usuario ";
+            $sql="SELECT nome,id_pessoa FROM usuario ";
             $comando = Yii::app()->db->createCommand($sql);
             $resultado = $comando->queryAll();
             return $resultado;

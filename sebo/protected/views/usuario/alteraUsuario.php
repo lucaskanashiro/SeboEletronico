@@ -1,5 +1,9 @@
 <?php
     $id = $_REQUEST['idPessoa'];
+    if(empty($id)){
+            UsuarioController::actionFEmail();
+            exit;
+        }
     $cadastro = UsuarioController::actionChecaCadastroId($id);
     $idSenha = $cadastro[0]['senha_id'];
     $senhaFinal = UsuarioController::actionChecaSenhaId($idSenha);
@@ -41,7 +45,7 @@
                 
                 <tr> 
                     <td>
-                        <h2> Nome: <input type="text" name="nome" value="<?php echo $cadastro[0]['nome']?>"/></h2> 
+                        <h4> Nome: <input type="text" name="nome" value="<?php echo $cadastro[0]['nome']?>"/></h4> 
                     </td>
                 </tr>
         

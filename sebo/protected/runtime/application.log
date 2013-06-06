@@ -5067,7 +5067,12 @@ Stack trace:
 REQUEST_URI=/sebo/index.php/usuario/AlterarCadastro
 HTTP_REFERER=http://localhost/sebo/index.php/usuario/altera?idPessoa=6
 ---
-2013/06/06 00:30:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] FATAL:  autentica��o do tipo password falhou para usu�rio "seboeletronico"' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:381
+2013/06/03 22:17:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:381
 Stack trace:
 #0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
 #1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
@@ -5091,5 +5096,890 @@ Stack trace:
 #19 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
 #20 {main}
 REQUEST_URI=/sebo/index.php/usuario/lista
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/deleta
+---
+2013/06/03 22:17:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CModule->__get('db')
+#5 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(101): Usuario::getCadastrados()
+#6 C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php(35): UsuarioController->actionListaCadastros()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('tabelaUsuarios', NULL, true)
+#11 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(19): CController->render('tabelaUsuarios')
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionLista()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('lista')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/lista')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/sebo/index.php/usuario/lista
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/deleta
+---
+2013/06/03 22:18:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CModule->__get('db')
+#5 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(101): Usuario::getCadastrados()
+#6 C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php(35): UsuarioController->actionListaCadastros()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('tabelaUsuarios', NULL, true)
+#11 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(19): CController->render('tabelaUsuarios')
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionLista()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('lista')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/lista')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/sebo/index.php/usuario/lista
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/deleta
+---
+2013/06/03 22:18:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[08006] [7] could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" and accepting
+	TCP/IP connections on port 5432?' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:381
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CModule->__get('db')
+#5 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(101): Usuario::getCadastrados()
+#6 C:\xampp\htdocs\sebo\protected\views\usuario\tabelaUsuarios.php(35): UsuarioController->actionListaCadastros()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('tabelaUsuarios', NULL, true)
+#11 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(19): CController->render('tabelaUsuarios')
+#12 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionLista()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('lista')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/lista')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/sebo/index.php/usuario/lista
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/deleta
+---
+2013/06/04 13:01:18 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. A declaração SQL executada foi: INSERT INTO senha (codigo_senha) VALUES ('').
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (126)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (38)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/04 13:01:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. The SQL statement executed was: INSERT INTO senha (codigo_senha) VALUES ('')' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(126): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(38): Usuario::SalvarUsuario('Mac??rio', 'macario.jr.com', 'gh089890hkj', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
+---
+2013/06/04 13:02:04 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. A declaração SQL executada foi: INSERT INTO senha (codigo_senha) VALUES ('').
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (126)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (38)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/04 13:02:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. The SQL statement executed was: INSERT INTO senha (codigo_senha) VALUES ('')' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(126): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(38): Usuario::SalvarUsuario('Mac??rio', 'macario.junior@...', 'huihj8787', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
+---
+2013/06/04 13:02:21 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (62)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:02:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(62): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
 HTTP_REFERER=http://localhost/sebo/index.php/usuario/index
+---
+2013/06/04 13:02:38 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (62)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:02:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(62): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/index
+---
+2013/06/04 13:04:03 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (62)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:04:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(62): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/index
+---
+2013/06/04 13:04:12 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (62)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:04:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(62): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:04:20 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (62)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:04:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(62): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:04:34 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (62)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:04:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(62): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:05:45 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (65)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:05:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(65): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:06:33 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (64)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:06:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(64): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:06:40 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (64)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:06:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(64): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/index
+---
+2013/06/04 13:06:43 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (64)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:06:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(64): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/index
+---
+2013/06/04 13:06:52 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (64)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:06:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(64): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:06:57 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (64)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:06:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(64): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:09:32 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. A declaração SQL executada foi: INSERT INTO senha (codigo_senha) VALUES ('').
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (126)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (38)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/04 13:09:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. The SQL statement executed was: INSERT INTO senha (codigo_senha) VALUES ('')' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(126): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(38): Usuario::SalvarUsuario('Mac??rio', 'macario.junior@...', '81322019', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
+---
+2013/06/04 13:09:53 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. A declaração SQL executada foi: INSERT INTO senha (codigo_senha) VALUES ('').
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (126)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (38)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/04 13:09:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. The SQL statement executed was: INSERT INTO senha (codigo_senha) VALUES ('')' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(126): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(38): Usuario::SalvarUsuario('Mac??rio', 'macario.junior@...', '34560642', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
+---
+2013/06/04 13:13:06 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. A declaração SQL executada foi: INSERT INTO senha (codigo_senha) VALUES ('').
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (126)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (38)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/04 13:13:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. The SQL statement executed was: INSERT INTO senha (codigo_senha) VALUES ('')' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(126): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(38): Usuario::SalvarUsuario('Jessica Suzuki', 'suzuki_jessica@...', '91470777', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
+---
+2013/06/04 13:24:55 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::execute(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. A declaração SQL executada foi: INSERT INTO senha (codigo_senha) VALUES ('').
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (126)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (38)
+in C:\xampp\htdocs\sebo\index.php (11)
+2013/06/04 13:24:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: INSERT INTO senha (codigo_senha) VALUES ('')
+                                                 ^. The SQL statement executed was: INSERT INTO senha (codigo_senha) VALUES ('')' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\sebo\protected\models\Usuario.php(126): CDbCommand->execute()
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(38): Usuario::SalvarUsuario('Ca??que Pereira', 'caiquepereira@g...', '93959009', Array)
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionCadastrar()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('cadastrar')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/cadastr...')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/cadastrar
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/cadastra
+---
+2013/06/04 13:30:30 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (204)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (63)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:30:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(204): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(63): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:33:05 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (208)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (63)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:33:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(208): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(63): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:33:07 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (208)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (63)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:33:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(208): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(63): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/04 13:33:11 [error] [system.db.CDbCommand] Falha ao executar CDbCommand::fetchAll(): SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. A declaração SQL executada foi: SELECT * FROM usuario WHERE id_pessoa = ''.
+in C:\xampp\htdocs\sebo\protected\models\Usuario.php (208)
+in C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php (63)
+in C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php (3)
+2013/06/04 13:33:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falhou ao executar o comando SQL: SQLSTATE[22P02]: Invalid text representation: 7 ERRO:  sintaxe de entrada é inválida para integer: ""
+LINE 1: SELECT * FROM usuario WHERE id_pessoa = ''
+                                                ^. The SQL statement executed was: SELECT * FROM usuario WHERE id_pessoa = ''' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:541
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\sebo\protected\models\Usuario.php(208): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(63): Usuario::getCadastradosPorId(NULL)
+#3 C:\xampp\htdocs\sebo\protected\views\usuario\alteraUsuario.php(3): UsuarioController->actionChecaCadastroId(NULL)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', NULL, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', NULL, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('alteraUsuario', NULL, true)
+#8 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(11): CController->render('alteraUsuario')
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionAltera()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('altera')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/altera')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/sebo/index.php/usuario/altera
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/femail
+---
+2013/06/06 08:13:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especifico" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especifico')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especifico')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especifico?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/lista
+---
+2013/06/06 08:16:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especifico" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especifico')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especifico')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especifico?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/lista
+---
+2013/06/06 08:19:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especificos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especificos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especificos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especificos?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:19:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especificos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especificos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especificos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especificos?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:20:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especificos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especificos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especificos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especificos?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:22:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especificos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especificos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especificos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especificos?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:22:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especificos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especificos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especificos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especificos?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:22:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'O sistema não foi capaz de encontrar a ação "especificos" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('especificos')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('especificos')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/especif...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/sebo/index.php/usuario/especificos?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:22:14 [error] [exception.CException] exception 'CException' with message 'UsuarioController não pôde encontrar a visualização "especifico" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('especifico', NULL, true)
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(31): CController->render('especifico')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionUser()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('user')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/user')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/user?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:22:47 [error] [exception.CException] exception 'CException' with message 'UsuarioController não pôde encontrar a visualização "especifico" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('especifico', NULL, true)
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(31): CController->render('especifico')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionUser()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('user')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/user')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/user?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:22:48 [error] [exception.CException] exception 'CException' with message 'UsuarioController não pôde encontrar a visualização "especifico" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('especifico', NULL, true)
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(31): CController->render('especifico')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionUser()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('user')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/user')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/user?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/especifico?id=16
+---
+2013/06/06 08:23:23 [error] [exception.CException] exception 'CException' with message 'UsuarioController não pôde encontrar a visualização "especifico" solicitada.' in C:\xampp\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('especifico', NULL, true)
+#1 C:\xampp\htdocs\sebo\protected\controllers\UsuarioController.php(31): CController->render('especifico')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsuarioController->actionUser()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('user')
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/user')
+#8 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\sebo\index.php(11): CApplication->run()
+#10 {main}
+REQUEST_URI=/sebo/index.php/usuario/user?id=16
+HTTP_REFERER=http://localhost/sebo/index.php/usuario/lista
 ---

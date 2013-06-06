@@ -1,3 +1,12 @@
+<?php
+    $id = $_REQUEST['id'];
+    if(empty($id)){
+            UsuarioController::actionLista();
+            exit;
+        }
+    $usuario = UsuarioController::actionChecaCadastroId($id);
+    
+    ?>
 <! DOCTYPE html>
 
 <html>
@@ -32,13 +41,19 @@
   
 	  <?php 
           
-          $pesquisa =  UsuarioController::actionListaCadastros();
+         
           
-            foreach($pesquisa as $k => $v) {
+            foreach($usuario as $k => $v) {
                                       
                     ?>
                 <tr>
-                    <td> <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/usuario/user?id=<?php echo $v['id_pessoa']?>"><h4><?php echo $v['nome'];?></h4></a></td>
+                    <td> <h4>Nome:</h4> <h2><?php echo $v['nome'];?></h2></td>
+                </tr>
+                <tr>
+                    <td> <h4> Email: </h4><h2><?php echo $v['email'];?></h2></td>
+                </tr>
+                <tr>
+                    <td> <h4> Telefone: </h4><h2><?php echo $v['telefone'];?></h2></td>
                 </tr>
           <?php
                   }?>

@@ -9,9 +9,14 @@
             font:100 80% normal arial, tahoma, sans-serif;
             color: #A3BBD1;
             overflow-x: hidden;
-    
-	
+    	
 	}
+        
+        .mapaUsuarios{
+            
+            margin-left: 410px;
+            
+        }
         
         .linha1{
             background: #fff url("../img/fundo_azul.jpg");
@@ -29,16 +34,16 @@
         
         .img{     
             margin-left: 210px;
-			width: 950px;
-			height:475px;
+            width: 950px;
+            height:475px;
+        }
+        
+        .img2{     
+            margin-left: 350px;
+            width: 600px;
+            height:300px;
         }
 
-		.img2{     
-            margin-left: 450px;
-			width: 400px;
-			height:350px;
-        }
-		
 	table{
 	
             background: #fff ;
@@ -108,11 +113,11 @@
         
 	h2{
 	
+		font-family: verdana, sans-serif;
 		color: #003457;
-		font-family: arial, sans-serif;
-		text-transform: uppercase;
-		font-size: 13px;
-                margin-left: 144px;
+		font-size: 17px;
+		color: #c0bdbd;
+                text-align: center;
 	
 	}
 	
@@ -122,6 +127,7 @@
 		text-transform: uppercase;
 		font-size: 17px;
 		color: #c0bdbd;
+                text-align: center;
 	
 	}
 	
@@ -160,3 +166,7 @@
                 width: 100%;
 	}
 	
+        a{
+            
+            text-decoration: none;
+        }

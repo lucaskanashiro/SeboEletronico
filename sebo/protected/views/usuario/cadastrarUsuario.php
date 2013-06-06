@@ -38,7 +38,7 @@ $this->breadcrumbs=array('Usuario',);
                 
                 <tr> 
                     <td>
-                        <h2> Nome: <input type="text" name="nome"/></h2> 
+                        <h4> Nome: <input type="text" name="nome"/></h4> 
                     </td>
                 </tr>
         

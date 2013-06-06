@@ -27,6 +27,10 @@ class UsuarioController extends Controller
             $this->render('frameEmail');
         }
         
+        public function actionUser(){
+            $this->render('especificos');
+        }
+        
 	public function actionCadastrar(){
             
             $nome = $_POST['nome'];
@@ -49,6 +53,7 @@ class UsuarioController extends Controller
         public function actionChecaCadastro(){
             $email = $_POST['email'];
             $senha = $_POST['senha'];
+            
             $resultado = Usuario::checaCadastro($email, $senha);
             $id_pessoa = $resultado[0]['id_pessoa'];
             
@@ -65,6 +70,8 @@ class UsuarioController extends Controller
         public function actionChecaSenhaId($idSenha){
             return Usuario::getSenhaPorId($idSenha);
         }
+        
+//       
 
         public function actionAlterarCadastro(){
             
