@@ -24,7 +24,7 @@ class Usuario {
         if(!ValidaDados::validaCamposNulos($nome)){
             throw new ExcessaoNomeInvalido("Nome nao pode ser nulo!");
         }elseif(!ValidaDados::validaNome($nome)){
-            throw new ExcessaoNomeInvalido("Nome nao pode ter caracteres invalidos!");
+            throw new ExcessaoNomeInvalido("Nome contem caracteres invalidos!");
         }else{
             $this->nome = $nome;
         }

@@ -23,11 +23,17 @@ class Livro {
     }
 
     public function getAutor() {
-        return $this->autor;
+        return $this->autor;   
     }
 
     public function setAutor($autor) {
-        $this->autor = $autor;
+        if(!ValidaDados::validaCamposNulos($autor)){
+            throw new ExcessaoNomeInvalido("O nome do Autor nao pode ser nulo!");
+        }elseif(!ValidaDados::validaNome($autor)){
+            throw new ExcessaoNomeInvalido("Nome contem caracteres invalidos!");
+        }else{
+            $this->autor = $autor;
+        }
     }
 
     public function getGenero() {
