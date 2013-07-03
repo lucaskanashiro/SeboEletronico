@@ -4,14 +4,14 @@ class ValidaDados {
 
     
         public function validaCamposNulos($parametro){
-            if(empty($parametro)){
-                    return false;
-            }
+            return !(empty($parametro));
+            //retorna verdadeiro caso a variavel esteja vazia
+            //com isso, o valor false eh invertido e enviado como true
         }
         
         public function validaNome($nome){
             
-            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìùäëïöüýñ';
             $vetorDeChar = str_split($nome);
             
             for ($i = 0; $i < count($vetorDeChar); $i++) {
