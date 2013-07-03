@@ -1,5 +1,5 @@
 <?php
-
+//include 'Livro.php';
 class ValidaDados {
 
     
@@ -46,6 +46,11 @@ class ValidaDados {
             }else{
                 return 0;
             }
+        }
+        
+        public function validaGenero($genero){
+            $listaDeGenerosValidos = Livro::defineTiposDeGeneros();
+            return in_array($listaDeGenerosValidos, $genero);      
         }
 }
 
