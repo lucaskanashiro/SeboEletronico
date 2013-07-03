@@ -1,0 +1,162 @@
+	*{
+            margin: 0;
+            padding: 0;
+	}
+
+	body{
+	
+            background: #162029 url("../img/bg_body.jpg");
+            font:100 80% normal arial, tahoma, sans-serif;
+            color: #A3BBD1;
+            overflow-x: hidden;
+    
+	
+	}
+        
+        .linha1{
+            background: #fff url("../img/fundo_azul.jpg");
+            color: #fff;
+            
+        }
+        
+        .acoes{
+            
+            margin-left: 10px;
+            background: url("../img/painel_link_active_bg.png") ;
+            position: relative;
+            
+        }
+        
+        .img{     
+            margin-left: 210px;
+			width: 950px;
+			height:475px;
+        }
+
+		.img2{     
+            margin-left: 450px;
+			width: 400px;
+			height:350px;
+        }
+		
+	table{
+	
+            background: #fff ;
+            width: 500px;
+            color: #f2f4ff;
+            font-size: 0.95em;
+            border-collapse: collapse;
+            border:1px solid #000;
+            boxshadow: 0 0 30px #000;
+	
+	}
+
+	table td, table th{
+    
+            padding: 10px;
+            text-wrap: suppress;
+            text-overflow:ellipsis-word;
+            border:1px solid #1B4158;
+    
+	}
+
+    input{
+	
+        background: #fff url("../img/input_bg.jpg") repeat-x top;
+        color: #466683;
+        border: 1px solid #162029;
+        box-shadow: 1px 0px 10px #1b4158;
+
+	
+	}
+	
+	
+	
+	h4{
+		
+		color: #003457;
+		font-family: arial, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+                font-size: 13px;
+	}
+	
+	h3{
+	
+		color: #003457;
+		font-family: arial, sans-serif;
+		text-transform: uppercase;
+		font-size: 13px;
+                margin-left: 57px;
+	}
+	
+        h6{
+	
+		color: #003457;
+		font-family: arial, sans-serif;
+		text-transform: uppercase;
+		font-size: 13px;
+                margin-left: 115px;
+	}
+        
+	h2{
+	
+		color: #003457;
+		font-family: arial, sans-serif;
+		text-transform: uppercase;
+		font-size: 13px;
+                margin-left: 144px;
+	
+	}
+	
+	h5{
+	
+		font-family: verdana, sans-serif;
+		text-transform: uppercase;
+		font-size: 17px;
+		color: #c0bdbd;
+	
+	}
+	
+	.Formulario{
+	
+		border-color: #1b4158;
+                font: verdana, sans-serif;
+                font-size: 16px;
+                width: 100%;
+	
+	}
+        
+	.insr{
+	
+		width: 500px;
+		box-shadow: 0 0 30px #1b4158 inset;
+		border-radius: 15px;
+                color: #1b4158;
+	
+	}
+        input.disabled{
+            color:silver;
+        }
+        
+        .button{
+            background: #162029;
+            border-color: #1b4158;
+            font: verdana, sans-serif;
+            color: #A3BBD1 ;
+        }
+        
+	.titlein{
+	
+		background: #19558C url("../img/fundo_azul.jpg") repeat-x bottom;
+	
+	}
+	
+	.caixa{
+	
+		border-color: #1b4158;
+                font: verdana, sans-serif;
+                font-size: 16px;
+                width: 100%;
+	}
+	
