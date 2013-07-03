@@ -18,8 +18,8 @@
    
    <div id="mainmenu">
        
-       <button class="button" onclick="home()">Home</button>
-       <button class="button">Usuário</button>       
+       <button class="button" onclick="home();">Home</button>
+       <button class="button" onclick="user();">Usuário</button>       
        <button class="button">Livro</button>
        
        

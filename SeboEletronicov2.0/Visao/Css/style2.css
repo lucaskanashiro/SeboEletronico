@@ -144,6 +144,8 @@
             border-color: #1b4158;
             font: verdana, sans-serif;
             color: #A3BBD1 ;
+            border-radius: 15px;
+            width: 100px;
         }
         
 	.titlein{

@@ -18,12 +18,18 @@
    <div id="mainmenu">
        
        <button class="button" onclick="home();">Home</button>
-       <button class="button">Usuário</button>       
+       <button class="button" onclick="user();">Usuário</button>       
        <button class="button">Livro</button>
+       
+   </div>
+   <div id="mainmenu">
+       
+       <button class="button" onclick="cadastra();">Cadastro</button>
+       <button class="button" onclick="altera();">Alteração</button>       
+       <button class="button" onclick="deleta();">Deletar</button>
        
        
    </div>
-   
     <img src="http://localhost/SeboEletronicov2.0/Visao/img/livroSEBO.png" class="img2"/>
 </body>
 
