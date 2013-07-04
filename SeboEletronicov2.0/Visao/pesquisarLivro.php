@@ -19,7 +19,7 @@
        
        <button class="button" onclick="home();">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
-       <button class="button" onclick="cadastraLivro();">Livro</button>
+       <button class="button" onclick="livro();">Livro</button>
        
    </div>
    <div id="mainmenu">

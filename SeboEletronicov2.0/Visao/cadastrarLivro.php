@@ -18,13 +18,13 @@
        
        <button class="button" onclick="home();">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
-       <button class="button" onclick="cadastraLivro();">Livro</button>
+       <button class="button" onclick="livro();">Livro</button>
        
    </div>
     
     <div id="mainmenu">
        
-       <button class="button" onclick="">Cadastro</button>
+       <button class="button" onclick="cadastraLivro();">Cadastro</button>
        <button class="button" onclick="">Alteração</button>       
        <button class="button" onclick="">Deletar</button>
        <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
