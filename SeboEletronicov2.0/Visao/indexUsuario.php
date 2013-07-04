@@ -19,7 +19,7 @@
        
        <button class="button" onclick="home();">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
-       <button class="button" onclick="livro();">Livro</button>
+       <button class="button" onclick="cadastraLivro();">Livro</button>
        
    </div>
    <div id="mainmenu">
@@ -30,7 +30,7 @@
        
        
    </div>
-    <img src="http://localhost/SeboEletronicov2.0/Visao/img/livroUsuario.png" class="img2"/>
+    <img src="http://localhost/SeboEletronicov2.0/Visao/img/livroSEBO.png" class="img2"/>
 </body>
 
 

@@ -11,13 +11,14 @@ class Livro {
     private $estado;
     
     
-    function __construct($titulo, $autor, $genero, $edicao, $editora, $tipoDeOperacao) {
+    function __construct($titulo, $autor, $genero, $edicao, $editora, $tipoDeOperacao, $estado) {
         $this->titulo = $titulo;
         $this->autor = $autor;
         $this->genero = $genero;
         $this->edicao = $edicao;
         $this->editora = $editora;
         $this->tipoDeOperacao = $tipoDeOperacao;
+        $this->estado = $estado;
     }
 
     

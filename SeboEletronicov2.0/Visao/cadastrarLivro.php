@@ -18,17 +18,16 @@
        
        <button class="button" onclick="home();">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
-       <button class="button" onclick="livro();">Livro</button>
+       <button class="button" onclick="cadastraLivro();">Livro</button>
        
    </div>
     
     <div id="mainmenu">
        
        <button class="button" onclick="">Cadastro</button>
-       <button class="button" onclick="">Alteração</button>
-       <button class="button" onclick="">Pesquisa</button>
+       <button class="button" onclick="">Alteração</button>       
        <button class="button" onclick="">Deletar</button>
-       
+       <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
    </div>
     
     <br/>
@@ -71,9 +70,8 @@
                     <td>
                         <h2> Tipo(s) de operação: </h2>
                         <h1>
-                                        <input type="checkbox" name="venda"/> Venda <br/>
-                                        <input type="checkbox" name="troca"/> Troca <br/>
-                                        <input TYPE="checkbox" name="emprestimo"/> Emprestimo <br/>
+                                        <input type="checkbox" name="venda" value="op1"/> Venda <br/>
+                                        <input type="checkbox" name="troca" value="op2"/> Troca <br/>
                         </h1>
                     </td>    
                 </tr>
@@ -82,12 +80,12 @@
                     <td>
                         <h2> Classificação: </h2>
                         <h1>
-                                <input type="radio" name="class" value="eng"/> Engenharia <br/>
-                                <input type="radio" name="class" value="engSof"/> Engenharia de Software <br/>
-                                <input type="radio" name="class" value="engEn"/> Engenharia de Energia <br/>
-                                <input type="radio" name="class" value="engEl"/> Engenharia Eletronica <br/>
-                                <input type="radio" name="class" value="engAu"/> Engenharia Automotiva <br/>
-                                <input type="radio" name="class" value="engAe"/> Engenharia Aeroespacial <br/>
+                                <input type="radio" name="class" value="clas1"/> Engenharia <br/>
+                                <input type="radio" name="class" value="clas2"/> Engenharia de Software <br/>
+                                <input type="radio" name="class" value="clas3"/> Engenharia de Energia <br/>
+                                <input type="radio" name="class" value="clas4"/> Engenharia Eletronica <br/>
+                                <input type="radio" name="class" value="clas5"/> Engenharia Automotiva <br/>
+                                <input type="radio" name="class" value="clas6"/> Engenharia Aeroespacial <br/>
                         </h1>
                     </td>
                 </tr>

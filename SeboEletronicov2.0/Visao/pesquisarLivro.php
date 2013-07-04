@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>	
@@ -26,7 +27,8 @@
        <button class="button" onclick="cadastra();">Cadastro</button>
        <button class="button" onclick="altera();">Alteração</button>       
        <button class="button" onclick="deleta();">Deletar</button>
-       <button class="button" onclick="">Pesquisar</button>
+       <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
+       
        
    </div>
     
@@ -34,48 +36,45 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeForm.php" method="post" class="formu">
+    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Controle/UsuarioControlador/deletaCadastro" method="post" class="formu">
         
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Cadastro de Usuário</h5></th>
-                </tr>
-                
-                <tr> 
-                    <td>
-                        <h2> Nome: <input type="text" name="nome"/></h2> 
-                    </td>
+                    <th class='titlein' > <h5>Pesquisar Livro</h5></th>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h4> E-mail: <input type="text" name="email"/></h4>
+                        <h4> Título: <input type="text" name="titulo"/></h4>
                     </td>
                 </tr>
                 
-                <tr> 
-                    <td>
-                        <h6> Telefone: <input type="text" name="telefone"/></h6> 
-                    </td>
-                </tr>
-
                 <tr>              
                     <td>
-                        <h4> Senha: <input type="password" name="senha[]"/></h4> <p>
+                        <h4> Estado:</h4> 
+                            <h3>
+                                <input type="checkbox" name="novo"/>Novo
+                                <input type="checkbox" name="usado"/>    Usado<br/>
+                            <h3/>
+                        
                     </td>    
                 </tr>
-
+                
                 <tr>              
                     <td>
-                        <h3> Confirmar Senha: <input type="password" name="senha[]"/></h3> <p>
+                        <h4> Disponibilidade:</h4> 
+                            <h3>
+                                <input type="checkbox" name="venda"/>Venda
+                                <input type="checkbox" name="troca"/>    Troca<br/>
+                            <h3/>
+                        
                     </td>    
                 </tr>
 
                 <th>
-                    <input type="hidden" name="tipo" value="cadastra"/>
-                    <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
-                    <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
+                    <input type="hidden" name="tipo" value="pesquisaLivro"/>
+                    <input type="submit" name='Enviar' value="Pesquisar" title='Pesquisar Livro' />
                 </th>
 
                 </table>    
@@ -87,3 +86,6 @@
 
 
 </html>
+
+
+
