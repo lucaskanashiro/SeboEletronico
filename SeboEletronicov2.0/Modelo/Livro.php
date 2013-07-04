@@ -2,7 +2,6 @@
 
 class Livro {
     
-    
     private $titulo;
     private $autor;
     private $genero; //eng soft, eng energia, eng automotiva, eng elet, eng aero, engenharia

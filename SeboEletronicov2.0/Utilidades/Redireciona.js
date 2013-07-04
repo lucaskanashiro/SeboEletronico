@@ -18,3 +18,7 @@ function altera(){
 function deleta(){
     window.location="http://localhost/SeboEletronicov2.0/Visao/excluiUsuario.php";
 }
+
+function cadastraLivro(){
+    window.location="http://localhost/SeboEletronicov2.0/Visao/cadastrarLivro.php";
+}
