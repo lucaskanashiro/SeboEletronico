@@ -1,5 +1,5 @@
 <?php
-
+include '../Utilidades/ValidaDados.php';
 class Usuario {
     
     private $nome;
@@ -7,11 +7,11 @@ class Usuario {
     private $email;
     private $senha;
     
-    function __construct($nome, $telefone, $email, $senha) {
+    public function __construct($nome, $telefone, $email, $senha) {
         $this->nome = $nome;
         $this->telefone = $telefone;
         $this->email = $email;
-        $this->senha = $senha;;
+        $this->senha = $senha;
         
     }
 

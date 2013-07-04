@@ -1,14 +1,12 @@
 <?php
 
+    include '../Dao/UsuarioDao.php';
+    include '../Modelo/Usuario.php';
 class UsuarioControlador {
     
-    public function salvaUsuario(){
-            
-            $nome = $_POST['nome'];
-            $email = $_POST['email'];
-            $telefone = $_POST['telefone'];
-            $senha = $_POST['senha'];
-            
+    
+    public function salvaUsuario($nome, $email, $telefone, $senha){
+                        
             $usuario = new Usuario($nome, $email, $telefone, $senha);
             UsuarioDao::salvaUsuario($usuario);
         }
