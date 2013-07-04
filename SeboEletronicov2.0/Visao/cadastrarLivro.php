@@ -65,7 +65,7 @@
                         <h3> Edição: <input type="number" name="number"/></h3> 
                     </td>    
                 </tr>
-
+                
                 <tr>              
                     <td>
                         <h2> Tipo(s) de operação: </h2>
@@ -89,6 +89,16 @@
                                 <input type="radio" name="class" value="clas6"/> Engenharia Aeroespacial <br/>
                         </h1>
                     </td>
+                </tr>
+                
+                <tr>              
+                    <td>
+                        <h2> Estado:<h2/> 
+                         <h1>
+                             <input type="radio" name="estado"/>Novo<br/>
+                             <input type="radio" name="estado"/>Usado<br/>
+                         <h1/>
+                    </td>    
                 </tr>
                 <th>
                     <input type="hidden" name="tipo" value="cadastraLivro"/>
