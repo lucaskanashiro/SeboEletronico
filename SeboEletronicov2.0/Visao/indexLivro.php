@@ -22,7 +22,7 @@
    </div>
    <div id="mainmenu">
        
-       <button class="button" onclick="cadastraLivro();">Cadastro</button>
+       <button class="button" onclick="cadastra();">Cadastro</button>
        <button class="button" onclick="altera();">Alteração</button>
        <button class="button" onclick="">Pesquisa</button>
        <button class="button" onclick="deleta();">Deletar</button>
