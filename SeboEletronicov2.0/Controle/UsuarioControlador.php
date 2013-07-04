@@ -6,43 +6,36 @@ class UsuarioControlador {
     
     
     public function salvaUsuario($nome, $email, $telefone, $senha){
-                        
-            $usuario = new Usuario($nome, $email, $telefone, $senha);
-            UsuarioDao::salvaUsuario($usuario);
+           
+            UsuarioDao::salvaUsuario($nome, $email, $telefone, $senha);
+            
         }
         
-       public function checaCadastro(){
-            $email = $_POST['email'];
-            $senha = $_POST['senha'];
+       public function checaCadastro($email, $senha){
             
-            $resultado = Usuario::checaCadastro($email, $senha);
+            $resultado = UsuarioDao::checaCadastro($email, $senha);
+            var_dump($resultado);
+            exit;
             $id_pessoa = $resultado[0]['id_pessoa'];
             
             ?>
             <script language = "Javascript">
-            window.location="ARRUMAR CAMINHO    /index.php/usuario/altera?idPessoa=<?php echo $id_pessoa?>";
+            window.location="http://localhost/SeboEletronicov2.0/Visao/alteraUsuario.php?idPessoa=<?php echo $id_pessoa?>";
             </script><?php
         }
         
         public function checaCadastroId($id){
-            return Usuario::getCadastradosPorId($id);
+            return UsuarioDao::getCadastradosPorId($id);
         }
         
         public function checaSenhaId($idSenha){
-            return Usuario::getSenhaPorId($idSenha);
+            return UsuarioDao::getSenhaPorId($idSenha);
         }
 
 
-        public function alterarCadastro(){
+        public function alterarCadastro($nome, $email, $telefone, $senha, $id){
             
-            $nome = $_POST['nome'];
-            $email = $_POST['email'];
-            $telefone = $_POST['telefone'];
-            $senha = $_POST['senha'];
-            $id = $_POST['id_pessoa'];
-        
-            $usuarioAlterado = new Usuario($nome, $email, $telefone, $senha);
-            UsuarioDao::alteraUsuario($usuarioAlterado ,$id);
+            UsuarioDao::alteraUsuario($nome, $email, $telefone, $senha,$id);
         
         }
         

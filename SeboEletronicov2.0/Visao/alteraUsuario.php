@@ -1,5 +1,7 @@
 <?php
-$id = $_REQUEST['idPessoa'];
+include '../Controle/UsuarioControlador.php';
+
+    $id = $_REQUEST['idPessoa'];
     $cadastro = UsuarioControlador::checaCadastroId($id);
     $idSenha = $cadastro[0]['senha_id'];
     $senhaFinal = UsuarioControlador::checaSenhaId($idSenha);
@@ -41,7 +43,7 @@ $id = $_REQUEST['idPessoa'];
     <br/>
     
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Controle/UsuarioControlador/alterarCadastro" method="post" class="formu">
+    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeForm.php" method="post" class="formu">
         
                 <table class='insr'>
 
@@ -80,6 +82,7 @@ $id = $_REQUEST['idPessoa'];
                 </tr>
 
                 <th>
+                    <input type="hidden" name="tipo" value="cadastra"/>
                     <input type="hidden" name="id_pessoa" value="<?php echo $cadastro[0]['id_pessoa'] ?>" />
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 

@@ -1,9 +1,9 @@
 <?php
 $destinatario = 'levi.moraes@yahoo.com.br';
 $mensagem =
-" <a href ="www.google.com.br"> 
+' <a href ="www.google.com.br"> 
 Visite a pagina do google </a>
-<h1> Hello World </h1>";
+<h1> Hello World </h1>';
 
 
 
@@ -13,5 +13,5 @@ $body= $mensagem; // corpo do texto.
 if (mail($to,$subject,$body,"Content-Type: text/html"))
 echo 'e-mail enviado com sucesso!';
 else
-echo 'e-mail não enviado!';
+echo 'e-mail nï¿½o enviado!';
 ?>

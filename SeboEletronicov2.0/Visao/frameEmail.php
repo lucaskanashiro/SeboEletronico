@@ -34,7 +34,7 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Controle/UsuarioControlador/checaCadastro" method="post" class="formu">
+    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeForm.php" method="post" class="formu">
         
                 <table class='insr'>
 
@@ -55,6 +55,7 @@
                 </tr>
                 
                 <th>
+                    <input type="hidden" name="tipo" value="fEmail"/>
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
                 </th>
