@@ -8,6 +8,7 @@ class Livro {
     private $edicao;
     private $editora;
     private $tipoDeOperacao;//venda, troca, emprestimo
+    private $estado;
     
     
     function __construct($titulo, $autor, $genero, $edicao, $editora, $tipoDeOperacao) {
@@ -92,6 +93,15 @@ class Livro {
     
     public function setEditora(){
         $this->editora;
+    }
+    
+    public function getEstado() {
+        
+        return $this->estado;
+    }
+   
+    public function setEstado(){
+        $this->estado;
     }
 }
 ?>
