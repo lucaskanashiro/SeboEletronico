@@ -8,7 +8,7 @@ class Livro {
     private $genero; //eng soft, eng energia, eng automotiva, eng elet, eng aero, engenharia
     private $edicao;
     private $editora;
-    private $tipoDeOperacao;//compra, venda, troca
+    private $tipoDeOperacao;//venda, troca, emprestimo
     
     
     function __construct($titulo, $autor, $genero, $edicao, $editora, $tipoDeOperacao) {
