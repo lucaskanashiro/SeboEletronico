@@ -5,14 +5,18 @@ class Livro {
     
     private $titulo;
     private $autor;
-    private $genero;
+    private $genero; //eng soft, eng energia, eng automotiva, eng elet, eng aero, engenharia
+    private $edicao;
+    private $editora;
     private $tipoDeOperacao;//compra, venda, troca
     
     
-    function __construct($titulo, $autor, $genero, $tipoDeOperacao) {
+    function __construct($titulo, $autor, $genero, $edicao, $editora, $tipoDeOperacao) {
         $this->titulo = $titulo;
         $this->autor = $autor;
         $this->genero = $genero;
+        $this->edicao = $edicao;
+        $this->editora = $editora;
         $this->tipoDeOperacao = $tipoDeOperacao;
     }
 
@@ -64,13 +68,31 @@ class Livro {
         $this->tipoDeOperacao = $tipoDeOperacao;
     }
 
-    public function defineTiposDeGeneros() {
-        define("MATEMATICA", "Matematica", TRUE);
-        define("FISICA", "Fisica", TRUE);
-        define("MEIO_AMBIENTE", "Meio-Ambiente", TRUE);
-        define("TECNOLOGIA_DA_INFORMACAO", "Tecnologia da Informacao", TRUE);
+    public function defineTiposDeGeneros() { //Genero por engenharia
+        define("ENGENHARIA", "Engenharia", TRUE);
+        define("SOFTWARE", "Engenharia de Software", TRUE);
+        define("ELETRONICA", "Engenharia Eletronica", TRUE);
+        define("ENERGIA", "Engenharia de Energia", TRUE);
+        define("AUTOMOTIVA", "Engenharia Automotiva", TRUE);
+        define("AEROESPACIAL", "Engenharia Aeroespacial", TRUE);
         
-        return array(MATEMATICA, FISICA, MEIO_AMBIENTE, TECNOLOGIA_DA_INFORMACAO);
+        return array(ENGENHARIA,SOFTWARE, ELETRONICA, ENERGIA, AUTOMOTIVA, AEROESPACIAL);
+    }
+    
+    public function getEdicao() {
+        return $this->edicao;
+    }
+    
+    public function setEdicao(){
+        $this->edicao;//Precisa validar entrada só de números
+    }
+    
+    public function getEditora(){
+        return $this->editora;
+    }
+    
+    public function setEditora(){
+        $this->editora;
     }
 }
 ?>
