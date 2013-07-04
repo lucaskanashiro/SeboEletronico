@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include '../Utilidades/ValidaDados.php';
 class Usuario {
     
@@ -45,8 +45,10 @@ class Usuario {
     }
 
     public function getEmail() {
-        return $this->email;
-    }
+	return $this->email;
+	//$email = "caiquepereira@gmail.com";
+	//return $email ;
+}
 
     public function setEmail($email) {
         
