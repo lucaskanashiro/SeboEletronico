@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>	
@@ -26,6 +27,7 @@
        <button class="button" onclick="cadastra();">Cadastro</button>
        <button class="button" onclick="altera();">Alteração</button>       
        <button class="button" onclick="deleta();">Deletar</button>
+       <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
        
        
    </div>
@@ -34,29 +36,23 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeForm.php" method="post" class="formu">
+    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Controle/UsuarioControlador/deletaCadastro" method="post" class="formu">
         
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Deletar Cadastro</h5></th>
+                    <th class='titlein' > <h5>Pesquisar Usuário</h5></th>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h4> E-mail: <input type="text" name="email"/></h4>
+                        <h4> Nome: <input type="text" name="nome"/></h4>
                     </td>
                 </tr>
                 
-                <tr>              
-                    <td>
-                        <h4> Senha: <input type="password" name="senha"/></h4> <p>
-                    </td>    
-                </tr>
-
                 <th>
-                    <input type="hidden" name="tipo" value="deletar"/>
-                    <input type="submit" name='Enviar' value="Excluir" title='Excluir Usuário' />
+                    <input type="hidden" name="tipo" value="pesquisar"/>
+                    <input type="submit" name='Enviar' value="Pesquisar" />
                 </th>
 
                 </table>    
@@ -68,3 +64,6 @@
 
 
 </html>
+
+
+

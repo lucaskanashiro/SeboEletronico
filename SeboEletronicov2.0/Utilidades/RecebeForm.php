@@ -36,9 +36,17 @@ switch($_POST['tipo']){
                             </script><?php
                         
                     break;
-      case "deletar":
+      case "deletar": $email = $_POST['email'];
+                      $senha = $_POST['senha'];
+                      
+                      UsuarioControlador::deletaCadastro($email,$senha);
+                      ?>
+                            <script language = "Javascript">
+                            window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
+                            </script><?php
                     break;
       case "pesquisar": 
+          
                     break;
       
     }

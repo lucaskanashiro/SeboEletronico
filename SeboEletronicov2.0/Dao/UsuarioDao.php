@@ -39,8 +39,8 @@ class UsuarioDao {
         $id_senha = pg_fetch_array($resultado);
 
 
-        $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$usuario->getNome()."', '".$usuario->getEmail()."', '".$usuario::getTelefone()."','".$id_senha['id_senha']."')";
-        pg_query(conectaBanco(), $sql3);
+//        $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$usuario->getNome()."', '".$usuario->getEmail()."', '".$usuario::getTelefone()."','".$id_senha['id_senha']."')";
+//        pg_query(conectaBanco(), $sql3);
     }
 
     public function pesquisaUsuario($usuario){
@@ -48,7 +48,7 @@ class UsuarioDao {
     }
     
     public function deletaUsuario($email, $senha){
-        
+                
         $sql="DELETE FROM usuario WHERE email = '".$email."'";
         pg_query(conectaBanco(), $sql);
 

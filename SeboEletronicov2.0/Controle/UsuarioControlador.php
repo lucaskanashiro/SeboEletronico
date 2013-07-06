@@ -39,11 +39,10 @@ class UsuarioControlador {
         
         }
         
-        public function deletaCadastro(){
-            $email = $_POST['email'];
-            $senha = $_POST['senha'];
-            Usuario::Deletar($email, $senha);
-          
+        public function deletaCadastro($email, $senha){
+   
+            UsuarioDao::Deletar($email, $senha);
+   
         }
 
 
