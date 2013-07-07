@@ -4,12 +4,14 @@
     include '../Modelo/Livro.php';
 class LivroControlador {
     
-    public function salvarLivro($titulo, $autor, $editora, $edicao, $tipoDeOperacao, $genero, $estado){
-        $livro = new Livro($titulo, $autor, $edicao, $editora, $tipoDeOperacao, $genero, $estado);
-        LivroDao::salvaLivro($livro);
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $tipoDeOperacao, $genero, $estado){
+       
+        LivroDao::salvaLivro($titulo, $autor, $edicao, $editora, $tipoDeOperacao, $genero, $estado);
     }
     
-  
+    public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
+        LivroDao:: pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca);
+    }
 }
 
 ?>
