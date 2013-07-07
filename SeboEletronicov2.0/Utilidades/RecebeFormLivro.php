@@ -44,7 +44,13 @@ switch($_POST['tipo']){
                 $estadoUsado = $_POST['usado'];
                 $disponibilidadeVenda = $_POST['venda'];
                 $disponibilidadeTroca = $_POST['troca'];
-                    break;
-      
+                    
+                 LivroControlador::pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca);
+                        ?>
+                            <script language = "Javascript">
+                            window.location="http://localhost/SeboEletronicov2.0/Visao/listaDeLivros.php";
+                            </script><?php
+                break;
+            
     }
 ?>
