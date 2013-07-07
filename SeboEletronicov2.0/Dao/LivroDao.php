@@ -2,27 +2,41 @@
 
 class LivroDao {
     
-    public function pesquisaLivro(){
+    public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
+        
+        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
+            AND tipo_operacao = '".$disponibilidadeTroca."'";
+        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoUsado."'
+            AND tipo_operacao = '".$disponibilidadeTroca."'";
+        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
+            AND tipo_operacao = '".$disponibilidadeVenda."'";
+        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoUsado."'
+            AND tipo_operacao = '".$disponibilidadeVenda."'";
+        
+        /*
+         * $resultado = pg_query(conectaBanco(), $sql1);
+         * $id_livro = pg_fetch_array($resultado);
+         * "SELECT * FROM senha WHERE codigo_senha = '".$senha."'"
+         * $resultado = $id_senha = pg_query(conectaBanco(), $sql2);
+         * $id_senha = pg_fetch_array($resultado); 
+         * 
+         * "SELECT id_senha FROM senha WHERE codigo_senha='".$senhaSalvar."'";
+         */
         
     }
     
-    public function salvaLivro(){
-         $livro = new Livro($titulo, $autor, $editora, $edicao, $tipoDeOperacao, $genero, $estado);
-         
-        $sql="INSERT INTO livro (titulo_livro, autor, editora, edicao, tipo_Operacao,genero, 
-        estado_conserv) VALUES ('".$livro->getTitulo()."', '".$livro->getAutor()."',
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $tipoDeOperacao, $genero, $estado){
+        
+        $livro = new Livro($titulo, $autor, $editora, $edicao, $tipoDeOperacao, $genero, $estado);
+        
+        $sql2="INSERT INTO livro (titulo_livro, autor, editora, edicao, tipo_Operacao,genero, 
+        estado_conserv, id_dono) VALUES ('".$livro->getTitulo()."', '".$livro->getAutor()."',
         '".$livro->getEditora()."','".$livro->getEdicao()."','".$livro->getTipoDeOperacao()."',
-        '".$livro->getGenero()."','".$livro->getEstado()."')";
-        pg_query(conectaBanco(), $sql);
-
-        $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaSalvar."'";
-        $resultado = $id_senha = pg_query(conectaBanco(), $sql2);
-        $id_senha = pg_fetch_array($resultado);
-
-        $sql3="INSERT INTO usuario (nome, email, telefone, senha_id) VALUES ('".$usuario->getNome()."', 
-            '".$usuario->getEmail()."', '".$usuario->getTelefone()."','".$id_senha['id_senha']."')";
-        pg_query(conectaBanco(), $sql3);
+        '".$livro->getGenero()."','".$livro->getEstado()."', '".$id_usuario."')";
+        pg_query(conectaBanco(), $sql2);
+        //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO
     }
 }
 
 ?>
+
