@@ -23,10 +23,9 @@
    </div>
    <div id="mainmenu">
        
-       <button class="button" onclick="cadastra();">Cadastro</button>
-       <button class="button" onclick="altera();">Alteração</button>       
+       <button class="button" onclick="cadastra();">Cadastrar</button>
+       <button class="button" onclick="altera();">Alterar</button>       
        <button class="button" onclick="deleta();">Deletar</button>
-       <button class="button" onclick="">Pesquisar</button>
        
    </div>
     
