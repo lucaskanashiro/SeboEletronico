@@ -4,14 +4,22 @@ class LivroDao {
     
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
         
-        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
+        if(!empty($titulo) && !empty($estadoNovo) && !empty($disponibilidadeTroca)){
+            $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
             AND tipo_operacao = '".$disponibilidadeTroca."'";
-        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoUsado."'
+        }elseif(!empty($titulo) && !empty($estadoUsado) && !empty($disponibilidadeTroca)){
+            $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoUsado."'
             AND tipo_operacao = '".$disponibilidadeTroca."'";
-        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
+        }elseif(!empty($titulo) && !empty($estadoNovo) && !empty($disponibilidadeVenda)){
+            $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
             AND tipo_operacao = '".$disponibilidadeVenda."'";
-        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoUsado."'
+        }elseif(!empty($titulo) && !empty($estadoUsado) && !empty($disponibilidadeVenda)){
+            $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoUsado."'
             AND tipo_operacao = '".$disponibilidadeVenda."'";
+        }
+        
+        //CONCLUIR A BUSCA NO BANCO
+        //DEPOIS DE BUSCAR NO BANCO EH SOH JOGAR O RESULTADO NA PAGINA LISTADELIVROS.PHP
         
         /*
          * $resultado = pg_query(conectaBanco(), $sql1);
