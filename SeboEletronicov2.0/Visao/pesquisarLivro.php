@@ -54,8 +54,8 @@
                     <td>
                         <h4> Estado:</h4> 
                             <h3>
-                                <input type="checkbox" name="novo"/>Novo
-                                <input type="checkbox" name="usado"/>    Usado<br/>
+                                <input type="radio" name="estado" value="novo" checked/>Novo
+                                <input type="radio" name="estado" value="usado"/>    Usado<br/>
                             <h3/>
                         
                     </td>    
@@ -65,8 +65,8 @@
                     <td>
                         <h4> Disponibilidade:</h4> 
                             <h3>
-                                <input type="checkbox" name="venda"/>Venda
-                                <input type="checkbox" name="troca"/>    Troca<br/>
+                                <input type="radio" name="operacao" value="venda" checked/>Venda
+                                <input type="radio" name="operacao" value="troca"/>    Troca<br/>
                             <h3/>
                         
                     </td>    
