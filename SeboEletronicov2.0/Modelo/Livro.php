@@ -20,18 +20,20 @@ class Livro {
         $this->tipoDeOperacao = $tipoDeOperacao;
         $this->estado = $estado;
     }
-
     
     public function getTitulo() {
         return $this->titulo;
     }
 
     public function setTitulo($titulo) {
-        $this->titulo = $titulo;
+        if(!ValidaDados::validaCamposnulos($titulo)){
+            throw new ExcessaoTituloInvalido("Titulo nao pode ser nulo!");
+        }else{
+            $this->titulo = $titulo;
+        }
         //Nao tera tratamento de excessao, pois o titulo é pessoal e vai de cada autor, 
         //logo pode ter qualquer tipo de caracter que o autor desejar
     }
-    
 
     public function getAutor() {
         return $this->autor;   
@@ -52,13 +54,7 @@ class Livro {
     }
 
     public function setGenero($genero) {
-        if(!ValidaDados::validaGenero($genero)){
-            throw new ExcessaoGeneroInvalido("Genero nao existente na lista de generos do sistema!");
-        }elseif(!ValidaDados::validaCamposNulos($genero)){
-            throw new ExcessaoGeneroInvalido("O genero do Livro nao pode ser nulo!");
-        }else{
-            $this->genero = $genero;
-        }
+        $this->genero = $genero;
     }
 
     public function getTipoDeOperacao() {
@@ -93,16 +89,20 @@ class Livro {
     }
     
     public function setEditora(){
-        $this->editora;
+        
+        if(!ValidaDados::validaCamposNulos($editora)){
+            throw new ExcessaoEditoraInvalida("O Editora do Livro nao pode ser nula!");
+        }else{
+            $this->editora = $editora;
+        }
     }
     
-    public function getEstado() {
-        
+    public function getEstado() {   
         return $this->estado;
     }
    
     public function setEstado(){
-        $this->estado;
+        $this->estado = $estado;
     }
 }
 ?>
