@@ -5,13 +5,13 @@
 class UsuarioControlador {
     
     
-    public function salvaUsuario($nome, $email, $telefone, $senha){
+        public function salvaUsuario($nome, $email, $telefone, $senha){
            
             UsuarioDao::salvaUsuario($nome, $email, $telefone, $senha);
             
         }
         
-       public function checaCadastro($email, $senha){
+        public function checaCadastro($email, $senha){
             
             $resultado = UsuarioDao::checaCadastro($email, $senha);
             var_dump($resultado);

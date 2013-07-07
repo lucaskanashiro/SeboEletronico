@@ -4,7 +4,7 @@ class UsuarioDao {
 
     public static function salvaUsuario($nome, $email, $telefone, $senha){
         
-         $usuario = new Usuario($nome, $email, $telefone, $senha);
+        $usuario = new Usuario($nome, $email, $telefone, $senha);
         
         $senhaFinal = $usuario->getSenha();
         $senhaSalvar = $senhaFinal[0];
