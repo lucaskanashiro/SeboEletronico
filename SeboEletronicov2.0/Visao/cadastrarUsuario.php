@@ -17,16 +17,7 @@
    <div id="mainmenu">
        
        <button class="button" onclick="home();">Home</button>
-       <button class="button" onclick="user();">Usuário</button>       
-       <button class="button" onclick="livro();">Livro</button>
-       
-   </div>
-   <div id="mainmenu">
-       
-       <button class="button" onclick="cadastra();">Cadastro</button>
-       <button class="button" onclick="altera();">Alteração</button>       
-       <button class="button" onclick="deleta();">Deletar</button>
-       <button class="button" onclick="">Pesquisar</button>
+       <button class="button" onclick="login();">Login</button>
        
    </div>
     

@@ -29,3 +29,6 @@ function pesquisaLivro() {
 function livro(){
     window.location="http://localhost/SeboEletronicov2.0/Visao/indexLivro.php";
 }
+function login(){
+    window.location="http://localhost/SeboEletronicov2.0/Visao/login.php";
+}

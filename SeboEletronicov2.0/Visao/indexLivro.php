@@ -22,10 +22,10 @@
    </div>
    <div id="mainmenu">
        
-       <button class="button" onclick="cadastraLivro();">Cadastro</button>
-       <button class="button" onclick="altera();">Alteração</button>
-       <button class="button" onclick="">Pesquisa</button>
-       <button class="button" onclick="deleta();">Deletar</button>
+       <button class="button" onclick="cadastraLivro();">Cadastrar</button>
+       <button class="button" onclick="">Alteração</button>
+       <button class="button" onclick="">Deletar</button>
+       <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
        
        
    </div>
