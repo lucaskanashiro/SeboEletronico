@@ -45,7 +45,6 @@ class UsuarioControlador {
    
         }
 
-
         public function listaCadastros(){
             return Usuario::getCadastrados();
         }
