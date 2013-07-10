@@ -1,8 +1,15 @@
 <?php
     
-    function conectaBanco(){
-        $string_de_conexao = "host=localhost port=5433 dbname=sebo user=seboeletronico password=sebo";
-        $dbcon = pg_connect($string_de_conexao);
-      return $dbcon;  
-    }
+        $server = "localhost";
+        $username = "SeboEletronico";
+        $senha = "sebo";
+        $dbcon = mysql_connect($server, $username, $senha);
+        
+        if(!$dbcon){
+            die ("Não foi possível conectar: " . mysql_error());
+        }
+        $bd = mysql_select_db ("sebo eletronico");
+        
+      
+   
 ?>

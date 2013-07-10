@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: Jul 07, 2013 as 02:53 PM
+-- Tempo de Geração: Jul 09, 2013 as 11:42 
 -- Versão do Servidor: 5.1.41
 -- Versão do PHP: 5.3.1
 
@@ -46,16 +46,35 @@ CREATE TABLE IF NOT EXISTS `livro` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `senha`
+--
+
+CREATE TABLE IF NOT EXISTS `senha` (
+  `id_senha` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `codigo_senha` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_senha`),
+  UNIQUE KEY `id_senha` (`id_senha`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Extraindo dados da tabela `senha`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id_usuario` int(64) NOT NULL AUTO_INCREMENT COMMENT 'Identificador do Usuario',
+  `id_usuario` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identificador do Usuario',
   `nome_usuario` varchar(64) DEFAULT NULL COMMENT 'Nome do Usuario',
   `senha_usuario` varchar(64) DEFAULT NULL COMMENT 'Senha do Usuario',
   `telefone_usuario` int(64) DEFAULT NULL COMMENT 'Telefone do Usuario',
   `email_usuario` varchar(64) DEFAULT NULL COMMENT 'Email do Usuario',
   PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `nome_usuario` (`nome_usuario`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Usuario' AUTO_INCREMENT=1 ;
 

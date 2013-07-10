@@ -64,7 +64,7 @@
                 </tr>
 
                 <th>
-                    <input type="hidden" name="tipo" value="cadastra"/>
+                    <input type="hidden" name="tipo" value="cadastrar"/>
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
                 </th>
