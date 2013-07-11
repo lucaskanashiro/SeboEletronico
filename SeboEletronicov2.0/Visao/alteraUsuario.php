@@ -3,8 +3,11 @@ include '../Controle/UsuarioControlador.php';
 
     $id = $_REQUEST['idPessoa'];
     $cadastro = UsuarioControlador::checaCadastroId($id);
-    $idSenha = $cadastro[0]['senha_id'];
+    
+    $idSenha = $cadastro['senha_usuario'];
+    
     $senhaFinal = UsuarioControlador::checaSenhaId($idSenha);
+    
     ?>
 <!DOCTYPE HTML>
 <html>
@@ -52,36 +55,37 @@ include '../Controle/UsuarioControlador.php';
                 
                 <tr> 
                     <td>
-                        <h2> Nome: <input type="text" name="nome" value="<?php echo $cadastro[0]['nome']?>"/></h2> 
+                        <h2> Nome: <input type="text" name="nome" value="<?php echo $cadastro ['nome_usuario']?>"/></h2> 
                     </td>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h4> E-mail: <input type="text" name="email" value="<?php echo $cadastro[0]['email']?>"/></h4>
+                        <h4> E-mail: <input type="text" name="email" value="<?php echo $cadastro['email_usuario']?>"/></h4>
                     </td>
                 </tr>
                 
                 <tr> 
                     <td>
-                        <h6> Telefone: <input type="text" name="telefone" value="<?php echo $cadastro[0]['telefone']?>"/></h6> 
+                        <h6> Telefone: <input type="text" name="telefone" value="<?php echo $cadastro['telefone_usuario']?>"/></h6> 
                     </td>
                 </tr>
 
                 <tr>              
                     <td>
-                        <h4> Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal[0]['codigo_senha']?>"/></h4> <p>
+                        <h4> Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal['codigo_senha']?>"/></h4> <p>
                     </td>    
                 </tr>
 
                 <tr>              
                     <td>
-                        <h3> Confirmar Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal[0]['codigo_senha']?>"/></h3> <p>
+                        <h3> Confirmar Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal['codigo_senha']?>"/></h3> <p>
                     </td>    
                 </tr>
 
                 <th>
                     <input type="hidden" name="tipo" value="alterar"/>
+                    <input type="hidden" name="senhaAntiga" value="<?php echo $senhaFinal['codigo_senha']?>"/>
                     <input type="hidden" name="id_pessoa" value="<?php echo $cadastro[0]['id_pessoa'] ?>" />
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 

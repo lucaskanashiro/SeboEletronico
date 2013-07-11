@@ -41,7 +41,7 @@ class LivroDao {
         estado_conserv, id_dono) VALUES ('".$livro->getTitulo()."', '".$livro->getAutor()."',
         '".$livro->getEditora()."','".$livro->getEdicao()."','".$livro->getTipoDeOperacao()."',
         '".$livro->getGenero()."','".$livro->getEstado()."', '".$id_usuario."')";
-        pg_query(conectaBanco(), $sql2);
+        mysql_query($sql2);
         //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO
     }
 }

@@ -1,4 +1,9 @@
-
+<?php 
+        include '../Controle/UsuarioControlador.php';
+        $nome = $_REQUEST['nome'];
+        $pesquisado = UsuarioControlador::pesquisaUsuario($nome);
+        
+?>
 <!DOCTYPE HTML>
 <html>
 <head>	
@@ -26,7 +31,8 @@
        
        <button class="button" onclick="cadastra();">Cadastrar</button>
        <button class="button" onclick="altera();">Alterar</button>       
-       <button class="button" onclick="deleta();">Deletar</button> 
+       <button class="button" onclick="deleta();">Deletar</button>
+       <button class="button" onclick="pesquisa();">Pesquisar</button>
        
        
    </div>
@@ -35,29 +41,31 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeForm.php" method="post" class="formu">
-        
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Pesquisar Usuário</h5></th>
+                    <th class='titlein' > <h5>Usuário Pesquisado</h5></th>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h4> Nome: <input type="text" name="nome"/></h4>
+                      <center> Nome: <?php echo $pesquisado[1];?></center> 
                     </td>
                 </tr>
                 
-                <th>
-                    <input type="hidden" name="tipo" value="pesquisar"/>
-                    <input type="submit" name='Enviar' value="Pesquisar" />
-                </th>
-
+                <tr>
+                    <td > 
+                   <center> Telefone :<?php echo $pesquisado[3];?></center> 
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td > 
+                <center>  Email: <?php echo $pesquisado[4];?></center>
+                    </td>
+                </tr>
                 </table>    
         
-    </form>
-    
     
 </body>
 

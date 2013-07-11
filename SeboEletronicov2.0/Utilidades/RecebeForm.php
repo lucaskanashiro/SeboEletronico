@@ -9,7 +9,7 @@ switch($_POST['tipo']){
                          $email = $_POST['email'];
                          $telefone = $_POST['telefone'];
                          $senha = $_POST['senha'];
-
+                         
                          UsuarioControlador::salvaUsuario($nome, $email, $telefone, $senha);
                          ?>
                             <script language = "Javascript">
@@ -28,8 +28,8 @@ switch($_POST['tipo']){
                         $telefone = $_POST['telefone'];
                         $senha = $_POST['senha'];
                         $id = $_POST['id_pessoa'];
-                        
-                        UsuarioControlador::alterarCadastro($nome, $email, $telefone, $senha, $id);
+                        $senhaVelha = $_POST['senhaAntiga'];
+                        UsuarioControlador::alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha);
                         ?>
                             <script language = "Javascript">
                             window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
@@ -45,8 +45,14 @@ switch($_POST['tipo']){
                             window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
                             </script><?php
                     break;
-      case "pesquisar": 
-          
+      case "pesquisar": $nome = $_POST['nome'];
+                        
+                        
+                      ?>
+                            <script language = "Javascript">
+                            window.location="http://localhost/SeboEletronicov2.0/Visao/usuarioPesquisado.php?nome=<?php echo $nome?>";
+                            </script><?php
+            
                     break;
       
     }

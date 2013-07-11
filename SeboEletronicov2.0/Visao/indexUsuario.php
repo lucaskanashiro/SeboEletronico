@@ -25,7 +25,8 @@
        
        <button class="button" onclick="cadastra();">Cadastrar</button>
        <button class="button" onclick="altera();">Alterar</button>       
-       <button class="button" onclick="deleta();">Deletar</button>      
+       <button class="button" onclick="deleta();">Deletar</button> 
+       <button class="button" onclick="pesquisa();">Pesquisar</button>
           
    </div>
     

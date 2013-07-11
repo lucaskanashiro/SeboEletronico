@@ -14,9 +14,8 @@ class UsuarioControlador {
         public function checaCadastro($email, $senha){
             
             $resultado = UsuarioDao::checaCadastro($email, $senha);
-            var_dump($resultado);
-            exit;
-            $id_pessoa = $resultado[0]['id_pessoa'];
+            
+            $id_pessoa = $resultado[0];
             
             ?>
             <script language = "Javascript">
@@ -33,20 +32,21 @@ class UsuarioControlador {
         }
 
 
-        public function alterarCadastro($nome, $email, $telefone, $senha, $id){
+        public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
             
-            UsuarioDao::alteraUsuario($nome, $email, $telefone, $senha,$id);
+            UsuarioDao::alteraUsuario($nome, $email, $telefone, $senha,$id, $senhaVelha);
         
         }
         
         public function deletaCadastro($email, $senha){
    
-            UsuarioDao::Deletar($email, $senha);
+            UsuarioDao::DeletaUsuario($email, $senha);
    
         }
 
-        public function listaCadastros(){
-            return Usuario::getCadastrados();
+
+        public function pesquisaUsuario($nome){
+            return UsuarioDao::pesquisaUsuario($nome);
         }
     
 }
