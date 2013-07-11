@@ -7,17 +7,19 @@ class Livro {
     private $genero; //eng soft, eng energia, eng automotiva, eng elet, eng aero, engenharia
     private $edicao;
     private $editora;
-    private $tipoDeOperacao;//venda, troca, emprestimo
+    private $venda;
+    private $troca;
     private $estado;
     
     
-    function __construct($titulo, $autor, $genero, $edicao, $editora, $tipoDeOperacao, $estado) {
+    function __construct($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado) {
         $this->titulo = $titulo;
         $this->autor = $autor;
         $this->genero = $genero;
         $this->edicao = $edicao;
         $this->editora = $editora;
-        $this->tipoDeOperacao = $tipoDeOperacao;
+        $this->venda = $venda;
+        $this->troca = $troca;
         $this->estado = $estado;
     }
     
@@ -57,12 +59,20 @@ class Livro {
         $this->genero = $genero;
     }
 
-    public function getTipoDeOperacao() {
-        return $this->tipoDeOperacao;
+    public function getTroca() {
+        return $this->troca;
     }
 
-    public function setTipoDeOperacao($tipoDeOperacao) {
-        $this->tipoDeOperacao = $tipoDeOperacao;
+    public function setTroca($troca) {
+        $this->troca = $troca;
+    }
+    
+    public function getVenda() {
+        return $this->venda;
+    }
+
+    public function setVenda($venda) {
+        $this->venda = $venda;
     }
 
     public function defineTiposDeGeneros() { //Genero por engenharia

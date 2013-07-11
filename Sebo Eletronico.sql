@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: Jul 09, 2013 as 11:42 
+-- Tempo de Geração: Jul 11, 2013 as 05:00 
 -- Versão do Servidor: 5.1.41
 -- Versão do PHP: 5.3.1
 
@@ -34,9 +34,10 @@ CREATE TABLE IF NOT EXISTS `livro` (
   `edicao` int(64) DEFAULT NULL,
   `genero` varchar(64) DEFAULT NULL,
   `estado_conserv` varchar(64) DEFAULT NULL,
-  `tipo_operacao` varchar(64) DEFAULT NULL,
+  `venda` varchar(45) NOT NULL,
+  `troca` varchar(45) NOT NULL,
   PRIMARY KEY (`id_livro`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Livro' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Livro' AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `livro`
@@ -54,12 +55,15 @@ CREATE TABLE IF NOT EXISTS `senha` (
   `codigo_senha` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_senha`),
   UNIQUE KEY `id_senha` (`id_senha`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `senha`
 --
 
+INSERT INTO `senha` (`id_senha`, `codigo_senha`) VALUES
+(5, 121212),
+(6, 121212);
 
 -- --------------------------------------------------------
 
@@ -76,12 +80,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `nome_usuario` (`nome_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Usuario' AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Usuario' AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
+INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `senha_usuario`, `telefone_usuario`, `email_usuario`) VALUES
+(4, 'MacÃ¡rio Cruz', '5', 81322019, 'macario.junior@gmail.com'),
+(5, 'joao', '5', 82235587, 'joao@hot.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

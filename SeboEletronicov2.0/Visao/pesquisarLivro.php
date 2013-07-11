@@ -36,7 +36,7 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Controle/UsuarioControlador/deletaCadastro" method="post" class="formu">
+    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeFormLivro.php" method="post" class="formu">
         
                 <table class='insr'>
 
@@ -54,8 +54,8 @@
                     <td>
                         <h4> Estado:</h4> 
                             <h3>
-                                <input type="radio" name="estado" value="novo" checked/>Novo
-                                <input type="radio" name="estado" value="usado"/>    Usado<br/>
+                                <input type="checkbox" name="estado" value="novo" checked/>Novo
+                                <input type="checkbox" name="estado" value="usado"/>    Usado<br/>
                             <h3/>
                         
                     </td>    
@@ -63,10 +63,10 @@
                 
                 <tr>              
                     <td>
-                        <h4> Disponibilidade:</h4> 
+                        <h4> Classificação:</h4> 
                             <h3>
-                                <input type="radio" name="operacao" value="venda" checked/>Venda
-                                <input type="radio" name="operacao" value="troca"/>    Troca<br/>
+                                <input type="checkbox" name="operacao" value="venda" checked/>Venda
+                                <input type="checkbox" name="operacao" value="troca"/>    Troca<br/>
                             <h3/>
                         
                     </td>    

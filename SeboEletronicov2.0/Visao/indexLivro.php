@@ -24,7 +24,7 @@
        
        <button class="button" onclick="cadastraLivro();">Cadastrar</button>
        <button class="button" onclick="">Alteração</button>
-       <button class="button" onclick="">Deletar</button>
+       <button class="button" onclick="deletaLivro();">Deletar</button>
        <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
        
        

@@ -34,7 +34,7 @@
     <br/>
     <br/>
     
-    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeForm.php" method="post" class="Formulario">
+    <form  name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeFormLivro.php" method="post" class="Formulario">
         
                 <table class='insr'>
 
@@ -76,8 +76,8 @@
                     <td>
                         <h2> Tipo(s) de operação: </h2>
                         <h1>
-                                        <input type="checkbox" name="venda" value="op1"/> Venda <br/>
-                                        <input type="checkbox" name="troca" value="op2"/> Troca <br/>
+                                        <input type="checkbox" name="venda" value="venda"/> Venda <br/>
+                                        <input type="checkbox" name="troca" value="troca"/> Troca <br/>
                         </h1>
                     </td>    
                 </tr>
@@ -86,12 +86,12 @@
                     <td>
                         <h2> Classificação: </h2>
                         <h1>
-                                <input type="radio" name="class" value="clas1"/> Engenharia <br/>
-                                <input type="radio" name="class" value="clas2"/> Engenharia de Software <br/>
-                                <input type="radio" name="class" value="clas3"/> Engenharia de Energia <br/>
-                                <input type="radio" name="class" value="clas4"/> Engenharia Eletronica <br/>
-                                <input type="radio" name="class" value="clas5"/> Engenharia Automotiva <br/>
-                                <input type="radio" name="class" value="clas6"/> Engenharia Aeroespacial <br/>
+                                <input type="radio" name="class" value="Engenharia"/> Engenharia <br/>
+                                <input type="radio" name="class" value="Engenharia de Software"/> Engenharia de Software <br/>
+                                <input type="radio" name="class" value="Engenharia de Energia"/> Engenharia de Energia <br/>
+                                <input type="radio" name="class" value="Engenharia Eletronica"/> Engenharia Eletronica <br/>
+                                <input type="radio" name="class" value="Engenharia Automotiva"/> Engenharia Automotiva <br/>
+                                <input type="radio" name="class" value="Engenharia Aeroespacial"/> Engenharia Aeroespacial <br/>
                         </h1>
                     </td>
                 </tr>
