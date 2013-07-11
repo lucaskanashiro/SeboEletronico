@@ -68,6 +68,12 @@
                 
                 <tr>              
                     <td>
+                        <h7> Descrição: <input type="textarea" name="descricao"></h7> 
+                    </td>    
+                </tr>
+                
+                <tr>              
+                    <td>
                         <h2> Tipo(s) de operação: </h2>
                         <h1>
                                         <input type="checkbox" name="venda" value="op1"/> Venda <br/>
