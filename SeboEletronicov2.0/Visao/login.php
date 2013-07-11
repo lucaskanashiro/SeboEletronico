@@ -24,7 +24,7 @@
     <br/>
     <br/>
 
-        <form name="loginform" method="post" action="indexUsuario.php">
+        <form name="loginform" method="post" action="http://localhost/SeboEletronicov2.0/Dao/autenticacaoUsuario.php">
             <table class='insr'>
 
                 <tr>
