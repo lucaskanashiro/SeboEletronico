@@ -8,7 +8,6 @@
     <title>Sebo Eletrônico</title>
     
 </head>
-
 <body>
     <div id="header">
 		<div id="logo"><img src="http://localhost/SeboEletronicov2.0/Visao/img/sebo_header.png" class="imgHeader"/></div>
@@ -16,9 +15,9 @@
     
     <div id="mainmenu">
        
-       <button class="button" onclick="home();">Home</button>
-       <button class="button" onclick="user();">Usuario</button>
+       <button class="button" onclick="user();">Usuário</button>       
        <button class="button" onclick="livro();">Livro</button>
+       <button class="button" onclick="sair();">Sair</button>
        
    </div>
     
@@ -26,7 +25,7 @@
        
        <button class="button" onclick="cadastraLivro();">Cadastrar</button>
        <button class="button" onclick="">Alterar</button>       
-       <button class="button" onclick="">Deletar</button>
+       <button class="button" onclick="deletaLivro();">Deletar</button>
        <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
    </div>
     

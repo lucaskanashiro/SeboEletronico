@@ -41,3 +41,6 @@ function livro(){
 function login(){
     window.location="http://localhost/SeboEletronicov2.0/Visao/login.php";
 }
+function sair(){
+    window.location="http://localhost/SeboEletronicov2.0/Visao/site.php";
+}

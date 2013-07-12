@@ -1,5 +1,3 @@
-
-<!DOCTYPE HTML>
 <html>
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,11 +16,13 @@
    
    <div id="mainmenu">
        
-       <button class="button" onclick="login();">Login</button>
+       <button class="button" onclick="user();">Usuário</button>       
+       <button class="button" onclick="livro();">Livro</button>
+       <button class="button" onclick="sair();">Sair</button>
        
    </div>
    
-    <img src="http://localhost/SeboEletronicov2.0/Visao/img/LogoSebo.jpg" class="img"/>
+    <img src="http://localhost/SeboEletronicov2.0/Visao/img/Login.png" class="img3"/>
     
 </body>
 
