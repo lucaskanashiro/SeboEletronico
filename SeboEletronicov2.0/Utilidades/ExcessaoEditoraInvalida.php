@@ -1,8 +1,8 @@
 <?php
 
-class ExcessaoEditoraInvalida {
+class ExcessaoEditoraInvalida extends InvalidArgumentException{
     function __construct($mensagem) {
-        super($mensagem);
+        parent::__construct($mensagem);
     }
 }
 
