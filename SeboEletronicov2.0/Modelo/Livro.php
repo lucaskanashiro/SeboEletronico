@@ -98,7 +98,7 @@ class Livro {
         return $this->editora;
     }
     
-    public function setEditora(){
+    public function setEditora($editora){
         
         if(!ValidaDados::validaCamposNulos($editora)){
             throw new ExcessaoEditoraInvalida("O Editora do Livro nao pode ser nula!");
@@ -111,7 +111,7 @@ class Livro {
         return $this->estado;
     }
    
-    public function setEstado(){
+    public function setEstado($estado){
         $this->estado = $estado;
     }
 }
