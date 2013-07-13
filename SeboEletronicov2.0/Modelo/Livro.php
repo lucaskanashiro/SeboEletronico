@@ -90,8 +90,8 @@ class Livro {
         return $this->edicao;
     }
     
-    public function setEdicao(){
-        $this->edicao;//Precisa validar entrada só de números
+    public function setEdicao($edicao){
+        $this->edicao = $edicao;//Precisa validar entrada só de números
     }
     
     public function getEditora(){
