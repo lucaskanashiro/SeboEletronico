@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["email"]) || !isset($_SESSION["senha"])){
+      header("Location: entrarLogin.php");
+      exit;
+    }else {
+?>
 <html>
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,3 +35,4 @@
 
 
 </html>
+    <?php }?>
