@@ -1,19 +1,19 @@
 <?php
 
-    include '../Dao/UsuarioDao.php';
+  
     include '../Modelo/Usuario.php';
 class UsuarioControlador {
     
     
         public function salvaUsuario($nome, $email, $telefone, $senha){
            
-            UsuarioDao::salvaUsuario($nome, $email, $telefone, $senha);
+           return Usuario::salvaUsuario($nome, $email, $telefone, $senha);
             
         }
         
         public function checaCadastro($email, $senha){
             
-            $resultado = UsuarioDao::checaCadastro($email, $senha);
+            $resultado = Usuario::checaCadastro($email, $senha);
             
             $id_pessoa = $resultado[0];
             
@@ -24,31 +24,30 @@ class UsuarioControlador {
         }
         
         public function checaCadastroId($id){
-            return UsuarioDao::getCadastradosPorId($id);
+            return Usuario::getCadastradosPorId($id);
         }
         
         public function checaSenhaId($idSenha){
-            return UsuarioDao::getSenhaPorId($idSenha);
+            return Usuario::checaSenhaId($idSenha);
         }
 
 
         public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
             
-            UsuarioDao::alteraUsuario($nome, $email, $telefone, $senha,$id, $senhaVelha);
+           return Usuario::alteraUsuario($nome, $email, $telefone, $senha,$id, $senhaVelha);
         
         }
         
         public function deletaCadastro($email, $senha){
    
-            UsuarioDao::DeletaUsuario($email, $senha);
+            return Usuario::DeletaUsuario($email, $senha);
    
         }
 
-
         public function pesquisaUsuario($nome){
-            return UsuarioDao::pesquisaUsuario($nome);
+            return Usuario::pesquisaUsuario($nome);
         }
-    
+        
 }
 
 ?>

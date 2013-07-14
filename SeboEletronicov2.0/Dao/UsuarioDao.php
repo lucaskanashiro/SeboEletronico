@@ -4,33 +4,33 @@ class UsuarioDao {
 
     public function salvaUsuario($nome, $email, $telefone, $senha){
         
-        $usuario = new Usuario($nome, $telefone, $email, $senha);
         
-        $senhaFinal = $usuario->getSenha();
-        $senhaSalvar = $senhaFinal[0];
+        $senhaFinal = $senha[0];
          
-        $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaSalvar."')";
+        $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
         mysql_query($sql);
 
-        $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaSalvar."'";
+        $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaFinal."'";
         $resultado = $id_senha = mysql_query($sql2);
         $id_senha = mysql_fetch_array($resultado);
 
-        $sql3="INSERT INTO usuario (nome_usuario, email_usuario, telefone_usuario, senha_usuario) VALUES ('".$usuario->getNome()."', 
-            '".$usuario->getEmail()."', '".$usuario->getTelefone()."','".$id_senha['id_senha']."')";
-        mysql_query($sql3);
+        $sql3="INSERT INTO usuario (nome_usuario, email_usuario, telefone_usuario, senha_usuario) VALUES ('".$nome."', 
+            '".$email."', '".$telefone."','".$id_senha['id_senha']."')";
+       $usuario = mysql_query($sql3);
+        
+        if ($usuario){
+            return 1;
+        } else
+                return 0;
     }
     
     public function alteraUsuario($nome, $email, $telefone, $senha, $idDoUsuario,$senhaVelha){
         
-        $usuario = new Usuario($nome, $telefone, $email, $senha);
-
-        $senhaFinal = $usuario->getSenha();
-        $senhaAlterar = $senhaFinal[0];
+        $senhaAlterar = $senha[0];
                 
-        $sql="UPDATE usuario SET email_usuario = '".$usuario->getEmail()."', nome_usuario = '".$usuario->getNome()."',telefone_usuario = '".$usuario->getTelefone()."'
+        $sql="UPDATE usuario SET email_usuario = '".$email."', nome_usuario = '".$nome."',telefone_usuario = '".$telefone."'
             WHERE id_usuario = '".$idDoUsuario."'";
-        mysql_query($sql);
+       $usuario = mysql_query($sql);
         
             
         if($senhaAlterar != $senhaVelha){
@@ -40,10 +40,13 @@ class UsuarioDao {
             $id_senha = mysql_fetch_row($resultado);
             
             $sql3="Update senha SET codigo_senha = '".$senhaAlterar."' WHERE id_senha = '".$id_senha[0]."'";
-            mysql_query($sql3);
+           $senhaSalva = mysql_query($sql3);
             
         }
-        
+        if ($usuario && $senhaSalva){
+            return 1;
+        } else
+                return 0;
     }
 
     public function pesquisaUsuario($usuario){
@@ -59,10 +62,15 @@ class UsuarioDao {
     public function deletaUsuario($email, $senha){
                 
         $sql="DELETE FROM usuario WHERE email_usuario = '".$email."'";
-        mysql_query($sql);
+        $deletouUsuario = mysql_query($sql);
 
         $sql1="DELETE FROM senha WHERE codigo_senha = '".$senha."'";
-        mysql_query($sql1);
+        $deleteouSenha = mysql_query($sql1);
+        
+        if ($deletouUsuario&&$deleteouSenha){
+            return 1;
+        }else 
+            return 0;
         
     }
 

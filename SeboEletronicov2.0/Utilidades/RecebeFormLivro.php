@@ -11,18 +11,12 @@ switch($_POST['tipo']){
                          $edicao = $_POST['number'];
                          $operacao1= $_POST['venda'];
                          $operacao2= $_POST['troca'];
-                         $classificacao = $_POST['class'];
+                         $genero = $_POST['class'];
                          $estado = $_POST['estado'];
+                         $descricao = $_POST['descricao'];
                          
                          
-                         if(!empty($operacao1)){
-                             $operacao1 = "ok";
-                         }else $operacao1 = "--";
-                         if(!empty($operacao2)){
-                             $operacao2 = "ok";
-                         }else $operacao2 = "--";
-                         
-                        $salvo = LivroControlador::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $classificacao, $estado);
+                        $salvo = LivroControlador::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao);
                          
                          
                          if (!empty($salvo)){

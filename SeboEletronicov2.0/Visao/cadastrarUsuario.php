@@ -35,31 +35,31 @@
                 
                 <tr> 
                     <td>
-                        <h2> Nome: <input type="text" name="nome" required/></h2> 
+                        <h2> Nome: <input type="text" name="nome"/></h2> 
                     </td>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h4> E-mail: <input type="text" name="email" required/></h4>
+                        <h4> E-mail: <input type="text" name="email"/></h4>
                     </td>
                 </tr>
                 
                 <tr> 
                     <td>
-                        <h6> Telefone: <input type="text" name="telefone" required/></h6> 
+                        <h6> Telefone: <input type="text" name="telefone"/></h6> 
                     </td>
                 </tr>
 
                 <tr>              
                     <td>
-                        <h4> Senha: <input type="password" name="senha[]" required/></h4> <p>
+                        <h4> Senha: <input type="password" name="senha[]"/></h4> <p>
                     </td>    
                 </tr>
 
                 <tr>              
                     <td>
-                        <h3> Confirmar Senha: <input type="password" name="senha[]" required/></h3> <p>
+                        <h3> Confirmar Senha: <input type="password" name="senha[]"/></h3> <p>
                     </td>    
                 </tr>
 

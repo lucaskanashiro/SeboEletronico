@@ -3,14 +3,13 @@ include "../Utilidades/ConexaoComBanco.php";
 class LivroDao {
     
     
-    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $classificacao, $estado){
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado,$descricao){
 
-        $livro = new Livro($titulo, $autor, $classificacao, $edicao, $editora, $venda, $troca, $estado);
+        
 
         $sql2="INSERT INTO livro (titulo_livro, autor, editora, edicao, genero, 
-        estado_conserv, id_dono, venda, troca) VALUES ('".$livro->getTitulo()."', '".$livro->getAutor()."',
-        '".$livro->getEditora()."','".$livro->getEdicao()."','".$livro->getGenero()."','".$livro->getEstado()."',
-            '3', '".$livro->getVenda()."', '".$livro->getTroca()."')";
+        estado_conserv, id_dono, venda, troca,descricao) VALUES ('".$titulo."', '".$autor."',
+        '".$editora."','".$edicao."','".$genero."','".$estado."','3', '".$venda."', '".$troca."', '".$descricao."')";
         $salvo = mysql_query($sql2);
         return $salvo;
         //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO

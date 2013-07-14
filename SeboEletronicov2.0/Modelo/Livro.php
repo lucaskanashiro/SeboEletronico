@@ -10,9 +10,10 @@ class Livro {
     private $venda;
     private $troca;
     private $estado;
+    private $descricao;
     
     
-    function __construct($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado) {
+    function __construct($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao) {
         $this->titulo = $titulo;
         $this->autor = $autor;
         $this->genero = $genero;
@@ -21,6 +22,7 @@ class Livro {
         $this->venda = $venda;
         $this->troca = $troca;
         $this->estado = $estado;
+        $this->descricao = $descricao;
     }
     
     public function getTitulo() {
@@ -56,11 +58,7 @@ class Livro {
     }
 
     public function setGenero($genero) {
-        if(!ValidaDados::validaCamposnulos($genero)){
-            throw new ExcessaoTituloInvalido("Classificacao nao pode ser nulo!");
-        }else{
-            $this->genero = $genero;
-        }
+        $this->genero = $genero;
     }
 
     public function getTroca() {
@@ -77,6 +75,14 @@ class Livro {
 
     public function setVenda($venda) {
         $this->venda = $venda;
+    }
+    
+    public function getDescricao() {
+        return $this->descricao;
+    }
+
+    public function setDescricao($descricao) {
+        $this->descricao = $descricao;
     }
 
     public function defineTiposDeGeneros() { //Genero por engenharia
@@ -117,6 +123,13 @@ class Livro {
    
     public function setEstado($estado){
         $this->estado = $estado;
+    }
+    
+    
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado, $descricao){
+        
+        $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
+        return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),$livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao());
     }
 }
 ?>
