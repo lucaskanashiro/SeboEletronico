@@ -1,3 +1,6 @@
+<?php 
+session_start();
+ ?>
 <html>
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -43,25 +46,25 @@
                 
                 <tr> 
                     <td>
-                        <h2> Título: <input type="text" name="titulo"/></h2> 
+                        <h2> Título: <input type="text" name="titulo" required/></h2> 
                     </td>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h2> Autor: <input type="text" name="autor"/></h2>
+                        <h2> Autor: <input type="text" name="autor" required/></h2>
                     </td>
                 </tr>
                 
                 <tr> 
                     <td>
-                        <h4> Editora: <input type="text" name="editora"/></h4>
+                        <h4> Editora: <input type="text" name="editora" required/></h4>
                     </td>
                 </tr>
 
                 <tr>              
                     <td>
-                        <h3> Edição: <input type="number" name="number"/></h3> 
+                        <h3> Edição: <input type="number" name="number" min="1" max="20" step="1" required/></h3> 
                     </td>    
                 </tr>
                 
@@ -85,7 +88,7 @@
                     <td>
                         <h2> Classificação: </h2>
                         <h1>
-                                <input type="radio" name="class" value="Engenharia"/> Engenharia <br/>
+                                <input type="radio" name="class" value="Engenharia" checked/> Engenharia <br/>
                                 <input type="radio" name="class" value="Engenharia de Software"/> Engenharia de Software <br/>
                                 <input type="radio" name="class" value="Engenharia de Energia"/> Engenharia de Energia <br/>
                                 <input type="radio" name="class" value="Engenharia Eletronica"/> Engenharia Eletronica <br/>
@@ -99,13 +102,14 @@
                     <td>
                         <h2> Estado:<h2/> 
                          <h1>
-                             <input type="radio" name="estado" value="novo"/>Novo<br/>
+                             <input type="radio" name="estado" value="novo" checked/>Novo<br/>
                              <input type="radio" name="estado" value="usado"/>Usado<br/>
                          <h1/>
                     </td>    
                 </tr>
                 <th>
                     <input type="hidden" name="tipo" value="cadastraLivro"/>
+                    <input type="hidden" name="id_dono" value="<?php echo $_SESSION['id_usuario'] ?>"/>
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
                 </th>

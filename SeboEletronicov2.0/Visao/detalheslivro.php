@@ -76,10 +76,6 @@
 		$tel_comprador =  $row['telefone_usuario'] . "<br />";		
 		}
  
- 
- 
- 
- 
   //Acessando informações do livro escolhido
    
   $id_livro = $_POST["id_livro"];
@@ -122,9 +118,9 @@
    echo'</font><br /><br />';
    
    ?>
-   <?php echo $id_livro; ?>
+    
    <form name="enviarpergunta" method="post" action="detalheslivro.php">     
-   <br />
+   <br>
    <textarea name="mural" value="mural" rows="15" cols="85"></textarea>
    <input type="hidden" value="nome_comprador" name="nome_comprador">
    <input type="hidden" name="id_livro" value="<?php echo $id_livro; ?>">
@@ -147,24 +143,18 @@
  	<?php
 	
 	include "..\Dao\conexao_bd.inc";
-	if(!$bd) die ("<h1>Falha no bd </h1>");
+             if(!$bd) die ("<h1>Falha no bd </h1>");
 	
 		
-	$strSQL3 = "SELECT * FROM mural WHERE id_livro = $id_livro " ;
+            $strSQL3 = "SELECT * FROM mural WHERE id_livro = $id_livro " ;
 						
-			
 		$rs3 = mysql_query($strSQL3);
 		
 		while($row3 = mysql_fetch_array($rs3)) {
-	   
-	   
-		echo $row3['nome_pergunta'];
-		echo " disse: ";
-		echo $row3['texto'];
-		echo " <br /> <br />";
-		
-	
-	
+                    echo $row3['nome_pergunta'];
+                    echo " disse: ";
+                    echo $row3['texto'];
+                    echo " <br /> <br />";
                 }
 	?> 
 

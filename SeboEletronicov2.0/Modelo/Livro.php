@@ -128,11 +128,11 @@ class Livro {
         $this->estado = $estado;
     }
     
-    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado, $descricao){
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado, $descricao, $id_dono){
         
         $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
         return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),
-        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao());
+        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao(), $id_dono);
     }
     
     public function pesquisaLivroTitulo($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){

@@ -4,9 +4,9 @@ include '../Modelo/Livro.php';
     
 class LivroControlador {
     
-    public function salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao){
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao, $id_dono){
        
-       return Livro::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao);
+       return Livro::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao, $id_dono);
     }
     
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){

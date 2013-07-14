@@ -24,7 +24,7 @@ class UsuarioControlador {
         }
         
         public function checaCadastroId($id){
-            return Usuario::getCadastradosPorId($id);
+            return Usuario::checaCadastroId($id);
         }
         
         public function checaSenhaId($idSenha){
@@ -34,13 +34,14 @@ class UsuarioControlador {
 
         public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
             
-           return Usuario::alteraUsuario($nome, $email, $telefone, $senha,$id, $senhaVelha);
+           return Usuario::alterarCadastro($nome, $email, $telefone, $senha,$id, $senhaVelha);
         
         }
         
         public function deletaCadastro($email, $senha){
    
-            return Usuario::DeletaUsuario($email, $senha);
+            return Usuario::deletaCadastro
+                    ($email, $senha);
    
         }
 

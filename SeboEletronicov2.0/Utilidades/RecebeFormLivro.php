@@ -14,9 +14,9 @@ switch($_POST['tipo']){
                          $genero = $_POST['class'];
                          $estado = $_POST['estado'];
                          $descricao = $_POST['descricao'];
+                         $id_dono = $_POST['id_dono'];
                          
-                         
-                        $salvo = LivroControlador::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao);
+                        $salvo = LivroControlador::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $genero, $estado, $descricao, $id_dono);
                          
                          
                          if (!empty($salvo)){

@@ -4,14 +4,18 @@ include "../Utilidades/ConexaoComBanco.php";
 
 class LivroDao {
     
-    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado,$descricao){
-
-        $sql2="INSERT INTO livro (titulo_livro, autor, editora, edicao, genero, 
-        estado_conserv, id_dono, venda, troca,descricao) VALUES ('".$titulo."', '".$autor."',
-        '".$editora."','".$edicao."','".$genero."','".$estado."','3', '".$venda."', '".$troca."', '".$descricao."')";
-        $salvo = mysql_query($sql2);
-        return $salvo;
-        //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO
+    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado,$descricao, $id_dono){
+        echo "chegou nesta maldita classe";
+        echo "</br>";
+        
+        
+        $sql="INSERT INTO livro (titulo_livro, autor, editora, edicao, genero, estado_conserv, id_dono, venda, troca,descricao) VALUES ('".$titulo."', '".$autor."', '".$editora."','".$edicao."','".$genero."','".$estado."','".$id_dono."', '".$venda."', '".$troca."', '".$descricao."')";
+        mysql_query($sql);
+        
+        var_dump(mysql_query($sql));
+        echo "</br>";
+        echo "tralala";
+      exit;  
     }
 
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
