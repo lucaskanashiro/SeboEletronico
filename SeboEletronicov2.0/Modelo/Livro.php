@@ -56,7 +56,11 @@ class Livro {
     }
 
     public function setGenero($genero) {
-        $this->genero = $genero;
+        if(!ValidaDados::validaCamposnulos($genero)){
+            throw new ExcessaoTituloInvalido("Classificacao nao pode ser nulo!");
+        }else{
+            $this->genero = $genero;
+        }
     }
 
     public function getTroca() {
