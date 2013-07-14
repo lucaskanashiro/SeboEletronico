@@ -55,64 +55,71 @@ $listaLivros = LivroControlador::getLivroById($id);
                 <tr> 
                     <td>
                         <h2> Título: </h2> 
-                         <h1>
+                         <h6>
                                 <?php echo $listaLivros['titulo_livro']?>
-                         </h1>
+                         </h6>
                     </td>
                 </tr>
         
                 <tr>
                     <td > 
                         <h2> Autor:</h2>
-                        <h1>
+                        <h6>
                                 <?php echo $listaLivros['autor']?>
-                         </h1>
+                         </h6>
                     </td>
                 </tr>
                 
                 <tr> 
                     <td>
-                        <h4> Editora: </h4>
-                        <h1>
+                        <h2> Editora: </h2>
+                        <h6>
                                 <?php echo $listaLivros['editora']?>
-                         </h1>
+                         </h6>
                     </td>
                 </tr>
 
                 <tr>              
                     <td>
-                        <h3> Edição:</h3> 
-                        <h1>
+                        <h2> Edição:</h2> 
+                        <h6>
                                 <?php echo $listaLivros['edicao']?>
-                         </h1>
+                         </h6>
                     </td>    
                 </tr>
                 
                 <tr>              
                     <td>
                         <h2> Tipo(s) de operação: </h2>
-                        <h1>
+                        <h6>
                              <?php echo $listaLivros['venda']?>
                             <?php echo $listaLivros['troca']?>
-                        </h1>
+                        </h6>
                     </td>    
                 </tr>
 
                 <tr>
                     <td>
                         <h2> Classificação: </h2>
-                        <h1>
+                        <h6>
                                 <?php echo $listaLivros['genero']?>
-                        </h1>
+                        </h6>
                     </td>
                 </tr>
                 
                 <tr>              
                     <td>
                         <h2> Estado:<h2/> 
-                         <h1>
+                         <h6>
                              <?php echo $listaLivros['estado_conserv']?>
-                         <h1/>
+                         </h6>
+                    </td>    
+                </tr>
+
+                <tr>              
+                    <td>
+                        <a href=" " title="Alterar Livro"> <img src="img/icone_lapis.png" align="left"> </a>
+                        <a href=" " title="Excluir Livro"> <img src="img/icone_lixeira.png" align="right" > </a>
                     </td>    
                 </tr>
                 
