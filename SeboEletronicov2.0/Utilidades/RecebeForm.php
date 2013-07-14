@@ -13,7 +13,7 @@ switch($_POST['tipo']){
                          UsuarioControlador::salvaUsuario($nome, $email, $telefone, $senha);
                          ?>
                             <script language = "Javascript">
-                            window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
+                            window.location="http://localhost/SeboEletronicov2.0/Visao/entrarLogin.php";
                             </script><?php
                             
                           break;
