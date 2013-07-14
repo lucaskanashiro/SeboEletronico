@@ -90,13 +90,95 @@
  
  
  
- 
+  //Acessando informações do livro escolhido
    
+  $id_livro = $_POST["id_livro"];
+ 
+ 	$id_livro = 50;
+ 
+ $strSQL = "SELECT * FROM livro WHERE id_livro = '$id_livro' ";
+ 
+ $rs = mysql_query($strSQL);
+		
+		while($row = mysql_fetch_array($rs)) {
+	   
+		$titulo2 = $row['titulo_livro'] . "<br />";
+		$estado = $row['estado_conserv'] . "<br />";
+ 		$editora = $row ['editora'] . "<br />"; 
+		$autor = $row ['autor'] . "<br />";
+		$descricao = $row ['descricao_livro'] . "<br />";
+		$id_dono = $row['id_dono'] . "<br />";
+		}
+
   
-  ?>
+  //Exibir 
+   echo '<font color = "white"> <h1>' ;
+   echo $titulo2;
+   echo '</h1> </font><br /><br />' ;
   
   
+   
+   echo'<font size="+2" color ="white">Autor: '; 
+   echo $autor;
+   echo'</font><br />';
+   
+   echo'<font size="+2" color ="white">Editora: ';
+   echo $editora;
+   echo'</font><br />';
+   
+   
+   echo'<font size="+2" color ="white">Descricao: ';
+   echo $descricao;
+   echo'</font><br /><br />';
+   
+   ?>
+   <?php echo $id_livro; ?>
+   <form name="enviarpergunta" method="post" action="detalheslivro.php">     
+   <br />
+   <textarea name="mural" value="mural" rows="15" cols="85"></textarea>
+   <input type="hidden" value="nome_comprador" name="nome_comprador">
+   <input type="hidden" name="id_livro" value="<?php echo $id_livro; ?>">
+   <input type="submit" value="Enviar" />  
+   </form>
+   
+   
+  <form name="comprarlivro" method="post" action="compralivro.php">
   
+   <input type = "hidden" name="nome_comprador" value= "<?php echo $nome_comprador; ?>" >
+   <input type="hidden" name="tel_comprador" value= " <?php echo $tel_comprador; ?>" >
+   <input type="hidden" name="id_livro" value=" <?php echo $id_livro; ?>" >
+   <input type="hidden" name="id_dono" value=" <?php echo $id_dono; ?>" >
+     <input type="submit" value="Comprar" />
+     <label for="pergunta"></label>
+  </form>
+ 
+ <br /><br /><br />
+ 
+ 	<?php
+	
+	include "..\Dao\conexao_bd.inc";
+	if(!$bd) die ("<h1>Falha no bd </h1>");
+	
+		
+	$strSQL3 = "SELECT * FROM mural WHERE id_livro = $id_livro " ;
+						
+			
+		$rs3 = mysql_query($strSQL3);
+		
+		while($row3 = mysql_fetch_array($rs3)) {
+	   
+	   
+		echo $row3['nome_pergunta'];
+		echo " disse: ";
+		echo $row3['texto'];
+		echo " <br /> <br />";
+		
+	
+	
+		}
+	
+	
+	?> 
   
   
   
