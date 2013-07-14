@@ -12,7 +12,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	protected $livroTeste;
 
 	protected function setUp(){
-		$this->livroTeste = new Livro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', True, True, 'novo');
+		$this->livroTeste = new Livro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', 'venda', 'troca', 'novo');
 	}
 
 	protected function tearDown(){

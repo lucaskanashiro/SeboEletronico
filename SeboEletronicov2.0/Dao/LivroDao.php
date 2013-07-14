@@ -15,15 +15,6 @@ class LivroDao {
         return $salvo;
         //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO
     }
-    
-    public function pesquisaLivroTitulo($titulo){
-        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."'";
-        
-        $lista = mysql_query($sql);
-        $listaLivros = mysql_fetch_array($lista);   
-        return $listaLivros;
-    }
-
 
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
 
@@ -43,7 +34,7 @@ class LivroDao {
                 $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
             AND tipo_operacao = '".$disponibilidadeTroca."'";
             }
-        } else{
+        } else {
             $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."'";
         }
             

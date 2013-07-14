@@ -14,22 +14,26 @@ class LivroControladorTest extends PHPUnit_Framework_TestCase{
 		unset($this->livroControlador);
 	}
 
-        
         public function salvaLivroTeste (){
-            $retorno= $this->livroControlador->salvaLivro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', True, True, 'novo');
+            $retorno= $this->livroControlador->salvaLivro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', 'venda', 'troca', 'novo');
             $this->assertTrue($retorno);
             
         }
         
-        
         public function pesquisaLivroTeste(){
            
-          //ainda a fazer  
+          $retorno = $this->livroControlador->pesquisaLivro('Calculo 1', 'novo', 'usado', 'venda', 'troca');
+            
+            if($retorno===false){
+                $this->assertFalse($retorno);
+            }  else {
+                $this->assertNotEmpty($retorno);
+            }
             
         }
         
         public function getLivroByIdTeste(){
-            $retorno=  $this->livroControlador->getLivroById('1');
+            $retorno = $this->livroControlador->getLivroById('1');
             
             if($retorno===false){
                 $this->assertFalse($retorno);
@@ -38,16 +42,12 @@ class LivroControladorTest extends PHPUnit_Framework_TestCase{
             }
         }
      
- 
         public function deletaLivroTeste(){
             $retorno=  $this->livroControlador->deletaLivro();
             $this->assertTrue($retorno);
             
         }
-        
-        
-        
-        
+          
 }
 
 ?>
