@@ -41,18 +41,44 @@
 	
 	
 	$insere = mysql_query("INSERT INTO mural (texto,nome_pergunta,id_livro) VALUES ('$mural', '$nome_comprador', '$id_livro')");
-	
-	
-  
-  
-  
-  
-  
-  
-  
+
   
   
    ?>
+  
+  
+  ?>
+	
+    <div id="header">
+		<div id="logo"><img src="http://localhost/SeboEletronicov2.0/Visao/img/sebo_header.png" class="imgHeader"/></div>
+    </div>
+   
+   <div id="mainmenu">
+       
+       <button class="button" onclick="home();">Home</button>
+       <button class="button" onclick="user();">Usuario</button>
+       <button class="button" onclick="livro();">Livro</button>
+       <button class="button" onclick="login();">Login</button>
+       
+   </div>
+   
+ 
+ 
+   
+   <?php
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
