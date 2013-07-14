@@ -14,7 +14,16 @@ switch($_POST['tipo']){
                          $classificacao = $_POST['class'];
                          $estado = $_POST['estado'];
                          
+                         
+                         if(!empty($operacao1)){
+                             $operacao1 = "ok";
+                         }else $operacao1 = "--";
+                         if(!empty($operacao2)){
+                             $operacao2 = "ok";
+                         }else $operacao2 = "--";
+                         
                          LivroControlador::salvaLivro($titulo, $autor, $editora, $edicao, $operacao1, $operacao2, $classificacao, $estado);
+                         
                          ?>
                             <script language = "Javascript">
                             window.location="http://localhost/SeboEletronicov2.0/Visao/indexLivro.php";
@@ -28,7 +37,7 @@ switch($_POST['tipo']){
                 $estadoUsado = $_POST['usado'];
                 $disponibilidadeVenda = $_POST['venda'];
                 $disponibilidadeTroca = $_POST['troca'];
-                    
+               
                  $listaLivros = LivroControlador::pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca);
                  $idLivro = $listaLivros['id_livro'];
                  

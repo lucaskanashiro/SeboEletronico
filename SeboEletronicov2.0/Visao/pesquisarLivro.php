@@ -44,7 +44,7 @@
         
                 <tr>
                     <td > 
-                        <h4> Título: <input type="text" name="titulo"/></h4>
+                        <h4> Título: <input type="text" name="titulo" required/></h4>
                     </td>
                 </tr>
                 
@@ -52,8 +52,8 @@
                     <td>
                         <h4> Estado:</h4> 
                             <h3>
-                                <input type="checkbox" name="estado" value="novo" checked/>Novo
-                                <input type="checkbox" name="estado" value="usado"/>    Usado<br/>
+                                <input type="checkbox" name="novo" value="novo" checked/>Novo
+                                <input type="checkbox" name="usado" value="usado"/>    Usado<br/>
                             <h3/>
                         
                     </td>    
@@ -63,8 +63,8 @@
                     <td>
                         <h4> Classificação:</h4> 
                             <h3>
-                                <input type="checkbox" name="operacao" value="venda" checked/>Venda
-                                <input type="checkbox" name="operacao" value="troca"/>    Troca<br/>
+                                <input type="checkbox" name="venda" value="venda" checked/>Venda
+                                <input type="checkbox" name="troca" value="troca"/>    Troca<br/>
                             <h3/>
                         
                     </td>    
