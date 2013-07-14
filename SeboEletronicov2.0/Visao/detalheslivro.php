@@ -47,7 +47,7 @@
    ?>
   
   
-  ?>
+  
 	
     <div id="header">
 		<div id="logo"><img src="http://localhost/SeboEletronicov2.0/Visao/img/sebo_header.png" class="imgHeader"/></div>
@@ -64,11 +64,36 @@
    
  
  
+ 
+ <?php
    
-   <?php
+   include "..\Utilidades\ConexaoComBanco.php";
+	if(!$bd) die ("<h1>Falha no bd </h1>");
+   
+  //Acessar Informações do comprador
   
+   
+  $email_usuario = $_POST ["email_usuario"];
   
+  $email_usuario = "joao@hot.com";
+  $strSQL2 = "SELECT * FROM usuario WHERE email_usuario = '$email_usuario' ";
   
+   $rs2 = mysql_query($strSQL2);
+		
+		while($row = mysql_fetch_array($rs2)) {
+	   
+		$nome_comprador = $row['nome_usuario'] . "<br />";
+		$tel_comprador =  $row['telefone_usuario'] . "<br />";		
+		}
+ 
+ 
+ 
+ 
+ 
+ 
+   
+  
+  ?>
   
   
   
