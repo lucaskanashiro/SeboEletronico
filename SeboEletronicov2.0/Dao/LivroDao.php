@@ -5,17 +5,11 @@ include "../Utilidades/ConexaoComBanco.php";
 class LivroDao {
     
     public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado,$descricao, $id_dono){
-        echo "chegou nesta maldita classe";
-        echo "</br>";
         
-        
-        $sql="INSERT INTO livro (titulo_livro, autor, editora, edicao, genero, estado_conserv, id_dono, venda, troca,descricao) VALUES ('".$titulo."', '".$autor."', '".$editora."','".$edicao."','".$genero."','".$estado."','".$id_dono."', '".$venda."', '".$troca."', '".$descricao."')";
-        mysql_query($sql);
-        
-        var_dump(mysql_query($sql));
-        echo "</br>";
-        echo "tralala";
-      exit;  
+        $sql = "INSERT INTO livro (id_dono, titulo_livro, editora, autor, edicao, genero, estado_conserv, descricao_livro, venda, troca)
+            VALUES ('".$id_dono."','".$titulo."','".$editora."','".$autor."','".$edicao."','".$genero."','".$estado."','".$descricao."','".$venda."','".$troca."')";
+        $livro = mysql_query($sql);
+          return $livro;
     }
 
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
@@ -60,6 +54,9 @@ class LivroDao {
     }
     
     public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id){
+        var_dump($id);
+        exit;
+        
         $sql = "UPDATE livro SET titulo_livro = '".$titulo."' AND autor = '".$autor."'
              AND genero = '".$genero."' AND edicao = '".$edicao."' AND editora = '".$editora."'AND venda = '".$venda."'
              AND troca = '".$troca."' AND estado_conserv = '".$estado."' AND descricao = '".$descricao."' WHERE id_livro = '".$id."'";

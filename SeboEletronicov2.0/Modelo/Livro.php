@@ -135,7 +135,7 @@ class Livro {
         $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao(), $id_dono);
     }
     
-    public function pesquisaLivroTitulo($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
+    public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
         return LivroDao::pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca);
     }
     
@@ -148,9 +148,9 @@ class Livro {
     }
     
     public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id){
-        $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id);
+        $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
         return LivroDao::alteraLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),
-        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao());
+        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao(),$id);
     }
 }
 ?>

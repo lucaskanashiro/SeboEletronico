@@ -57,7 +57,7 @@ switch($_POST['tipo']){
                         $troca = $_POST['troca'];
                         $estado = $_POST['estado_conserv'];
                         $id = $_POST['id'];
-                        LivroControlador::alteraLivro($titulo, $autor, $genero, $edicao, $venda, $troca, $estado, $id);
+                        LivroControlador::alteraLivro($titulo, $autor, $genero, $edicao, $editora,$venda, $troca, $estado, $descricao, $id);
                         ?>
                             <script language = "Javascript">
                             window.location="http://localhost/SeboEletronicov2.0/Visao/indexLivro.php";
