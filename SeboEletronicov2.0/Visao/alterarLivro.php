@@ -45,7 +45,7 @@ $listaLivros = LivroControlador::getLivroById($id);
     <br/>
     
     
-    <form>
+    <form name="Insere Dados" action="http://localhost/SeboEletronicov2.0/Utilidades/RecebeFormLivro.php" method="post" class="Formulario">
                 <table class='insr'>
 
                 <tr>
@@ -132,6 +132,7 @@ $listaLivros = LivroControlador::getLivroById($id);
 
                <th>
                     <input type="hidden" name="tipo" value="alterarLivro"/>
+                    <input type="hidden" name="id" value="<?php echo $id?>"/>
                     <input type="submit" name='Enviar' value="ALTERAR" title='Enviar dados' />
                 </th>
                 

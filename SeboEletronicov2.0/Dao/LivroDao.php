@@ -15,6 +15,15 @@ class LivroDao {
         return $salvo;
         //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO
     }
+    
+    public function pesquisaLivroTitulo($titulo){
+        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."'";
+        
+        $lista = mysql_query($sql);
+        $listaLivros = mysql_fetch_array($lista);   
+        return $listaLivros;
+    }
+
 
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
 
@@ -34,7 +43,7 @@ class LivroDao {
                 $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."' AND estado_conserv = '".$estadoNovo."' 
             AND tipo_operacao = '".$disponibilidadeTroca."'";
             }
-        } else {
+        } else{
             $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."'";
         }
             
@@ -55,6 +64,13 @@ class LivroDao {
         $sql = "DELETE FROM livro WHERE titulo_livro = '".$titulo."'";
         $deletou = mysql_query($sql);
         return $deletou;
+    }
+    
+    public function alteraLivro($titulo, $autor, $genero, $edicao, $venda, $troca, $estado, $id){
+        $sql = "UPDATE livro SET titulo_livro = '".$titulo."' AND autor = '".$autor."'
+             AND genero = '".$genero."' AND edicao = '".$edicao."' AND venda = '".$venda."'
+             AND troca = '".$troca."' AND estado_conserv = '".$estado."' WHERE id_livro = '".$id."'";
+        mysql_query($sql);
     }
 }
 

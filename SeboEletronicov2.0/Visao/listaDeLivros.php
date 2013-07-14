@@ -118,7 +118,7 @@ $listaLivros = LivroControlador::getLivroById($id);
 
                 <tr>              
                     <td>
-                        <a href=" " title="Alterar Livro"> <img src="img/icone_lapis.png" align="left"> </a>
+                        <a href="http://localhost/SeboEletronicov2.0/Visao/alterarLivro.php?id=<?php echo $id ?> " title="Alterar Livro"> <img src="img/icone_lapis.png" align="left"> </a>
                         <a href=" " title="Excluir Livro"> <img src="img/icone_lixeira.png" align="right" > </a>
                     </td>    
                 </tr>

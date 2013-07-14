@@ -20,6 +20,10 @@ class LivroControlador {
     public function deletaLivro($titulo){
        return LivroDao::deletaLivro($titulo);
     }
+    
+    public function alteraLivro($titulo, $autor, $genero, $edicao, $operacaoVenda, $operacaoTroca, $estado, $id){
+        return LivroDao::alteraLivro($titulo, $autor, $genero, $edicao, $operacaoVenda, $operacaoTroca, $estado, $id);
+    }
 }
 
 ?>

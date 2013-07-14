@@ -55,19 +55,21 @@ switch($_POST['tipo']){
                             </script><?php
                 break;
       
-      /*case "alterar":   $nome = $_POST['nome'];
-                        $email = $_POST['email'];
-                        $telefone = $_POST['telefone'];
-                        $senha = $_POST['senha'];
-                        $id = $_POST['id_pessoa'];
-                        
-                        UsuarioControlador::alterarCadastro($nome, $email, $telefone, $senha, $id);
+      case "alterarLivro":   $titulo = $_POST['titulo'];
+                        $autor = $_POST['autor'];
+                        $genero = $_POST['genero'];
+                        $edicao = $_POST['edicao'];
+                        $venda = $_POST['venda'];
+                        $troca = $_POST['troca'];
+                        $estado = $_POST['estado_conserv'];
+                        $id = $_POST['id'];
+                        LivroControlador::alteraLivro($titulo, $autor, $genero, $edicao, $venda, $troca, $estado, $id);
                         ?>
                             <script language = "Javascript">
-                            window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
+                            window.location="http://localhost/SeboEletronicov2.0/Visao/indexLivro.php";
                             </script><?php
                         
-                    break;*/
+                    break;
       case "excluiLivro": $titulo = $_POST['titulo'];
          
                             LivroControlador::deletaLivro($titulo);
