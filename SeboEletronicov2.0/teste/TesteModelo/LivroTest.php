@@ -67,6 +67,14 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 		$this->livroTeste->setAutor($autor);
 	}
 
+        /**
+	 * @expectedException InvalidArgumentException
+	 */
+	public function testSetAutorComApenasEspacos(){
+		$autor = "      ";
+		$this->livroTeste->setAutor($autor);
+	}
+        
 	public function testGetGenero(){
 		$this->assertEquals('engenharia', $this->livroTeste->getGenero());
 	}
