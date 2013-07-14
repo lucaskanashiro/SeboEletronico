@@ -27,6 +27,28 @@
 	//Acessar Informações do comprador
   $id_livro = $_POST['id_livro'];
   
+  $email_usuario = $_POST ["email_usuario"];
+  
+  $email_usuario = "joao@hot.com";
+  $strSQL4 = "SELECT * FROM usuario WHERE email_usuario = '$email_usuario' ";
+  
+   $rs4 = mysql_query($strSQL4);
+		
+		while($row = mysql_fetch_array($rs4)) {
+	   
+		$nome_comprador = $row['nome_usuario'];
+			}
+	
+	
+	$insere = mysql_query("INSERT INTO mural (texto,nome_pergunta,id_livro) VALUES ('$mural', '$nome_comprador', '$id_livro')");
+	
+	
+  
+  
+  
+  
+  
+  
   
   
   
