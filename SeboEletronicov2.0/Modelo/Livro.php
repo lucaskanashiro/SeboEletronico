@@ -1,5 +1,8 @@
 <?php
 
+include '../Dao/LivroDao.php';
+include '../Utilidades/ValidaDados.php';
+
 class Livro {
     
     private $titulo;
@@ -125,11 +128,29 @@ class Livro {
         $this->estado = $estado;
     }
     
-    
     public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado, $descricao){
         
         $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
-        return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),$livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao());
+        return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),
+        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao());
+    }
+    
+    public function pesquisaLivroTitulo($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
+        return LivroDao::pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca);
+    }
+    
+    public function getLivroById($id){
+        return LivroDao::getLivroById($id);
+    }
+    
+    public function deletaLivro($titulo){
+        return LivroDao::deletaLivro($titulo);
+    }
+    
+    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id){
+        $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id);
+        return LivroDao::alteraLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),
+        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao());
     }
 }
 ?>

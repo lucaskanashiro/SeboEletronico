@@ -1,11 +1,10 @@
 <?php
+
 include "../Utilidades/ConexaoComBanco.php";
+
 class LivroDao {
     
-    
     public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado,$descricao){
-
-        
 
         $sql2="INSERT INTO livro (titulo_livro, autor, editora, edicao, genero, 
         estado_conserv, id_dono, venda, troca,descricao) VALUES ('".$titulo."', '".$autor."',
@@ -14,15 +13,6 @@ class LivroDao {
         return $salvo;
         //BUSCAR O ID DO DONO PARA GUARDAR NO BANCO
     }
-    
-    public function pesquisaLivroTitulo($titulo){
-        $sql = "SELECT * FROM livro WHERE titulo_livro = '".$titulo."'";
-        
-        $lista = mysql_query($sql);
-        $listaLivros = mysql_fetch_array($lista);   
-        return $listaLivros;
-    }
-
 
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
 
@@ -65,13 +55,18 @@ class LivroDao {
         return $deletou;
     }
     
-    public function alteraLivro($titulo, $autor, $genero, $edicao, $venda, $troca, $estado, $id){
+    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id){
         $sql = "UPDATE livro SET titulo_livro = '".$titulo."' AND autor = '".$autor."'
-             AND genero = '".$genero."' AND edicao = '".$edicao."' AND venda = '".$venda."'
-             AND troca = '".$troca."' AND estado_conserv = '".$estado."' WHERE id_livro = '".$id."'";
-        mysql_query($sql);
-    }
+             AND genero = '".$genero."' AND edicao = '".$edicao."' AND editora = '".$editora."'AND venda = '".$venda."'
+             AND troca = '".$troca."' AND estado_conserv = '".$estado."' AND descricao = '".$descricao."' WHERE id_livro = '".$id."'";
+        $livro = mysql_query($sql);
+        
+        if($livro){
+            return 1;
+        }else{
+            return 0;
+        }
+    }   
 }
-
 ?>
 

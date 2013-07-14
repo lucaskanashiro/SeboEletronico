@@ -15,40 +15,30 @@
 		$_POST['mural'];			
 		$_POST['nome_comprador'];
 		$_POST ['id_livro'];
+                $mural = $_POST['mural'];
+		//$nome_comprador = $_POST['nome_comprador'];
 			
-			$mural = $_POST['mural'];
-			//$nome_comprador = $_POST['nome_comprador'];
-			
-	
-	include "..\Utilidades\ConexaoComBanco.php";
-	if(!$bd) die ("<h1>Falha no bd </h1>");
-	
-	
-	//Acessar Informações do comprador
-  $id_livro = $_POST['id_livro'];
-  
-  $email_usuario = $_POST ["email_usuario"];
-  
-  $email_usuario = "joao@hot.com";
-  $strSQL4 = "SELECT * FROM usuario WHERE email_usuario = '$email_usuario' ";
-  
-   $rs4 = mysql_query($strSQL4);
-		
-		while($row = mysql_fetch_array($rs4)) {
-	   
-		$nome_comprador = $row['nome_usuario'];
-			}
-	
-	
-	$insere = mysql_query("INSERT INTO mural (texto,nome_pergunta,id_livro) VALUES ('$mural', '$nome_comprador', '$id_livro')");
+                include "..\Utilidades\ConexaoComBanco.php";
+                if(!$bd) die ("<h1>Falha no bd </h1>");
 
+                //Acessar Informações do comprador
+                $id_livro = $_POST['id_livro'];
+
+                $email_usuario = $_POST ["email_usuario"];
+
+                $email_usuario = "joao@hot.com";
+                $strSQL4 = "SELECT * FROM usuario WHERE email_usuario = '$email_usuario' ";
+
+                $rs4 = mysql_query($strSQL4);
+
+                while($row = mysql_fetch_array($rs4)) {
+                    $nome_comprador = $row['nome_usuario'];
+                }
+                
+                $insere = mysql_query("INSERT INTO mural (texto,nome_pergunta,id_livro) VALUES ('$mural', '$nome_comprador', '$id_livro')");
+
+        ?>
   
-  
-   ?>
-  
-  
-  
-	
     <div id="header">
 		<div id="logo"><img src="http://localhost/SeboEletronicov2.0/Visao/img/sebo_header.png" class="imgHeader"/></div>
     </div>
@@ -94,7 +84,7 @@
    
   $id_livro = $_POST["id_livro"];
  
- 	$id_livro = 50;
+ 	$id_livro = 1;
  
  $strSQL = "SELECT * FROM livro WHERE id_livro = '$id_livro' ";
  
@@ -175,22 +165,8 @@
 		
 	
 	
-		}
-	
-	
+                }
 	?> 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 </body>
-
-
 </html>

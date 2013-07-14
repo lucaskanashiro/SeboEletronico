@@ -1,6 +1,8 @@
 ﻿<?php
+
 include '../Utilidades/ValidaDados.php';
-  include '../Dao/UsuarioDao.php';
+include '../Dao/UsuarioDao.php';
+
 class Usuario {
     
     private $nome;
@@ -88,17 +90,14 @@ class Usuario {
     }
     
     public function checaCadastro($email, $senha){
-        
         return UsuarioDao::checaCadastro($email, $senha);
     }
     
     public function checaCadastroId($id){
-        
         return UsuarioDao::getCadastradosPorId($id);
     }
     
      public function checaSenhaId($idSenha){
-    
          return UsuarioDao::getSenhaPorId($idSenha);
      }
      
@@ -108,7 +107,6 @@ class Usuario {
      }
      
      public function deletaCadastro($email, $senha){
-         
          return UsuarioDao::deletaUsuario($email, $senha);
      }
      public function pesquisaUsuario($nome){
