@@ -1,21 +1,9 @@
 <?php
 include '../Utilidades/ConexaoComBanco.php';
-?>
 
-<html>
-    <head>
-        <title>Sebo Eletronico</title>
-        <script type="text/javascript">
-        function loginsuccessfully(){
-            setTimeout("window.location='http://localhost/SeboEletronicov2.0/Visao/indexLogin.php'",0);
-        }
-        function loginfailed(){
-            setTimeout("window.location='http://localhost/SeboEletronicov2.0/Visao/login.php'",0);
-        }
-        </script>
-    </head>
-    <body>
-<?php
+ include '../Controle/validacaologin.html';
+
+
 $email = $_POST['email'];
 
 $senha = $_POST['senha'];
@@ -26,9 +14,6 @@ $row = mysql_num_rows($sql);
 $row2 = mysql_num_rows($sql2);
 if($row == $row2){
     if($row>0){
-        /*session_start();
-        $_SESSION['email']=$_POST['email'];
-        $_SESSION['senha']=$_POST['senha'];*/
         echo "<script>alert('Seja bem vindo ao SEBO Eletronico!')</script>";
         echo"<script>loginsuccessfully()</script>";
     }
@@ -37,5 +22,4 @@ if($row == $row2){
         echo "<script>loginfailed()</script>"; 
     }
 ?>
-    </body>
-</html>
+
