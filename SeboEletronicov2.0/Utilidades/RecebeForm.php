@@ -1,7 +1,6 @@
 <?php
 
 include_once '../Controle/UsuarioControlador.php';
-//require_once '';
 
 switch($_POST['tipo']){
       
@@ -14,7 +13,7 @@ switch($_POST['tipo']){
                          ?>
 
                             <script language="Javascript" type="text/javascript">
-                                alert("Usuario cadastrado com sucesso!!");
+                                alert("Usuario cadastrado com sucesso!!teste");
                             </script>      
                             
                             <script language = "Javascript">

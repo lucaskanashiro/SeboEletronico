@@ -1,14 +1,12 @@
 <?php
 
-  
-    include '../Modelo/Usuario.php';
+include '../Modelo/Usuario.php';
+
 class UsuarioControlador {
     
     
         public function salvaUsuario($nome, $email, $telefone, $senha){
-           
            return Usuario::salvaUsuario($nome, $email, $telefone, $senha);
-            
         }
         
         public function checaCadastro($email, $senha){

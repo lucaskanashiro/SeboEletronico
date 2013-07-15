@@ -1,6 +1,10 @@
 ﻿<?php
 
 include '../Utilidades/ValidaDados.php';
+include '../Utilidades/ExcessaoNomeInvalido.php';
+include '../Utilidades/ExcessaoTelefoneInvalido.php';
+include '../Utilidades/ExcessaoEmailInvalido.php';
+include '../Utilidades/ExcessaoSenhaInvalida.php';
 include '../Dao/UsuarioDao.php';
 
 class Usuario {
@@ -11,14 +15,17 @@ class Usuario {
     private $senha;
     
     public function __construct($nome, $telefone, $email, $senha) {
+//        $this->setNome($nome);
+//        $this->setTelefone($telefone);
+//        $this->setEmail($email);
+//        $this->setSenha($senha);
         $this->nome = $nome;
         $this->telefone = $telefone;
         $this->email = $email;
-        $this->senha = $senha;
+        $this->senha = $senha; 
         
     }
-
-    
+ 
     public function getNome() {
         return $this->nome;
     }
