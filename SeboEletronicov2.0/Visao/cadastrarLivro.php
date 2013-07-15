@@ -66,7 +66,7 @@ $id_usuario = $_SESSION['id_usuario'];
 
                 <tr>              
                     <td>
-                        <h3> Edição: <input type="number" name="edicao" min="1" max="20" step="1" required/></h3> 
+                        <h3> Edição: <input type="number" name="edicao" min="1" max="20" step="1" value="1" required/></h3> 
                     </td>    
                 </tr>
                 
