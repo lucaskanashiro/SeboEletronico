@@ -28,11 +28,11 @@ class Usuario {
     public function setNome($nome){
         
         if(!ValidaDados::validaCamposNulos($nome)){
-            throw new Exception("Nome nao pode ser nulo!");
+            throw new ExcessaoNomeInvalido("Nome nao pode ser nulo!");
         }elseif(ValidaDados::validaNome($nome) == 1){
-            throw new Exception("Nome contem caracteres invalidos!");
+            throw new ExcessaoNomeInvalido("Nome contem caracteres invalidos!");
         }elseif(ValidaDados::validaNome($nome) == 2){
-            throw new Exception("Nome contem espaços seguidos!");
+            throw new ExcessaoNomeInvalido("Nome contem espaços seguidos!");
         }else{
             $this->nome = $nome;
         }
@@ -44,11 +44,11 @@ class Usuario {
 
     public function setTelefone($telefone) {
         if(!ValidaDados::validaCamposNulos($telefone)){
-            throw new Exception("Telefone nao pode ser nulo!");
+            throw new ExcessaoTelefoneInvalido("Telefone nao pode ser nulo!");
         }elseif(ValidaDados::validaTelefone($telefone) == 1){
-            throw new Exception("Telefone nao pode conter caracteres alfabeticos!");
+            throw new ExcessaoTelefoneInvalido("Telefone nao pode conter caracteres alfabeticos!");
         }elseif(ValidaDados::validaTelefone($telefone) == 2){
-            throw new Exception("Telefone deve conter exatamente oito (8) digitos!");
+            throw new ExcessaoTelefoneInvalido("Telefone deve conter exatamente oito (8) digitos!");
         }else{
             $this->telefone = $telefone;
         }
@@ -63,9 +63,9 @@ class Usuario {
     public function setEmail($email) {
         
         if(ValidaDados::validaEmail($email) == 1){
-            throw new Exception("E-mail nao válido!");
+            throw new ExcessaoEmailInvalido("E-mail nao válido!");
         }elseif(!ValidaDados::validaCamposNulos($email)){
-            throw new Exception("E-mail nao pode ser nulo!");
+            throw new ExcessaoEmailInvalido("E-mail nao pode ser nulo!");
         }else{
             $this->email = $email;
         }
@@ -79,13 +79,13 @@ class Usuario {
         $auxiliar = ValidaDados::validaSenha($senha);
         
         if(!ValidaDados::validaSenhaNula($senha)){
-            throw new Exception("Senha nao pode ser nula!");
+            throw new ExcessaoSenhaInvalida("Senha nao pode ser nula!");
         }elseif($auxiliar == 1){
-            throw new Exception("Senha contem caracteres invalidos!");
+            throw new ExcessaoSenhaInvalida("Senha contem caracteres invalidos!");
         }elseif($auxiliar == 2){
-            throw new Exception("Senha deve conter exatamente seis (6) digitos!");
+            throw new ExcessaoSenhaInvalida("Senha deve conter exatamente seis (6) digitos!");
         }elseif($auxiliar == 3){
-            throw new Exception("Senha e confirmação estão diferentes!");
+            throw new ExcessaoSenhaInvalida("Senha e confirmação estão diferentes!");
         }else{
             $this->senha = $senha;
         } 
@@ -115,22 +115,22 @@ class Usuario {
         return UsuarioDao::getCadastradosPorId($id);
     }
     
-     public function checaSenhaId($idSenha){
-         return UsuarioDao::getSenhaPorId($idSenha);
-     }
-     
-     public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
-         $usuario = new Usuario($nome, $telefone, $email, $senha);
-         return UsuarioDao::alteraUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha(),$id,$senhaVelha);
-     }
-     
-     public function deletaCadastro($email, $senha){
-         return UsuarioDao::deletaUsuario($email, $senha);
-     }
-     
-     public function pesquisaUsuario($nome){
-         return UsuarioDao::pesquisaUsuario($nome);
-     }
+    public function checaSenhaId($idSenha){
+        return UsuarioDao::getSenhaPorId($idSenha);
+    }
+
+    public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
+        $usuario = new Usuario($nome, $telefone, $email, $senha);
+        return UsuarioDao::alteraUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha(),$id,$senhaVelha);
+    }
+
+    public function deletaCadastro($email, $senha){
+        return UsuarioDao::deletaUsuario($email, $senha);
+    }
+
+    public function pesquisaUsuario($nome){
+        return UsuarioDao::pesquisaUsuario($nome);
+    }
 }
 
 ?>
