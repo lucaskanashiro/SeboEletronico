@@ -24,13 +24,15 @@ class Usuario {
     public function getNome() {
         return $this->nome;
     }
-
+        
     public function setNome($nome){
         
         if(!ValidaDados::validaCamposNulos($nome)){
             throw new Exception("Nome nao pode ser nulo!");
-        }if(!ValidaDados::validaNome($nome)){
+        }elseif(ValidaDados::validaNome($nome) == 1){
             throw new Exception("Nome contem caracteres invalidos!");
+        }elseif(ValidaDados::validaNome($nome) == 2){
+            throw new Exception("Nome contem espaços seguidos!");
         }else{
             $this->nome = $nome;
         }
@@ -41,10 +43,12 @@ class Usuario {
     }
 
     public function setTelefone($telefone) {
-        if(!ValidaDados::validaTelefone($telefone)){
-            throw new Exception("Telefone nao pode conter caracteres alfabeticos!");
-        }elseif(!ValidaDados::validaCamposNulos($telefone)){
+        if(!ValidaDados::validaCamposNulos($telefone)){
             throw new Exception("Telefone nao pode ser nulo!");
+        }elseif(ValidaDados::validaTelefone($telefone) == 1){
+            throw new Exception("Telefone nao pode conter caracteres alfabeticos!");
+        }elseif(ValidaDados::validaTelefone($telefone) == 2){
+            throw new Exception("Telefone deve conter exatamente oito (8) digitos!");
         }else{
             $this->telefone = $telefone;
         }
@@ -58,7 +62,7 @@ class Usuario {
 
     public function setEmail($email) {
         
-        if(!ValidaDados::validaEmail($email)){
+        if(ValidaDados::validaEmail($email) == 1){
             throw new Exception("E-mail nao válido!");
         }elseif(!ValidaDados::validaCamposNulos($email)){
             throw new Exception("E-mail nao pode ser nulo!");
@@ -74,14 +78,14 @@ class Usuario {
     public function setSenha($senha) {
         $auxiliar = ValidaDados::validaSenha($senha);
         
-        if($auxiliar == 1){
+        if(!ValidaDados::validaSenhaNula($senha)){
+            throw new Exception("Senha nao pode ser nula!");
+        }elseif($auxiliar == 1){
             throw new Exception("Senha contem caracteres invalidos!");
         }elseif($auxiliar == 2){
-            throw new Exception("Senha possui mais de seis (6) digitos!");
+            throw new Exception("Senha deve conter exatamente seis (6) digitos!");
         }elseif($auxiliar == 3){
             throw new Exception("Senha e confirmação estão diferentes!");
-        }elseif(!ValidaDados::validaCamposNulos($senha)){
-            throw new Exception("Senha nao pode ser nula!");
         }else{
             $this->senha = $senha;
         } 

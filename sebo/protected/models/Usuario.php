@@ -29,7 +29,7 @@ class Usuario extends CActiveRecord
         
         public function validaNome($nome){
             
-            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzç';
             $vetorDeChar = str_split($nome);
             
             for ($i = 0; $i < count($vetorDeChar); $i++) {
