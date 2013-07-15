@@ -2,12 +2,15 @@
 
 include '../Dao/LivroDao.php';
 include '../Utilidades/ValidaDados.php';
+include '../Utilidades/ExcessaoNomeInvalido.php';
+include '../Utilidades/ExcessaoTituloInvalido.php';
+include '../Utilidades/ExcessaoEditoraInvalida.php';
 
 class Livro {
     
     private $titulo;
     private $autor;
-    private $genero; //eng soft, eng energia, eng automotiva, eng elet, eng aero, engenharia
+    private $genero;
     private $edicao;
     private $editora;
     private $venda;
@@ -17,15 +20,15 @@ class Livro {
     
     
     function __construct($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao) {
-        $this->titulo = $titulo;
-        $this->autor = $autor;
-        $this->genero = $genero;
-        $this->edicao = $edicao;
-        $this->editora = $editora;
-        $this->venda = $venda;
-        $this->troca = $troca;
-        $this->estado = $estado;
-        $this->descricao = $descricao;
+        $this->setTitulo($titulo);
+        $this->setAutor($autor);
+        $this->setGenero($genero);
+        $this->setEdicao($edicao);
+        $this->setEditora($editora);
+        $this->setVenda($venda);
+        $this->setTroca($troca);
+        $this->setEstado($estado);
+        $this->setDescricao($descricao);
     }
     
     public function getTitulo() {
@@ -49,8 +52,10 @@ class Livro {
     public function setAutor($autor) {
         if(!ValidaDados::validaCamposNulos($autor)){
             throw new ExcessaoNomeInvalido("O nome do Autor nao pode ser nulo!");
-        }elseif(!ValidaDados::validaNome($autor)){
-            throw new ExcessaoNomeInvalido("Nome contem caracteres invalidos!");
+        }elseif(ValidaDados::validaNome($autor) == 1){
+            throw new ExcessaoNomeInvalido("Nome do Autor contem caracteres invalidos!");
+        }elseif(ValidaDados::validaNome($autor) == 2){
+            throw new ExcessaoNomeInvalido("Nome do Autor contem espaços seguidos!");
         }else{
             $this->autor = $autor;
         }
@@ -114,7 +119,7 @@ class Livro {
     public function setEditora($editora){
         
         if(!ValidaDados::validaCamposNulos($editora)){
-            throw new ExcessaoEditoraInvalida("O Editora do Livro nao pode ser nula!");
+            throw new ExcessaoEditoraInvalida("A Editora do Livro nao pode ser nula!");
         }else{
             $this->editora = $editora;
         }
@@ -133,7 +138,19 @@ class Livro {
             $venda = "venda";
             $troca = "troca";
         }
-        $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
+
+        try{
+            $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
+        }catch(Exception $e){
+            print"<script>alert('".$e->getMessage()."')</script>";
+            ?>
+                <script language = "Javascript">
+                    window.location="http://localhost/SeboEletronicov2.0/Visao/cadastrarLivro.php";
+                </script>
+            <?php 
+            
+            exit;    
+        }
         return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getGenero(),$livro->getEdicao(), 
                 $livro->getEditora(), $livro->getVenda(),$livro->getTroca(),$livro->getEstado(), 
                 $livro->getDescricao(), $id_dono);
