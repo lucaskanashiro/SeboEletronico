@@ -1,3 +1,7 @@
+<?php
+session_start();
+$id_usuario = $_SESSION['id_usuario'];
+?>
 <!DOCTYPE HTML>
 <html>
 <head>	
@@ -15,7 +19,7 @@
     </div>
    
    <div id="mainmenu">
-       
+       <button class="button" onclick="home()">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
        <button class="button" onclick="livro();">Livro</button>
        <button class="button" onclick="sair();">Sair</button>

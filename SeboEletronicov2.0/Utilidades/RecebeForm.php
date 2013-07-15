@@ -12,15 +12,22 @@ switch($_POST['tipo']){
                          
                          UsuarioControlador::salvaUsuario($nome, $email, $telefone, $senha);
                          ?>
+
+                            <script language="Javascript" type="text/javascript">
+                                alert("Usuario cadastrado com sucesso!!");
+                            </script>      
+                            
                             <script language = "Javascript">
                             window.location="http://localhost/SeboEletronicov2.0/Visao/entrarLogin.php";
-                            </script><?php
+                            </script>
+                         <?php
                             
                           break;
       case "fEmail":  $email = $_POST['email'];
                       $senha = $_POST['senha'];
                       
                       UsuarioControlador::checaCadastro($email, $senha);
+                      
                     break;
       
       case "alterar":   $nome = $_POST['nome'];
@@ -31,9 +38,16 @@ switch($_POST['tipo']){
                         $senhaVelha = $_POST['senhaAntiga'];
                         UsuarioControlador::alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha);
                         ?>
+                            
+                            <script language="Javascript" type="text/javascript">
+                                alert("Usuario alterado com sucesso!!");
+                            </script>      
+                            
                             <script language = "Javascript">
-                            window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
-                            </script><?php
+                                window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
+                            </script>
+                           
+                        <?php
                         
                     break;
       case "deletar": $email = $_POST['email'];
@@ -41,9 +55,14 @@ switch($_POST['tipo']){
                       
                       UsuarioControlador::deletaCadastro($email,$senha);
                       ?>
+                            <script language="Javascript" type="text/javascript">
+                                alert("Usuario excluido  com sucesso!!");
+                            </script>   
+                            
                             <script language = "Javascript">
-                            window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
-                            </script><?php
+                                window.location="http://localhost/SeboEletronicov2.0/Visao/site.php";
+                            </script>
+                      <?php
                     break;
       case "pesquisar": $nome = $_POST['nome'];
                         

@@ -4,12 +4,13 @@ include "../Utilidades/ConexaoComBanco.php";
 
 class LivroDao {
     
-    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado,$descricao, $id_dono){
-        
+    public function salvaLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id_dono){
+
         $sql = "INSERT INTO livro (id_dono, titulo_livro, editora, autor, edicao, genero, estado_conserv, descricao_livro, venda, troca)
-            VALUES ('".$id_dono."','".$titulo."','".$editora."','".$autor."','".$edicao."','".$genero."','".$estado."','".$descricao."','".$venda."','".$troca."')";
+            VALUES ('".$id_dono."','".$titulo."','".$editora."','".$autor."','".$edicao."','".$genero."','".$estado."','".$descricao."',
+                '".$venda."','".$troca."')";
         $livro = mysql_query($sql);
-          return $livro;
+        return $livro;
     }
 
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
@@ -53,13 +54,17 @@ class LivroDao {
         return $deletou;
     }
     
-    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id){
-        var_dump($id);
-        exit;
+    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id, $id_usuario){
+        //echo "livrodao</br>";
+        //var_dump($genero);
+        //var_dump($id_usuario);
+        //var_dump($id);
+        //exit;
         
-        $sql = "UPDATE livro SET titulo_livro = '".$titulo."' AND autor = '".$autor."'
-             AND genero = '".$genero."' AND edicao = '".$edicao."' AND editora = '".$editora."'AND venda = '".$venda."'
-             AND troca = '".$troca."' AND estado_conserv = '".$estado."' AND descricao = '".$descricao."' WHERE id_livro = '".$id."'";
+        //$sql = "UPDATE livro SET id_dono = '".$id_usuario."', titulo_livro = '".$titulo."', autor = '".$autor."', genero = '".$genero."', edicao = '".$edicao."', 
+        //   editora = '".$editora."', venda = '".$venda."', troca = '".$troca."', estado_conserv = '".$estado."', descricao = '".$descricao."' 
+        //        WHERE id_livro = '".$id."'";
+        $sql = "UPDATE livro SET id_dono = '".$id_usuario."', titulo_livro = '".$titulo."', editora = '".$editora."', autor = '".$autor."', edicao = '".$edicao."', genero = '".$genero."', estado_conserv = '".$estado."', descricao_livro = '".$descricao."', venda = '".$venda."', troca = '".$troca."' WHERE id_livro = '".$id."'";
         $livro = mysql_query($sql);
         
         if($livro){

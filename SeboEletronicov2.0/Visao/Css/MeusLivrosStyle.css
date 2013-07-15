@@ -52,7 +52,7 @@ body{
 		font-family: arial, sans-serif;
 		text-transform: uppercase;
 		font-size: 13px;
-                margin-left: 131px;
+                margin-left: 50px;
 	}
 	
 	h3{
@@ -61,7 +61,7 @@ body{
 		font-family: arial, sans-serif;
 		text-transform: uppercase;
 		font-size: 13px;
-                margin-left: 140px;
+                margin-left: 50px;
 	}
 	
         h6{
@@ -69,7 +69,7 @@ body{
 		color: #003457;
 		font-family: arial, sans-serif;
 		font-size: 13px;
-                margin-left: 150px;
+                margin-left: 50px;
 	}
         
          h7{
@@ -78,7 +78,7 @@ body{
                 font-family: arial, sans-serif;
                 text-transform: uppercase;
                 font-size: 13px;
-                margin-left: 110px;
+                margin-left: 50px;
   }
         
 	h2{
@@ -87,7 +87,7 @@ body{
 		font-family: arial, sans-serif;
 		text-transform: uppercase;
 		font-size: 13px;
-                margin-left: 144px;
+                margin-left: 50px;
 	
 	}
 	
@@ -103,7 +103,7 @@ body{
         h1{
             font-family: arial, sans-serif;
             font-size: 11px;
-            margin-left: 144px;
+            margin-left: 50px;
         }
 	
 	.Formulario{
@@ -117,7 +117,7 @@ body{
         
 	.insr{
 	
-		width: 500px;
+		width: 250px;
 		box-shadow: 0 0 30px #1b4158 inset;
 		border-radius: 15px;
                 color: #1b4158;

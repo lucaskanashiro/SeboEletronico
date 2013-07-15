@@ -1,3 +1,7 @@
+<?php 
+session_start();
+$id_usuario = $_SESSION['id_usuario'];
+?>
 <html>
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,8 +19,7 @@
    
    <div id="mainmenu">
        
-       <button class="button" onclick="home();">Home</button>
-       <button class="button" onclick="login();">Login</button>
+       <button class="button" onclick="sair();">Home</button>
        
    </div> 
     

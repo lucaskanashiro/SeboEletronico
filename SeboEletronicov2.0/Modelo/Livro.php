@@ -128,11 +128,15 @@ class Livro {
         $this->estado = $estado;
     }
     
-    public function salvaLivro($titulo, $autor, $editora, $edicao, $venda, $troca, $genero, $estado, $descricao, $id_dono){
-        
+    public function salvaLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id_dono){
+        if(empty($venda) && empty($troca)){
+            $venda = "venda";
+            $troca = "troca";
+        }
         $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
-        return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),
-        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao(), $id_dono);
+        return LivroDao::salvaLivro($livro->getTitulo(),$livro->getAutor(),$livro->getGenero(),$livro->getEdicao(), 
+                $livro->getEditora(), $livro->getVenda(),$livro->getTroca(),$livro->getEstado(), 
+                $livro->getDescricao(), $id_dono);
     }
     
     public function pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca){
@@ -147,10 +151,14 @@ class Livro {
         return LivroDao::deletaLivro($titulo);
     }
     
-    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id){
+    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id, $id_usuario){
+        if(empty($venda) && empty($troca)){
+            $venda = "venda";
+            $troca = "troca";
+        }
         $livro = new Livro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao);
-        return LivroDao::alteraLivro($livro->getTitulo(),$livro->getAutor(),$livro->getEditora(),
-        $livro->getEdicao(),$livro->getVenda(),$livro->getTroca(),$livro->getGenero(),$livro->getEstado(), $livro->getDescricao(),$id);
+        return LivroDao::alteraLivro($livro->getTitulo(),$livro->getAutor(),$livro->getGenero(),$livro->getEdicao(), $livro->getEditora(), 
+                $livro->getVenda(),$livro->getTroca(),$livro->getEstado(), $livro->getDescricao(),$id, $id_usuario);
     }
 }
 ?>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+$id_usuario = $_SESSION['id_usuario'];
 include '../Controle/UsuarioControlador.php';
 
     $id = $_REQUEST['idPessoa'];
@@ -26,7 +28,7 @@ include '../Controle/UsuarioControlador.php';
     </div>
        
    <div id="mainmenu">
-       
+       <button class="button" onclick="home()">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
        <button class="button" onclick="livro();">Livro</button>
        <button class="button" onclick="sair();">Sair</button>

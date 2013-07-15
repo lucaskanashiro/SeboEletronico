@@ -14,7 +14,7 @@
     </div>
    
    <div id="mainmenu">
-       
+       <button class="button" onclick="home()">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
        <button class="button" onclick="livro();">Livro</button>
        <button class="button" onclick="sair();">Sair</button>
@@ -22,9 +22,10 @@
    </div>
    <div id="mainmenu">
        
+       <button class="button" onclick="meusLivros();">Meus Livros</button>
+       <button class="button" onclick="livrosDisponiveis();">Livros Disponiveis</button>
        <button class="button" onclick="cadastraLivro();">Cadastrar</button>
-       <button class="button" onclick="">Alterar</button>       
-       <button class="button" onclick="deletaLivro();">Deletar</button>
+       <!--<button class="button" onclick="deletaLivro();">Deletar</button>-->
        <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
        
        
@@ -52,7 +53,7 @@
                     <td>
                         <h4> Estado:</h4> 
                             <h3>
-                                <input type="checkbox" name="novo" value="novo" checked/>Novo
+                                <input type="checkbox" name="novo" value="novo"/>Novo
                                 <input type="checkbox" name="usado" value="usado"/>    Usado<br/>
                             <h3/>
                         
@@ -63,7 +64,7 @@
                     <td>
                         <h4> Classificação:</h4> 
                             <h3>
-                                <input type="checkbox" name="venda" value="venda" checked/>Venda
+                                <input type="checkbox" name="venda" value="venda"/>Venda
                                 <input type="checkbox" name="troca" value="troca"/>    Troca<br/>
                             <h3/>
                         

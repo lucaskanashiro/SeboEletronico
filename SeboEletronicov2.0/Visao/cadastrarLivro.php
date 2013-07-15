@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$id_usuario = $_SESSION['id_usuario'];
  ?>
 <html>
 <head>	
@@ -17,7 +18,7 @@ session_start();
     </div>
     
     <div id="mainmenu">
-       
+       <button class="button" onclick="home()">Home</button>
        <button class="button" onclick="user();">Usuário</button>       
        <button class="button" onclick="livro();">Livro</button>
        <button class="button" onclick="sair();">Sair</button>
@@ -26,9 +27,10 @@ session_start();
     
     <div id="mainmenu">
        
+       <button class="button" onclick="meusLivros();">Meus Livros</button>
+       <button class="button" onclick="livrosDisponiveis();">Livros Disponiveis</button>
        <button class="button" onclick="cadastraLivro();">Cadastrar</button>
-       <button class="button" onclick="">Alterar</button>       
-       <button class="button" onclick="deletaLivro();">Deletar</button>
+       <!--<button class="button" onclick="deletaLivro();">Deletar</button>-->
        <button class="button" onclick="pesquisaLivro();">Pesquisar</button>
    </div>
     
@@ -64,7 +66,7 @@ session_start();
 
                 <tr>              
                     <td>
-                        <h3> Edição: <input type="number" name="number" min="1" max="20" step="1" required/></h3> 
+                        <h3> Edição: <input type="number" name="edicao" min="1" max="20" step="1" required/></h3> 
                     </td>    
                 </tr>
                 
@@ -88,12 +90,12 @@ session_start();
                     <td>
                         <h2> Classificação: </h2>
                         <h1>
-                                <input type="radio" name="class" value="Engenharia" checked/> Engenharia <br/>
-                                <input type="radio" name="class" value="Engenharia de Software"/> Engenharia de Software <br/>
-                                <input type="radio" name="class" value="Engenharia de Energia"/> Engenharia de Energia <br/>
-                                <input type="radio" name="class" value="Engenharia Eletronica"/> Engenharia Eletronica <br/>
-                                <input type="radio" name="class" value="Engenharia Automotiva"/> Engenharia Automotiva <br/>
-                                <input type="radio" name="class" value="Engenharia Aeroespacial"/> Engenharia Aeroespacial <br/>
+                                <input type="radio" name="genero" value="Engenharia" checked/> Engenharia <br/>
+                                <input type="radio" name="genero" value="Engenharia de Software"/> Engenharia de Software <br/>
+                                <input type="radio" name="genero" value="Engenharia de Energia"/> Engenharia de Energia <br/>
+                                <input type="radio" name="genero" value="Engenharia Eletronica"/> Engenharia Eletronica <br/>
+                                <input type="radio" name="genero" value="Engenharia Automotiva"/> Engenharia Automotiva <br/>
+                                <input type="radio" name="genero" value="Engenharia Aeroespacial"/> Engenharia Aeroespacial <br/>
                         </h1>
                     </td>
                 </tr>
@@ -109,7 +111,7 @@ session_start();
                 </tr>
                 <th>
                     <input type="hidden" name="tipo" value="cadastraLivro"/>
-                    <input type="hidden" name="id_dono" value="<?php echo $_SESSION['id_usuario'] ?>"/>
+                    <input type="hidden" name="id_dono" value="<?php echo $id_usuario?>"/>
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
                 </th>

@@ -10,7 +10,7 @@ $listaLivros = LivroControlador::getLivroById($id);
 <html>
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="http://localhost/SeboEletronicov2.0/Visao/css/UsuarioStyle.css" type="text/css" media="all">
+        <link rel="stylesheet" href="http://localhost/SeboEletronicov2.0/Visao/css/MeusLivrosStyle.css" type="text/css" media="all">
         <link rel="stylesheet" href="http://localhost/SeboEletronicov2.0/Visao/css/main.css" type="text/css" media="all">
         <link rel="shortcut icon" href="http://localhost/SeboEletronicov2.0/Visao/img/android.ico">
         <script src="http://localhost/SeboEletronicov2.0/Utilidades/Redireciona.js"></script> 
@@ -42,85 +42,69 @@ $listaLivros = LivroControlador::getLivroById($id);
     <br/>
     <br/>
     <br/>
-    
-    
-        
+        <!-- tr = linha
+             td = coluna-->
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Dados da Pesquisa de Livro</h5></th>
+                    <th class='titlein' > <h5>Meus Livros</h5></th>
                 </tr>
                 
                 <tr> 
                     <td>
                         <h2> Título: </h2> 
                          <h6>
-                                <?php echo $listaLivros['titulo_livro']?>
+                                
                          </h6>
                     </td>
-                </tr>
-        
-                <tr>
+                
                     <td > 
                         <h2> Autor:</h2>
                         <h6>
-                                <?php echo $listaLivros['autor']?>
+                                
                          </h6>
                     </td>
-                </tr>
-                
-                <tr> 
+                    
                     <td>
                         <h2> Editora: </h2>
                         <h6>
-                                <?php echo $listaLivros['editora']?>
+                                
                          </h6>
                     </td>
-                </tr>
-
-                <tr>              
+             
                     <td>
                         <h2> Edição:</h2> 
                         <h6>
-                                <?php echo $listaLivros['edicao']?>
+                                
                          </h6>
                     </td>    
-                </tr>
-                
-                <tr>              
+             
                     <td>
                         <h2> Descrição: </h2>
                         <h6>
-                                <?php echo $listaLivros['descricao_livro']?>
+                                
                         </h6>
                     </td>    
-                </tr>
-                
-                <tr>              
+             
                     <td>
                         <h2> Tipo(s) de operação: </h2>
                         <h6>
-                                <?php echo $listaLivros['venda']?>
-                            <?php echo $listaLivros['troca']?>
+                                
                         </h6>
                     </td>    
-                </tr>
-
-                <tr>
+                    
                     <td>
                         <h2> Classificação: </h2>
                         <h6>
-                                <?php echo $listaLivros['genero']?>
+                                
                         </h6>
                     </td>
-                </tr>
-                
-                <tr>              
+             
                     <td>
                         <h2> Estado:<h2/> 
-                         <h6>
-                             <?php echo $listaLivros['estado_conserv']?>
-                         </h6>
+                        <h6>
+                             
+                        </h6>
                     </td>    
                 </tr>
 

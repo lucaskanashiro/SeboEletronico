@@ -1,6 +1,13 @@
+function livrosDisponiveis(){
+    window.location="http://localhost/SeboEletronicov2.0/Visao/livrosDisponiveis.php";
+}
+
+function meusLivros(){
+    window.location="http://localhost/SeboEletronicov2.0/Visao/meusLivros.php";
+}
 
 function home(){
-    window.location="http://localhost/SeboEletronicov2.0/Visao/site.php";
+    window.location="http://localhost/SeboEletronicov2.0/Visao/indexLogin.php";
 }
 
 function user(){
