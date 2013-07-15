@@ -1,11 +1,11 @@
 <?php
 
-require_once "Usuario.php";
-require_once "ValidaDados.php";
-require_once "ExcessaoNomeInvalido.php";
-require_once "ExcessaoSenhaInvalida.php";
-require_once "ExcessaoTelefoneInvalido.php";
-require_once "ExcessaoEmailInvalido.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Modelo/Usuario.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ValidaDados.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoNomeInvalido.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoSenhaInvalida.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoTelefoneInvalido.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoEmailInvalido.php";
 
 class UsuarioTest extends PHPUnit_Framework_TestCase{
 

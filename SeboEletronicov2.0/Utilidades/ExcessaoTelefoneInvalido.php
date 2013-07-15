@@ -1,6 +1,6 @@
 <?php
 
-class ExcessaoTelefoneInvalido extends InvalidArgumentException{
+class ExcessaoTelefoneInvalido extends Exception{
     function __construct($mensagem) {
         parent::__construct($mensagem);
     }

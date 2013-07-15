@@ -13,7 +13,7 @@ switch($_POST['tipo']){
                          ?>
 
                             <script language="Javascript" type="text/javascript">
-                                alert("Usuario cadastrado com sucesso!!teste");
+                                alert("Usuario cadastrado com sucesso!!");
                             </script>      
                             
                             <script language = "Javascript">

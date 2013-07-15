@@ -11,11 +11,11 @@ class ValidaDados {
         
         public function validaNome($nome){
             
-            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìùäëïöüýñ';
-            $vetorDeChar = str_split($nome);
+            $caracteresValidos = 'a bcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+            //$vetorDeChar = str_split($nome);
             
-            for ($i = 0; $i < count($vetorDeChar); $i++) {
-                $char = stripos($caracteresValidos, $vetorDeChar[$i]);
+            for ($i = 0; $i < count($nome); $i++) {
+                $char = stripos($caracteresValidos, $nome[$i]);
                 if(!$char){
                     return false;
                 }

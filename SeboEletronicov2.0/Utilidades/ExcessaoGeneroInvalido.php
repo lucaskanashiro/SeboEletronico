@@ -1,6 +1,6 @@
 <?php
 
-class ExcessaoGeneroInvalido extends InvalidArgumentException{
+class ExcessaoGeneroInvalido extends Exception{
      function __construct($mensagem) {
         parent::__construct($mensagem);
     }

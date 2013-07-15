@@ -15,15 +15,10 @@ class Usuario {
     private $senha;
     
     public function __construct($nome, $telefone, $email, $senha) {
-//        $this->setNome($nome);
-//        $this->setTelefone($telefone);
-//        $this->setEmail($email);
-//        $this->setSenha($senha);
-        $this->nome = $nome;
-        $this->telefone = $telefone;
-        $this->email = $email;
-        $this->senha = $senha; 
-        
+        $this->setNome($nome);
+        $this->setTelefone($telefone);
+        $this->setEmail($email);
+        $this->setSenha($senha);
     }
  
     public function getNome() {
@@ -31,10 +26,11 @@ class Usuario {
     }
 
     public function setNome($nome){
+        
         if(!ValidaDados::validaCamposNulos($nome)){
-            throw new ExcessaoNomeInvalido("Nome nao pode ser nulo!");
-        }elseif(!ValidaDados::validaNome($nome)){
-            throw new ExcessaoNomeInvalido("Nome contem caracteres invalidos!");
+            throw new Exception("Nome nao pode ser nulo!");
+        }if(!ValidaDados::validaNome($nome)){
+            throw new Exception("Nome contem caracteres invalidos!");
         }else{
             $this->nome = $nome;
         }
@@ -46,11 +42,11 @@ class Usuario {
 
     public function setTelefone($telefone) {
         if(!ValidaDados::validaTelefone($telefone)){
-            throw new ExcessaoTelefoneInvalido("Telefone nao pode conter caracteres alfabeticos!");
+            throw new Exception("Telefone nao pode conter caracteres alfabeticos!");
         }elseif(!ValidaDados::validaCamposNulos($telefone)){
-            throw new ExcessaoTelefoneInvalido("Telefone nao pode ser nulo!");
+            throw new Exception("Telefone nao pode ser nulo!");
         }else{
-            $this->telefone = $telefone;   
+            $this->telefone = $telefone;
         }
     }
 
@@ -63,9 +59,9 @@ class Usuario {
     public function setEmail($email) {
         
         if(!ValidaDados::validaEmail($email)){
-            throw new ExcessaoEmailInvalido("E-mail nao válido!");
+            throw new Exception("E-mail nao válido!");
         }elseif(!ValidaDados::validaCamposNulos($email)){
-            throw new ExcessaoEmailInvalido("E-mail nao pode ser nulo!");
+            throw new Exception("E-mail nao pode ser nulo!");
         }else{
             $this->email = $email;
         }
@@ -79,20 +75,31 @@ class Usuario {
         $auxiliar = ValidaDados::validaSenha($senha);
         
         if($auxiliar == 1){
-            throw new ExcessaoSenhaInvalida("Senha contem caracteres invalidos!");
+            throw new Exception("Senha contem caracteres invalidos!");
         }elseif($auxiliar == 2){
-            throw new ExcessaoSenhaInvalida("Senha possui mais de seis (6) digitos!");
+            throw new Exception("Senha possui mais de seis (6) digitos!");
         }elseif($auxiliar == 3){
-            throw new ExcessaoSenhaInvalida("Senha e confirmação estão diferentes!");
+            throw new Exception("Senha e confirmação estão diferentes!");
         }elseif(!ValidaDados::validaCamposNulos($senha)){
-            throw new ExcessaoSenhaInvalida("Senha nao pode ser nula!");
+            throw new Exception("Senha nao pode ser nula!");
         }else{
             $this->senha = $senha;
         } 
     }
     
     public function salvaUsuario($nome, $email, $telefone, $senha){
-        $usuario = new Usuario($nome, $telefone, $email, $senha);
+               
+        try{
+            $usuario = new Usuario($nome, $telefone, $email, $senha);
+        }catch(Exception $e){
+            print"<script>alert('".$e->getMessage()."')</script>";
+            ?>
+                <script language = "Javascript">
+                    window.location="http://localhost/SeboEletronicov2.0/Visao/cadastrarUsuario.php";
+                </script>
+            <?php 
+            exit;    
+        }
         return UsuarioDao::salvaUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha());   
     }
     
@@ -116,6 +123,7 @@ class Usuario {
      public function deletaCadastro($email, $senha){
          return UsuarioDao::deletaUsuario($email, $senha);
      }
+     
      public function pesquisaUsuario($nome){
          return UsuarioDao::pesquisaUsuario($nome);
      }

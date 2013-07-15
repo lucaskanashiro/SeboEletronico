@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tempo de Geração: Jul 14, 2013 as 11:47 
+-- Tempo de Geração: Jul 15, 2013 as 01:54 
 -- Versão do Servidor: 5.1.41
 -- Versão do PHP: 5.3.1
 
@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `livro` (
   `genero` varchar(64) DEFAULT NULL,
   `estado_conserv` varchar(64) DEFAULT NULL,
   `descricao_livro` varchar(400) DEFAULT NULL,
-  `venda` varchar(3) NOT NULL,
-  `troca` varchar(3) NOT NULL,
+  `venda` varchar(5) NOT NULL,
+  `troca` varchar(5) NOT NULL,
   PRIMARY KEY (`id_livro`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Livro' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Livro' AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `livro`
@@ -47,7 +47,8 @@ CREATE TABLE IF NOT EXISTS `livro` (
 INSERT INTO `livro` (`id_livro`, `id_dono`, `titulo_livro`, `editora`, `autor`, `edicao`, `genero`, `estado_conserv`, `descricao_livro`, `venda`, `troca`) VALUES
 (1, 1, 'Calculo Exponencial', 'Friburgo', 'Seu Patinhas', 2, 'Engenharia de Pesca', 'NOVO', NULL, '', ''),
 (2, 1, 'Matematica Algebrica', 'Paramount', 'Silvio Santos', 5, 'TODAS', 'VELHO', 'Livro escrito pelo renomado autor de grandes best-sellers da literatura niponica', '', ''),
-(3, 3, 'Calculo1', 'Saraiva', 'Thomas', 2, 'Engenharia', 'usado', NULL, 'ok', '');
+(3, 3, 'Calculo1', 'Saraiva', 'Thomas', 2, 'Engenharia', 'usado', NULL, 'ok', ''),
+(4, 11, 'fisica', 'galileu', 'galileu', 1, 'Engenharia', 'usado', 'livro de fisica', 'ven', 'tro');
 
 -- --------------------------------------------------------
 
@@ -104,17 +105,14 @@ CREATE TABLE IF NOT EXISTS `senha` (
   `codigo_senha` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_senha`),
   UNIQUE KEY `id_senha` (`id_senha`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Extraindo dados da tabela `senha`
 --
 
 INSERT INTO `senha` (`id_senha`, `codigo_senha`) VALUES
-(5, 121212),
-(6, 121212),
-(7, 123456),
-(8, 123456);
+(12, 123456);
 
 -- --------------------------------------------------------
 
@@ -131,17 +129,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario` (`id_usuario`),
   KEY `nome_usuario` (`nome_usuario`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Usuario' AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COMMENT='Tabela Relacionada ao Usuario' AUTO_INCREMENT=12 ;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `senha_usuario`, `telefone_usuario`, `email_usuario`) VALUES
-(4, 'MacÃ¡rio Cruz', '5', 81322019, 'macario.junior@gmail.com'),
-(1, 'joao', '5', 82235587, 'joao@hot.com'),
-(6, 'Levi', '7', 88888888, 'levi@gmail'),
-(7, 'levi', '7', 2147483647, 'levi@levi.com.br');
+(11, 'Joao', '12', 82235587, 'joao@gmail.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

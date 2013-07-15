@@ -1,6 +1,6 @@
 <?php
 
-class ExcessaoSenhaInvalida extends InvalidArgumentException {
+class ExcessaoSenhaInvalida extends Exception {
     
     function __construct($mensagem) {
         parent::__construct($mensagem);

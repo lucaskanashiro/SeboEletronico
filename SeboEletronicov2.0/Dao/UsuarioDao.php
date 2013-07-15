@@ -6,34 +6,20 @@ class UsuarioDao {
 
     public function salvaUsuario($nome, $email, $telefone, $senha){
         
-        try{
-            $usuario = new Usuario($nome, $telefone, $email, $senha);
-//            $usuario->setNome($nome);
-//            $usuario->setEmail($email);
-//            $usuario->setSenha($senha);
-//            $usuario->setTelefone($telefone);
-        }catch(IllegalArgumentException $e){
-            echo $e->getMessage(); 
-            exit;    
-        }
-        
-        $senhaF = $usuario->getSenha();
-        $senhaF2 = $senhaF[0];
+        $senhaFinal = $senha[0];
          
-        $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaF2."')";
+        $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";
         mysql_query($sql);
 
-        $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaF2."'";
+        $sql2="SELECT id_senha FROM senha WHERE codigo_senha='".$senhaFinal."'";
         $resultado = $id_senha = mysql_query($sql2);
         $id_senha = mysql_fetch_array($resultado);
 
-        $sql3="INSERT INTO usuario (nome_usuario, email_usuario, telefone_usuario, senha_usuario) VALUES ('".$usuario->getNome()."', '".$usuario->getEmail()."', '".$usuario->getTelefone()."','".$id_senha['id_senha']."')";
+        $sql3="INSERT INTO usuario (nome_usuario, email_usuario, telefone_usuario, senha_usuario) VALUES ('".$nome."', '".$email."', 
+            '".$telefone."','".$id_senha['id_senha']."')";
         $usuarioRetorno = mysql_query($sql3);
         
-        if ($usuarioRetorno){
-            return 1;
-        } else
-                return 0;
+        return $usuarioRetorno;
     }
     
     public function alteraUsuario($nome, $email, $telefone, $senha, $idDoUsuario,$senhaVelha){
@@ -55,10 +41,7 @@ class UsuarioDao {
            $senhaSalva = mysql_query($sql3);
             
         }
-        if ($usuario && $senhaSalva){
-            return 1;
-        } else
-                return 0;
+        return ($usuario && $senhaSalva);
     }
 
     public function pesquisaUsuario($usuario){
@@ -79,10 +62,7 @@ class UsuarioDao {
         $sql1="DELETE FROM senha WHERE codigo_senha = '".$senha."'";
         $deleteouSenha = mysql_query($sql1);
         
-        if ($deletouUsuario&&$deleteouSenha){
-            return 1;
-        }else 
-            return 0;
+        return ($deletouUsuario&&$deleteouSenha);
         
     }
 
@@ -119,9 +99,6 @@ class UsuarioDao {
             
             return $res;
         }    
-        
-        
-        
 }
 
 ?>

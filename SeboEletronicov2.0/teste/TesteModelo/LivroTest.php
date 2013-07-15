@@ -1,19 +1,18 @@
 <?php
-//REVER OS CAMINHOS
 
-require_once "Livro.php";
-require_once "ValidaDados.php";
-require_once "ExcessaoEditoraInvalida.php";
-require_once "ExcessaoGeneroInvalido.php";
-require_once "ExcessaoTituloInvalido.php";
-require_once "ExcessaoNomeInvalido.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Modelo/Livro.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ValidaDados.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoEditoraInvalida.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoGeneroInvalido.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoTituloInvalido.php";
+require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoNomeInvalido.php";
 
 class LivroTest extends PHPUnit_Framework_TestCase{
 
 	protected $livroTeste;
 
 	protected function setUp(){
-		$this->livroTeste = new Livro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', 'venda', 'troca', 'novo','Livro Legal');
+		$this->livroTeste = new Livro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', True, True, 'novo');
 	}
 
 	protected function tearDown(){
@@ -49,7 +48,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	public function testSetAutor(){
 		$autor = 'Joao';
 		$this->livroTeste->setAutor($autor);
-		$this->assertEquals('Joao', $this->livroTeste->getAutor());
+		$this->assertEquals($autor, $this->livroTeste->getAutor());
 	}
 
 	/**
@@ -135,17 +134,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 		$this->livroTeste->setEditora($editora);
 		$this->assertEquals($editora, $this->livroTeste->getEditora());
 	}
-	
-	public function testGetDescricao(){
-		$this->assertEquals('Livro Legal', $this->livroTeste->getDescricao());
-	}
 
-	public function testSetDescricao(){
-		$descricao = 'livro muito legal';
-		$this->livroTeste->setDescricao($descricao);
-		$this->assertEquals('livro muito legal', $this->livroTeste->getDescricao());
-	}
-	
 	/**
 	 * @expectedException InvalidArgumentException
 	 */
@@ -159,10 +148,10 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	public function testSetEstado(){
-		$this->assertEquals('usado', $this->livroTeste->setEstado('usado'));
+		$estado = 'usado';
+		$this->livroTeste->setEstado($estado);
+		$this->assertEquals($estado, $this->livroTeste->getEstado());
 	}
-	
-	
 }
 
 ?>
