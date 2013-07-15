@@ -1,6 +1,6 @@
 <?php
 
-require_once "../SeboEletronico/SeboEletronicov2.0/Controle/LivroControlador.php";
+require_once "LivroControlador.php";
 
 class LivroControladorTest extends PHPUnit_Framework_TestCase{
 

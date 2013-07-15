@@ -1,20 +1,11 @@
 <?php
 
-class faz{
-	public function fazer () {
-	
-		
-//<input type=button value="sadfc it now" onClick="alert('Hello from JavaScript!')">
 
-		return TRUE;
-	
-	}
-}
-	include "conexao_bd.inc";
+	include "../Dao/conexao_bd.inc";
 	if(!$bd) die ("<h1>Falha no bd </h1>");
 		
 		
-		$strSQL = "SELECT * FROM livro WHERE tipo_operacao = 'COMPRA' ";
+		$strSQL = "SELECT * FROM livro WHERE estado_conserv = 'usado' ";
 						
 			
 		$rs = mysql_query($strSQL);
