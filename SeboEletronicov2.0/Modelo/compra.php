@@ -1,9 +1,7 @@
 <?php
 
-
 	include "../Dao/conexao_bd.inc";
 	if(!$bd) die ("<h1>Falha no bd </h1>");
-		
 		
 		$strSQL = "SELECT * FROM livro WHERE estado_conserv = 'usado' ";
 						
