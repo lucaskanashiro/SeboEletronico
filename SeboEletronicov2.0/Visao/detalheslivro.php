@@ -18,7 +18,7 @@ $id_usuario = $_SESSION['id_usuario'];
 	<?php
 		$_POST['mural'];			
 		$_POST['nome_comprador'];
-		$_POST ['id_livro'];
+		
                 $mural = $_POST['mural'];
 		//$nome_comprador = $_POST['nome_comprador'];
 			
@@ -26,7 +26,7 @@ $id_usuario = $_SESSION['id_usuario'];
                 if(!$bd) die ("<h1>Falha no bd </h1>");
 
                 //Acessar Informações do comprador
-                $id_livro = $_POST['id_livro'];
+                $id_livro = $_REQUEST['id_livro'];
 
                 $email_usuario = $_SESSION["email"];
 
@@ -77,9 +77,9 @@ $id_usuario = $_SESSION['id_usuario'];
  
   //Acessando informações do livro escolhido
    
-  $id_livro = $_POST["id_livro"];
+  
  
- 	$id_livro = 1;
+ 	
  
  $strSQL = "SELECT * FROM livro WHERE id_livro = '$id_livro' ";
  
