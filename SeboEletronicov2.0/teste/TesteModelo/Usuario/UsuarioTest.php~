@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../Modelo/Usuario.php";
+require_once "../../../Modelo/Usuario.php";
 require_once "../../Utilidades/ValidaDados.php";
 require_once "../../Utilidades/ExcessaoNomeInvalido.php";
 require_once "../../Utilidades/ExcessaoSenhaInvalida.php";

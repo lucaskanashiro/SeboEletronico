@@ -61,11 +61,10 @@ class Usuario {
 }
 
     public function setEmail($email) {
-        
-        if(ValidaDados::validaEmail($email) == 1){
-            throw new ExcessaoEmailInvalido("E-mail nao válido!");
-        }elseif(!ValidaDados::validaCamposNulos($email)){
+        if(!ValidaDados::validaCamposNulos($email)){
             throw new ExcessaoEmailInvalido("E-mail nao pode ser nulo!");
+        }elseif(ValidaDados::validaEmail($email) == 1){
+            throw new ExcessaoEmailInvalido("E-mail nao válido!");
         }else{
             $this->email = $email;
         }
