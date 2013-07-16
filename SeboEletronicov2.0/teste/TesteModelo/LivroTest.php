@@ -1,18 +1,18 @@
 <?php
 
-require_once "../SeboEletronico/SeboEletronicov2.0/Modelo/Livro.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ValidaDados.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoEditoraInvalida.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoGeneroInvalido.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoTituloInvalido.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoNomeInvalido.php";
+require_once "../../Modelo/Livro.php";
+require_once "../../Utilidades/ValidaDados.php";
+require_once "../../Utilidades/ExcessaoEditoraInvalida.php";
+require_once "../../Utilidades/ExcessaoGeneroInvalido.php";
+require_once "../../Utilidades/ExcessaoTituloInvalido.php";
+require_once "../../Utilidades/ExcessaoNomeInvalido.php";
 
 class LivroTest extends PHPUnit_Framework_TestCase{
 
 	protected $livroTeste;
 
 	protected function setUp(){
-		$this->livroTeste = new Livro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', True, True, 'novo');
+		$this->livroTeste = new Livro('calculo 1', 'Thomas', 'engenharia', 2, 'editora teste', 'venda', 'troca', 'novo', 'livro é muito legal');
 	}
 
 	protected function tearDown(){
@@ -34,7 +34,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoTituloInvalido
 	 */
 	public function testSetTituloNulo(){
 		$titulo = null;
@@ -52,7 +52,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoNomeInvalido
 	 */
 	public function testSetAutorNulo(){
 		$autor = null;
@@ -60,7 +60,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoNomeInvalido
 	 */
 	public function testSetAutorComCaracterInvalido(){
 		$autor = 12345;
@@ -68,7 +68,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
         /**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoNomeInvalido
 	 */
 	public function testSetAutorComApenasEspacos(){
 		$autor = "      ";
@@ -86,7 +86,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	public function testGetTroca(){
-		$this->assertEquals(True, $this->livroTeste->getTroca());
+		$this->assertEquals('troca', $this->livroTeste->getTroca());
 	}
 
 	public function testSetTroca(){
@@ -96,7 +96,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	public function testGetVenda(){
-		$this->assertEquals(True, $this->livroTeste->getVenda());
+		$this->assertEquals('venda', $this->livroTeste->getVenda());
 	}
 
 	public function testSetVenda(){
@@ -136,7 +136,7 @@ class LivroTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoEditoraInvalida
 	 */
 	public function testSetEditoraNula(){
 		$editora = null;
