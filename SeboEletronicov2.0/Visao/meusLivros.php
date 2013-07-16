@@ -9,7 +9,7 @@ $listaLivros = LivroControlador::getLivroByIdUsuario($id);
 <html>
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="http://localhost/SeboEletronicov2.0/Visao/css/MeusLivrosStyle.css" type="text/css" media="all">
+        <link rel="stylesheet" href="http://localhost/SeboEletronicov2.0/Visao/css/MeusLivrosStyle2.css" type="text/css" media="all">
         <link rel="stylesheet" href="http://localhost/SeboEletronicov2.0/Visao/css/main.css" type="text/css" media="all">
         <link rel="shortcut icon" href="http://localhost/SeboEletronicov2.0/Visao/img/android.ico">
         <script src="http://localhost/SeboEletronicov2.0/Utilidades/Redireciona.js"></script> 
@@ -43,7 +43,7 @@ $listaLivros = LivroControlador::getLivroByIdUsuario($id);
     <br/>
         <!-- tr = linha
              td = coluna-->
-                <table class='insr'>
+                <table class="lista">
 
                 <tr>
                     <th class='titlein' > <h5>Meus Livros</h5></th>
@@ -108,9 +108,8 @@ $listaLivros = LivroControlador::getLivroByIdUsuario($id);
                              <?php echo $valor['estado_conserv'] ?>
                         </h6>
                     </td>    
-                </tr>
+                
 
-                <tr>              
                     <td>
                         <a href="http://localhost/SeboEletronicov2.0/Visao/alterarLivro.php?id=<?php echo $valor['id_livro'] ?> " title="Alterar Livro"> <img src="img/icone_lapis.png" align="left"> </a>
                         <a href="http://localhost/SeboEletronicov2.0/Utilidades/RecebeFormLivro.php?id_livro=<?php echo $valor['id_livro'] ?> " title="Excluir Livro"> <img src="img/icone_lixeira.png" align="right" > </a>

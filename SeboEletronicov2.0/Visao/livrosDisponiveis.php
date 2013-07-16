@@ -3,7 +3,7 @@ session_start();
 include '../Controle/LivroControlador.php';
 $id = $_SESSION['id_usuario'];
 
-$listaLivros = LivroControlador::getLivroByIdUsuario($id);
+$listaLivros = LivroControlador::getAllLivro();
 ?>
 
 <html>

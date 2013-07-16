@@ -78,12 +78,13 @@ body{
             margin-left: 50px;
         }
 	
-	.insr{
-		width: 250px;
+	.lista{
+            
+		width: 60px;
 		box-shadow: 0 0 30px #1b4158 inset;
 		border-radius: 15px;
                 color: #1b4158;
-	
+                
 	}
         
         
