@@ -52,6 +52,10 @@ class LivroControlador {
         return LivroDao::getLivroByIdUsuario($idUsuario);
     }
     
+    public function getAllLivro(){
+        return LivroDao::getAllLivro();
+    }
+    
 }
 
 ?>

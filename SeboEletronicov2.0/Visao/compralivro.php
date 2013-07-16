@@ -33,14 +33,13 @@ $id_usuario = $_SESSION['id_usuario'];
    
     <?php
 	//$_POST['tel_usuario'];
-	$id_livro = $_REQUEST['id_livro'];
-	
-	
+
 include "..\Utilidades\ConexaoComBanco.php";
 	if(!$bd) die ("<h1>Falha no bd </h1>");
 
 	$tel_comprador = $_POST ['tel_comprador'];
 	$nome_comprador = $_POST['nome_comprador'];
+	$id_livro = $_POST['id_livro'];
 	$id_dono = $_POST['id_dono'];
 
 

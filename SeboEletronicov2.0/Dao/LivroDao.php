@@ -82,6 +82,21 @@ class LivroDao {
      
     }
     
+    public function getAllLivro(){
+         $sql = "SELECT * FROM livro";
+        $result = mysql_query($sql);
+        
+        $livros = array();
+        
+        while($registro = mysql_fetch_assoc($result) ) {
+	   
+        $livros[]=$registro;         
+        
+		}
+        
+        return $livros;
+    }
+    
 }
 ?>
 
