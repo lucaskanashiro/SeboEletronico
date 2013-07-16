@@ -49,8 +49,8 @@ class LivroDao {
         return mysql_fetch_array($result);
     }
 
-    public function deletaLivro($titulo){
-        $sql = "DELETE FROM livro WHERE titulo_livro = '".$titulo."'";
+    public function deletaLivro($id){
+        $sql = "DELETE FROM livro WHERE id_livro = '".$id."'";
         $deletou = mysql_query($sql);
         return $deletou;
     }
@@ -70,17 +70,15 @@ class LivroDao {
         $sql = "SELECT * FROM livro WHERE id_dono = '".$idUsuario."'";
         $result = mysql_query($sql);
         
+        $livros = array();
         
-        $cont =0;
-        
-        while($row = mysql_fetch_array($result)) {
+        while($registro = mysql_fetch_assoc($result) ) {
 	   
-                 $listaLivros = array($cont=>$row);
-                 $cont ++;
-		
+        $livros[]=$registro;         
+        
 		}
         
-        return $listaLivros;
+        return $livros;
      
     }
     

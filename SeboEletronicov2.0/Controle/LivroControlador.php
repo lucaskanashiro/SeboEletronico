@@ -24,13 +24,13 @@ class LivroControlador {
        return LivroDao:: pesquisaLivro($titulo, $estadoNovo, $estadoUsado, $disponibilidadeVenda, $disponibilidadeTroca);
     }
     
-    public function getLivroById($listaLivros){
-        return LivroDao::getLivroById($listaLivros);
+    public function getLivroById($id){
+        return LivroDao::getLivroById($id);
     }
     
-    public function deletaLivro($titulo){
-       return LivroDao::deletaLivro($titulo);
-    }
+    public function deletaLivro($idLivro){
+        return LivroDao::deletaLivro($idLivro);
+        }
     
     public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id_dono, $id_usuario){
         if(empty($venda) && empty($troca)){
@@ -47,6 +47,11 @@ class LivroControlador {
         }
         return LivroDao::alteraLivro($livro, $id_dono, $id_usuario);
     }
+    
+    public function getLivroByIdUsuario($idUsuario){
+        return LivroDao::getLivroByIdUsuario($idUsuario);
+    }
+    
 }
 
 ?>

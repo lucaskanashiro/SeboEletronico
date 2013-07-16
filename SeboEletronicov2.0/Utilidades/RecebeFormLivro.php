@@ -73,9 +73,11 @@ switch($_POST['tipo']){
                             </script><?php
                 break;
             
-      case "excluiLivro": $titulo = $_POST['titulo'];
-         
-                            LivroControlador::deletaLivro($titulo);
+    }
+    
+   if($_REQUEST['id_livro']) {
+    $idLivro = $_REQUEST['id_livro'];
+    LivroControlador::deletaLivro($idLivro);
           
                         ?>
                             <script language="Javascript" type="text/javascript">
@@ -85,7 +87,7 @@ switch($_POST['tipo']){
                             <script language = "Javascript">
                                 window.location="http://localhost/SeboEletronicov2.0/Visao/indexLivro.php";
                             </script><?php
-                    break; 
+   }
             
-    }
+    
 ?>

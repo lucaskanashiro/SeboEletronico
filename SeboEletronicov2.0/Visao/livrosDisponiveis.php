@@ -1,10 +1,9 @@
 <?php
-
+session_start();
 include '../Controle/LivroControlador.php';
-$id = $_REQUEST['livros'];
+$id = $_SESSION['id_usuario'];
 
-$listaLivros = LivroControlador::getLivroById($id);
-
+$listaLivros = LivroControlador::getLivroByIdUsuario($id);
 ?>
 
 <html>
@@ -47,69 +46,19 @@ $listaLivros = LivroControlador::getLivroById($id);
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Livros Disponiveis</h5></th>
+                    <th class='titlein' > <h5>Livros Disponíveis</h5></th>
                 </tr>
-                
+  <?php  foreach($listaLivros as $chave => $valor){ 
+                          ?>              
                 <tr> 
                     <td>
                         <h2> Título: </h2> 
                          <h6>
-                                
+                             <a href="http://localhost/SeboEletronicov2.0/Visao/detalhesLivro.php?id_livro=<?php echo $valor['id_livro'] ?>"> <?php echo $valor['titulo_livro'] ?></a>
                          </h6>
                     </td>
-                
-                    <td > 
-                        <h2> Autor:</h2>
-                        <h6>
-                                
-                         </h6>
-                    </td>
-                    
-                    <td>
-                        <h2> Editora: </h2>
-                        <h6>
-                                
-                         </h6>
-                    </td>
-             
-                    <td>
-                        <h2> Edição:</h2> 
-                        <h6>
-                                
-                         </h6>
-                    </td>    
-             
-                    <td>
-                        <h2> Descrição: </h2>
-                        <h6>
-                                
-                        </h6>
-                    </td>    
-             
-                    <td>
-                        <h2> Tipo(s) de operação: </h2>
-                        <h6>
-                                
-                        </h6>
-                    </td>    
-                    
-                    <td>
-                        <h2> Classificação: </h2>
-                        <h6>
-                                
-                        </h6>
-                    </td>
-             
-                    <td>
-                        <h2> Estado:<h2/> 
-                        <h6>
-                             
-                        </h6>
-                    </td>    
                 </tr>
-
-               
-                
+      <?php }?>         
 
                 </table>    
         
