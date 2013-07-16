@@ -1,18 +1,19 @@
 <?php
 
-require_once "../SeboEletronico/SeboEletronicov2.0/Modelo/Usuario.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ValidaDados.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoNomeInvalido.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoSenhaInvalida.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoTelefoneInvalido.php";
-require_once "../SeboEletronico/SeboEletronicov2.0/Utilidades/ExcessaoEmailInvalido.php";
+require_once "../../Modelo/Usuario.php";
+require_once "../../Utilidades/ValidaDados.php";
+require_once "../../Utilidades/ExcessaoNomeInvalido.php";
+require_once "../../Utilidades/ExcessaoSenhaInvalida.php";
+require_once "../../Utilidades/ExcessaoTelefoneInvalido.php";
+require_once "../../Utilidades/ExcessaoEmailInvalido.php";
 
 class UsuarioTest extends PHPUnit_Framework_TestCase{
 
 	protected $usuarioTeste;
 
 	protected function setUp(){
-		$this->usuarioTeste = new Usuario('Lucas', 88888888, 'lucas-kanashiro@hotmail.com', 12345);
+                $senha = array(123456, 123456);
+		$this->usuarioTeste = new Usuario('Lucas', 88888888, 'lucas-kanashiro@hotmail.com', $senha);
 	}	
 
 	protected function tearDown(){
@@ -34,7 +35,7 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoNomeInvalido
 	 */
 	public function testSetNomeNulo(){
 		$nome = null;
@@ -42,7 +43,7 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoNomeInvalido
 	 */
 	public function testSetNomeComCaracterInvalido(){
 		$nome = 123;
@@ -60,7 +61,7 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoTelefoneInvalido
 	 */
 	public function testSetTelefoneNulo(){
 		$telefone = null;
@@ -68,7 +69,7 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoTelefoneInvalido
 	 */
 	public function testSetTelefoneComCaracterInvalido(){
 		$telefone = 'abc';
@@ -86,7 +87,7 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoEmailInvalido
 	 */
 	public function testSetEmailInvalido(){
 		$email = 'kanashiro';
@@ -94,41 +95,43 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoEmailInvalido
 	 */
 	public function testSetEmailNulo(){
 		$email = null;
 		$this->usuarioTeste->setEmail($email);
-	}
+       }
 
 	public function testGetSenha(){
-		$this->assertEquals(12345, $this->usuarioTeste->getSenha());
+                $senha = $this->usuarioTeste->getSenha();
+		$this->assertEquals(123456, $senha[0]);
 	}
 
 	public function testSetSenha(){
-		$senha = array(98765, 98765);
+		$senha = array(987656, 987656);
 		$this->usuarioTeste->setSenha($senha);
-		$this->assertEquals(98765, $this->usuarioTeste->getSenha());
+                $senha2 = $this->usuarioTeste->getSenha();
+		$this->assertEquals(987656, $senha2[0]);
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoSenhaInvalida
 	 */
 	public function testSetSenhaNula(){
-		$senha = null;
+		$senha = array(null,null);
 		$this->usuarioTeste->setSenha($senha);
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoSenhaInvalida
 	 */
 	public function testSetSenhaComValoresDiferentes(){
-		$senha = array(98765, 12345);
+		$senha = array(987656, 123456);
 		$this->usuarioTeste->setSenha($senha);
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoSenhaInvalida
 	 */
 	public function testSetSenhaComMaisDe6Digitos(){
 		$senha = array(987654321, 987654321);
@@ -136,7 +139,7 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 	}
 
 	/**
-	 * @expectedException InvalidArgumentException
+	 * @expectedException ExcessaoSenhaInvalida
 	 */
 	public function testSetSenhaComCaracterInvalido(){
 		$senha = array('abc', 'abc');
