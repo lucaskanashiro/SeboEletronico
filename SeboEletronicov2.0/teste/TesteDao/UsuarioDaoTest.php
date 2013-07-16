@@ -40,11 +40,11 @@ class UsuarioDaoTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($retorno);
     }
     
-//    public function testDeletaUsuario(){
-//        $senha = $this->usuario->getSenha();
-//        $retorno = $this->usuarioDaoTest->deletaUsuario($this->usuario->getEmail(), $senha[0]);
-//        $this->assertTrue($retorno);
-//    }
+    public function testDeletaUsuario(){
+        $senha = $this->usuario->getSenha();
+        $retorno = $this->usuarioDaoTest->deletaUsuario($this->usuario->getEmail(), $senha[0]);
+        $this->assertTrue($retorno);
+    }
     
     public function testGetCadastradosPorIdComIdNulo(){
         $retorno = $this->usuarioDaoTest->getCadastradosPorId(null);

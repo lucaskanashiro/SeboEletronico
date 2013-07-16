@@ -76,9 +76,19 @@ class LivroDaoTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($retorno);    
     }
     
+    public function testGetLivroByIdUsuarioComRetornoValido() {
+        $retorno = $this->livroDaoTeste->getLivroByIdUsuario(23);
+        $this->assertNotSame(null, $retorno);    
+    }
+    
     public function testGetAllLivro(){
         $retorno = $this->livroDaoTeste->getAllLivro(23);
         $this->assertFalse($retorno);
+    }
+    
+    public function testGetAllLivroComRetornoValido(){
+        $retorno = $this->livroDaoTeste->getAllLivro(23);
+        $this->assertNotSame(null, $retorno);
     }
 
 
