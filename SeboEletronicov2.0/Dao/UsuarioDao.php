@@ -4,9 +4,8 @@ include "../Utilidades/ConexaoComBanco.php";
 
 class UsuarioDao {
 
-    public function salvaUsuario($usuario){
-        var_dump($usuario);
-        exit;
+    public function salvaUsuario($nome, $email, $telefone, $senha){
+        
         $senhaFinal = $senha[0];
          
         $sql="INSERT INTO senha (codigo_senha) VALUES ('".$senhaFinal."')";

@@ -61,6 +61,26 @@ class LivroDao {
         
         return $livro;
     }   
+    
+    public function getLivroByIdUsuario($idUsuario){
+        
+        $sql = "SELECT * FROM livro WHERE id_dono = '".$idUsuario."'";
+        $result = mysql_query($sql);
+        
+        
+        $cont =0;
+        
+        while($row = mysql_fetch_array($result)) {
+	   
+                 $listaLivros = array($cont=>$row);
+                 $cont ++;
+		
+		}
+        
+        return $listaLivros;
+     
+    }
+    
 }
 ?>
 

@@ -3,19 +3,27 @@
 	include "../Dao/conexao_bd.inc";
 	if(!$bd) die ("<h1>Falha no bd </h1>");
 		
-		$strSQL = "SELECT * FROM livro WHERE estado_conserv = 'usado' ";
-						
-			
-		$rs = mysql_query($strSQL);
-		
-		while($row = mysql_fetch_array($rs)) {
-	   
-		echo $row['titulo_livro'] . "<br />";
-		echo $row['estado_conserv'] . "<br />";
-		//echo $row['tipo_operacao'] . "<br /> <br />" ;
-		
-		
-		}
+	$sql = "SELECT * FROM livro WHERE id_dono = '8'";
+        $result = mysql_query($sql);
+        
+        $cont =0;
+        $registro = mysql_fetch_assoc($result);
+
+        
+//        
+//        while() {
+//	   
+//                 
+//		 $listaLivros = array($cont=>$registro);
+//                 
+//                 
+//                 $cont++;
+//		}
+//             
+                
+        
+        var_dump($registro);
+        
 	?> 
 	
 	<input type=button value="Compre" onClick="alert('Compra feita com Sucesso')">
