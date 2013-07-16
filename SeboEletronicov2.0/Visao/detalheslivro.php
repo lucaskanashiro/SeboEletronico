@@ -28,9 +28,8 @@ $id_usuario = $_SESSION['id_usuario'];
                 //Acessar Informações do comprador
                 $id_livro = $_POST['id_livro'];
 
-                $email_usuario = $_POST ["email_usuario"];
+                $email_usuario = $_SESSION["email"];
 
-                $email_usuario = "joao@hot.com";
                 $strSQL4 = "SELECT * FROM usuario WHERE email_usuario = '$email_usuario' ";
 
                 $rs4 = mysql_query($strSQL4);
@@ -66,11 +65,7 @@ $id_usuario = $_SESSION['id_usuario'];
    
   //Acessar Informações do comprador
   
-   
-  $email_usuario = $_POST ["email_usuario"];
-  
-  $email_usuario = "joao@hot.com";
-  $strSQL2 = "SELECT * FROM usuario WHERE email_usuario = '$email_usuario' ";
+  $strSQL2 = "SELECT * FROM usuario WHERE email_usuario = '".$email_usuario."' ";
   
    $rs2 = mysql_query($strSQL2);
 		
@@ -102,36 +97,28 @@ $id_usuario = $_SESSION['id_usuario'];
 
   
   //Exibir 
-   echo '<font color = "white"> <h1>' ;
+   echo '<h6> <h1>' ;
    echo $titulo2;
-   echo '</h1> </font><br /><br />' ;
-  
-  
+   echo '</h1> </h6><br /><br />' ; 
    
-   echo'<font size="+2" color ="white">Autor: '; 
+   echo'<h6>Autor: '; 
    echo $autor;
-   echo'</font><br />';
+   echo'</h6><br />';
    
-   echo'<font size="+2" color ="white">Editora: ';
+   echo'<h6>Editora: ';
    echo $editora;
-   echo'</font><br />';
+   echo'</h6><br />';
    
    
-   echo'<font size="+2" color ="white">Descricao: ';
+   echo'<h6>Descricao: ';
    echo $descricao;
-   echo'</font><br /><br />';
+   echo'</h6><br /><br />';
+   
+   
    
    ?>
     
-   <form name="enviarpergunta" method="post" action="detalheslivro.php">     
-   <br>
-   <textarea name="mural" value="mural" rows="15" cols="85"></textarea>
-   <input type="hidden" value="nome_comprador" name="nome_comprador">
-   <input type="hidden" name="id_livro" value="<?php echo $id_livro; ?>">
-   <input type="submit" value="Enviar" />  
-   </form>
-   
-   
+    <div id="formulario">
   <form name="comprarlivro" method="post" action="compralivro.php">
   
    <input type = "hidden" name="nome_comprador" value= "<?php echo $nome_comprador; ?>" >
@@ -141,16 +128,27 @@ $id_usuario = $_SESSION['id_usuario'];
      <input type="submit" value="Comprar" />
      <label for="pergunta"></label>
   </form>
- 
- <br /><br /><br />
+    </div>
+    
+    
+   <div id="formulariotop"> 
+   <form name="enviarpergunta" method="post" action="detalheslivro.php"> 
+   <h6>Envie sua mensagem:</h6>
+   <br>
+   <textarea name="mural" value="mural" rows="5" cols="45" ></textarea>
+   <input type="hidden" value="nome_comprador" name="nome_comprador">
+   <input type="hidden" name="id_livro" value="<?php echo $id_livro; ?>">
+   <input type="submit" value="Enviar" />  
+   </form>
+
+ <br/><br/><br/>
  
  	<?php
 	
 	include "..\Dao\conexao_bd.inc";
              if(!$bd) die ("<h1>Falha no bd </h1>");
 	
-		
-            $strSQL3 = "SELECT * FROM mural WHERE id_livro = $id_livro " ;
+            $strSQL3 = "SELECT * FROM mural WHERE id_livro = '".$id_livro."' ORDER BY id_comentario DESC" ;
 						
 		$rs3 = mysql_query($strSQL3);
 		
@@ -161,6 +159,8 @@ $id_usuario = $_SESSION['id_usuario'];
                     echo " <br /> <br />";
                 }
 	?> 
+      
+   </div>
 
 </body>
 </html>

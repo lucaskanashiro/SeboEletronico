@@ -9,6 +9,7 @@
             font:100 80% normal arial, tahoma, sans-serif;
             color: #A3BBD1;
             overflow-x: hidden;
+           
     
 	
 	}
@@ -41,6 +42,7 @@
             border-collapse: collapse;
             border:1px solid #000;
             boxshadow: 0 0 30px #000;
+            
 	
 	}
 
@@ -59,7 +61,6 @@
         color: #466683;
         border: 1px solid #162029;
         box-shadow: 1px 0px 10px #1b4158;
-
 	
 	}
 	
@@ -108,6 +109,16 @@
 		text-transform: uppercase;
 		font-size: 17px;
 		color: #c0bdbd;
+	
+	}
+        
+        h6{
+	
+		font-family: verdana, sans-serif;
+		text-transform: uppercase;
+		font-size: 12px;
+		color: #c0bdbd;
+                margin-left: 40px;
 	
 	}
         
