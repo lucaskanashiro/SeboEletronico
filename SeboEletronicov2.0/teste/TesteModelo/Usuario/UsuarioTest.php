@@ -169,7 +169,13 @@ class UsuarioTest extends PHPUnit_Framework_TestCase{
 		$senha = array('abc', 'abc');
 		$this->usuarioTeste->setSenha($senha);
 	}
-}
+
+        public function testSalvaUsuario(){
+            $retorno = $this->usuarioTeste->salvaUsuario($this->usuarioTeste->getNome(), $this->usuarioTeste->getTelefone(),$this->usuarioTeste->getEmail(),$this->usuarioTeste->getSenha());
+            $this->assertTrue($retorno);
+        }
+        
+     }
 
 ?>
 

@@ -1,12 +1,14 @@
 <?php
 
 include '../Modelo/Usuario.php';
+include '../Dao/UsuarioDao.php';
 
 class UsuarioControlador {
     
     
         public function salvaUsuario($nome, $email, $telefone, $senha){
-           return Usuario::salvaUsuario($nome, $email, $telefone, $senha);
+           $usuario = new Usuario($nome, $email, $telefone, $senha);
+           return UsuarioDao::salvaUsuario($usuario);
         }
         
         public function checaCadastro($email, $senha){
@@ -17,8 +19,9 @@ class UsuarioControlador {
             
             ?>
             <script language = "Javascript">
-            window.location="http://localhost/SeboEletronicov2.0/Visao/alteraUsuario.php?idPessoa=<?php echo $id_pessoa?>";
-            </script><?php
+                window.location="http://localhost/SeboEletronicov2.0/Visao/alteraUsuario.php?idPessoa=<?php echo $id_pessoa?>";
+            </script>
+                <?php
         }
         
         public function checaCadastroId($id){
@@ -38,8 +41,7 @@ class UsuarioControlador {
         
         public function deletaCadastro($email, $senha){
    
-            return Usuario::deletaCadastro
-                    ($email, $senha);
+            return Usuario::deletaCadastro($email, $senha);
    
         }
 

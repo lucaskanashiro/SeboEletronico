@@ -96,11 +96,7 @@ class Usuario {
             $usuario = new Usuario($nome, $telefone, $email, $senha);
         }catch(Exception $e){
             print"<script>alert('".$e->getMessage()."')</script>";
-            ?>
-                <script language = "Javascript">
-                    window.location="http://localhost/SeboEletronicov2.0/Visao/cadastrarUsuario.php";
-                </script>
-            <?php 
+            echo "<script>window.location='http://localhost/SeboEletronicov2.0/Visao/cadastrarUsuario.php';</script>";
             exit;    
         }
         return UsuarioDao::salvaUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha());   
