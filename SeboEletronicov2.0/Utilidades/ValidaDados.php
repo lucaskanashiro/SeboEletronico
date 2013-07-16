@@ -54,11 +54,7 @@ class ValidaDados {
                 return 3;
             }
         }
-        
-        public function validaGenero($genero){
-            $listaDeGenerosValidos = Livro::defineTiposDeGeneros();
-            return in_array($listaDeGenerosValidos, $genero);      
-        }
+
 }
 
 
