@@ -17,8 +17,8 @@ $idUsuario = $usuario['id_usuario'];
 if($row == $row2){
     if($row>0){
         session_start();
-        $_SESSION['email']= $_POST['email'];
-        $_SESSION['senha']= $_POST['senha'];
+        $_SESSION['email']= $email;
+        $_SESSION['senha']= $senha;
         $_SESSION['id_usuario'] = $idUsuario;
         //echo "<script>alert('Seja bem vindo ao SEBO Eletronico!')</script>";
         echo"<script>window.location='http://localhost/SeboEletronicov2.0/Visao/indexLogin.php'</script>";

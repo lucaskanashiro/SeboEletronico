@@ -1,6 +1,10 @@
 <?php
 session_start();
 $id_usuario = $_SESSION['id_usuario'];
+$senha = $_SESSION['senha'];
+include '../Controle/UsuarioControlador.php';
+$cadastro = UsuarioControlador::checaCadastroId($id_usuario);
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -43,23 +47,20 @@ $id_usuario = $_SESSION['id_usuario'];
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Deletar Cadastro</h5></th>
+                    <th class='titlein' > <h5>Deletar Cadastro de: </h5></th>
                 </tr>
         
                 <tr>
                     <td > 
-                        <h4> E-mail: <input type="text" name="email"/></h4>
+                        <h4> <?php echo $cadastro['nome_usuario'] ?></h4>
                     </td>
                 </tr>
                 
-                <tr>              
-                    <td>
-                        <h4> Senha: <input type="password" name="senha"/></h4> <p>
-                    </td>    
-                </tr>
-
+                
                 <th>
                     <input type="hidden" name="tipo" value="deletar"/>
+                    <input type="hidden" name="email" value="<?php echo $cadastro['email_usuario']?>"/>
+                    <input type="hidden" name="senha" value="<?php echo $senha?>"/>
                     <input type="submit" name='Enviar' value="Excluir" title='Excluir Usuário' />
                 </th>
 

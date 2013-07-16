@@ -19,7 +19,7 @@ function cadastra(){
 }
 
 function altera(){
-    window.location="http://localhost/SeboEletronicov2.0/Visao/frameEmail.php";
+    window.location="http://localhost/SeboEletronicov2.0/Visao/alteraUsuario.php";
 }
 
 function deleta(){

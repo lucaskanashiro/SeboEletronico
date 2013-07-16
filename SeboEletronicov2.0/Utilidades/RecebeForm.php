@@ -22,19 +22,14 @@ switch($_POST['tipo']){
                          <?php
                             
                           break;
-      case "fEmail":  $email = $_POST['email'];
-                      $senha = $_POST['senha'];
                       
-                      UsuarioControlador::checaCadastro($email, $senha);
-                      
-                    break;
-      
       case "alterar":   $nome = $_POST['nome'];
                         $email = $_POST['email'];
                         $telefone = $_POST['telefone'];
                         $senha = $_POST['senha'];
                         $id = $_POST['id_pessoa'];
                         $senhaVelha = $_POST['senhaAntiga'];
+                        
                         UsuarioControlador::alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha);
                         ?>
                             
@@ -43,7 +38,7 @@ switch($_POST['tipo']){
                             </script>      
                             
                             <script language = "Javascript">
-                                window.location="http://localhost/SeboEletronicov2.0/Visao/indexUsuario.php";
+                                window.location="http://localhost/SeboEletronicov2.0/Visao/indexLogin.php";
                             </script>
                            
                         <?php

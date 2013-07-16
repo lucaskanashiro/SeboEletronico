@@ -90,46 +90,30 @@ class Usuario {
         } 
     }
     
-    public function salvaUsuario($nome, $email, $telefone, $senha){
-               
-        try{
-            $usuario = new Usuario($nome, $telefone, $email, $senha);
-        }catch(Exception $e){
-            print"<script>alert('".$e->getMessage()."')</script>";
-            ?>
-                <script language = "Javascript">
-                    window.location="http://localhost/SeboEletronicov2.0/Visao/cadastrarUsuario.php";
-                </script>
-            <?php 
-            exit;    
-        }
-        return UsuarioDao::salvaUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha());   
-    }
-    
-    public function checaCadastro($email, $senha){
-        return UsuarioDao::checaCadastro($email, $senha);
-    }
-    
-    public function checaCadastroId($id){
-        return UsuarioDao::getCadastradosPorId($id);
-    }
-    
-    public function checaSenhaId($idSenha){
-        return UsuarioDao::getSenhaPorId($idSenha);
-    }
-
-    public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
-        $usuario = new Usuario($nome, $telefone, $email, $senha);
-        return UsuarioDao::alteraUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha(),$id,$senhaVelha);
-    }
-
-    public function deletaCadastro($email, $senha){
-        return UsuarioDao::deletaUsuario($email, $senha);
-    }
-
-    public function pesquisaUsuario($nome){
-        return UsuarioDao::pesquisaUsuario($nome);
-    }
+//    public function checaCadastro($email, $senha){
+//        return UsuarioDao::checaCadastro($email, $senha);
+//    }
+//    
+//    public function checaCadastroId($id){
+//        return UsuarioDao::getCadastradosPorId($id);
+//    }
+//    
+//    public function checaSenhaId($idSenha){
+//        return UsuarioDao::getSenhaPorId($idSenha);
+//    }
+//
+//    public function alterarCadastro($nome, $email, $telefone, $senha, $id, $senhaVelha){
+//        $usuario = new Usuario($nome, $telefone, $email, $senha);
+//        return UsuarioDao::alteraUsuario($usuario->getNome(), $usuario->getEmail(), $usuario->getTelefone(), $usuario->getSenha(),$id,$senhaVelha);
+//    }
+//
+//    public function deletaCadastro($email, $senha){
+//        return UsuarioDao::deletaUsuario($email, $senha);
+//    }
+//
+//    public function pesquisaUsuario($nome){
+//        return UsuarioDao::pesquisaUsuario($nome);
+//    }
 }
 
 ?>

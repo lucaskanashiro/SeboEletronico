@@ -1,14 +1,10 @@
 <?php
-session_start();
-$id_usuario = $_SESSION['id_usuario'];
-include '../Controle/UsuarioControlador.php';
+    session_start();
+    $id_usuario = $_SESSION['id_usuario'];
+    $senhaFinal = $_SESSION['senha'];
+    include '../Controle/UsuarioControlador.php';
 
-    $id = $_REQUEST['idPessoa'];
-    $cadastro = UsuarioControlador::checaCadastroId($id);
-    
-    $idSenha = $cadastro['senha_usuario'];
-    
-    $senhaFinal = UsuarioControlador::checaSenhaId($idSenha);
+    $cadastro = UsuarioControlador::checaCadastroId($id_usuario);
     
     ?>
 <!DOCTYPE HTML>
@@ -54,7 +50,7 @@ include '../Controle/UsuarioControlador.php';
                 <table class='insr'>
 
                 <tr>
-                    <th class='titlein' > <h5>Aletrar Cadastro</h5></th>
+                    <th class='titlein' > <h5>Alterar Cadastro</h5></th>
                 </tr>
                 
                 <tr> 
@@ -77,20 +73,20 @@ include '../Controle/UsuarioControlador.php';
 
                 <tr>              
                     <td>
-                        <h4> Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal['codigo_senha']?>"/></h4> <p>
+                        <h4> Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal?>"/></h4> <p>
                     </td>    
                 </tr>
 
                 <tr>              
                     <td>
-                        <h3> Confirmar Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal['codigo_senha']?>"/></h3> <p>
+                        <h3> Confirmar Senha: <input type="password" name="senha[]" value="<?php echo $senhaFinal?>"/></h3> <p>
                     </td>    
                 </tr>
 
                 <th>
                     <input type="hidden" name="tipo" value="alterar"/>
                     <input type="hidden" name="senhaAntiga" value="<?php echo $senhaFinal['codigo_senha']?>"/>
-                    <input type="hidden" name="id_pessoa" value="<?php echo $cadastro[0]['id_pessoa'] ?>" />
+                    <input type="hidden" name="id_pessoa" value="<?php echo $id_usuario ?>" />
                     <input type="submit" name='Enviar' value="ENVIAR" title='Enviar dados' />
                     <input type="reset" name='Limpar' value="LIMPAR DADOS" title='Limpar dados' /> 
                 </th>

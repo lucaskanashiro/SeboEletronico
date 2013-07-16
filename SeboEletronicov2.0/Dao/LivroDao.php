@@ -4,11 +4,12 @@ include "../Utilidades/ConexaoComBanco.php";
 
 class LivroDao {
     
-    public function salvaLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id_dono){
+    public function salvaLivro($livro, $id_dono){
 
         $sql = "INSERT INTO livro (id_dono, titulo_livro, editora, autor, edicao, genero, estado_conserv, descricao_livro, venda, troca)
-            VALUES ('".$id_dono."','".$titulo."','".$editora."','".$autor."','".$edicao."','".$genero."','".$estado."','".$descricao."',
-                '".$venda."','".$troca."')";
+            VALUES ('".$id_dono."','".$livro->getTitulo()."','".$livro->getEditora()."','".$livro->getAutor()."',
+                '".$livro->getEdicao()."','".$livro->getGenero()."','".$livro->getEstado()."','".$livro->getDescricao()."','".$livro->getVenda()."',
+                    '".$livro->getTroca()."')";
         $livro = mysql_query($sql);
         return $livro;
     }
@@ -54,9 +55,11 @@ class LivroDao {
         return $deletou;
     }
     
-    public function alteraLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id, $id_usuario){
+    public function alteraLivro($livro, $id_dono, $id_usuario){
 
-        $sql = "UPDATE livro SET id_dono = '".$id_usuario."', titulo_livro = '".$titulo."', editora = '".$editora."', autor = '".$autor."', edicao = '".$edicao."', genero = '".$genero."', estado_conserv = '".$estado."', descricao_livro = '".$descricao."', venda = '".$venda."', troca = '".$troca."' WHERE id_livro = '".$id."'";
+        $sql = "UPDATE livro SET id_dono = '".$id_usuario."', titulo_livro = '".$livro->getTitulo()."', editora = '".$livro->getEditora()."', 
+            autor = '".$livro->getAutor()."', edicao = '".$livro->getEdicao()."', genero = '".$livro->getGenero()."', estado_conserv = '".$livro->getEstado()."', 
+                descricao_livro = '".$livro->getDescricao()."', venda = '".$livro->getVenda()."', troca = '".$livro->getTroca()."' WHERE id_livro = '".$id_dono."'";
         $livro = mysql_query($sql);
         
         return $livro;

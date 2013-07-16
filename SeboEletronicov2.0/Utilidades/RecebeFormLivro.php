@@ -16,11 +16,7 @@ switch($_POST['tipo']){
                          $estado = $_POST['estado'];
                          $descricao = $_POST['descricao'];
                          $id_dono = $_POST['id_dono'];
-                         
-                         if(empty($venda) && empty($troca)){
-                             $venda = "venda";
-                             $troca = "troca";
-                         }
+                        
                          
                         $salvo = LivroControlador::salvaLivro($titulo, $autor, $genero, $edicao, $editora, $venda, $troca, $estado, $descricao, $id_dono);
                          
@@ -32,14 +28,7 @@ switch($_POST['tipo']){
                              echo "<script>('Falha ao cadastrar o livro, tente novamente.')</script>";
                          }
                            
-                         ?>
-                            <script language="Javascript" type="text/javascript">
-                                alert("Livro cadastrado com sucesso!!");
-                            </script>  
-
-                            <script language = "Javascript">
-                                   window.location="http://localhost/SeboEletronicov2.0/Visao/indexLivro.php";
-                            </script><?php
+                            echo "<script>window.location='http://localhost/SeboEletronicov2.0/Visao/indexLivro.php';</script>";
                             
                           break;
       

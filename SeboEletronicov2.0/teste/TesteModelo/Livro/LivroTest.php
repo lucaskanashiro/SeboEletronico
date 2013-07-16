@@ -109,6 +109,11 @@ class LivroTest extends PHPUnit_Framework_TestCase{
             $this->assertEquals('livro e muito legal', $this->livroTeste->getDescricao());
             
         }
+        
+        public function testSetDescricao(){
+            $this->livroTeste->setDescricao('livro demais');
+            $this->assertEquals('livro demais', $this->livroTeste->getDescricao());
+        }
 
 	public function testDefineTiposDeGeneros(){
 		$resultado = $this->livroTeste->defineTiposDeGeneros();
