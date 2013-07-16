@@ -39,6 +39,10 @@ class LivroDao {
         $lista = mysql_query($sql);
         $listaLivros = mysql_fetch_array($lista);
         
+        if(!(empty($listaLivros))){
+            return false;
+        }
+        
         return $listaLivros;
         
     }
@@ -73,26 +77,30 @@ class LivroDao {
         $livros = array();
         
         while($registro = mysql_fetch_assoc($result) ) {
-	   
-        $livros[]=$registro;         
+            $livros[]=$registro;         
+	}
         
-		}
+        if(!(empty($livros))){
+            return false;
+        }
         
         return $livros;
      
     }
     
     public function getAllLivro(){
-         $sql = "SELECT * FROM livro";
+        $sql = "SELECT * FROM livro";
         $result = mysql_query($sql);
         
         $livros = array();
         
         while($registro = mysql_fetch_assoc($result) ) {
-	   
-        $livros[]=$registro;         
+            $livros[]=$registro;         
+	}
         
-		}
+        if(!(empty($livros))){
+            return false;
+        }
         
         return $livros;
     }

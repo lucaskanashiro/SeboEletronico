@@ -61,15 +61,24 @@ class LivroDaoTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testDeletaLivro() {
-        
+        $retorno = $this->livroDaoTeste->deletaLivro(15);
+        $this->assertTrue($retorno);    
     }
 
-    public function testAlteraLivro() {
 
+    public function testAlteraLivro() {
+            $retorno = $this->livroDaoTeste->alteraLivro($this->livroTeste, 23,16);
+            $this->assertTrue($retorno);    
     }
 
     public function testGetLivroByIdUsuario() {
-
+        $retorno = $this->livroDaoTeste->getLivroByIdUsuario(23);
+        $this->assertFalse($retorno);    
+    }
+    
+    public function testGetAllLivro(){
+        $retorno = $this->livroDaoTeste->getAllLivro(23);
+        $this->assertFalse($retorno);
     }
 
 
